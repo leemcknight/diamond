@@ -23,6 +23,14 @@ service: v1
 provider:
   name: aws
   runtime: nodejs12.x
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+      Resource:
+        arn:aws:dynamodb:us-west-2:941853961702:table/ballpark
 
 # you can overwrite defaults here
   stage: dev

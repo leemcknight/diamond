@@ -4,13 +4,17 @@
   "description": "backend rest api for diamond",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Lee McKnight",
   "license": "ISC",
   "dependencies": {
     "aws-sdk": "^2.623.0",
     "serverless": "^1.65.0",
-    "serverless-http": "^2.3.2"
+    "serverless-http": "^2.3.2",
+    "webpack": "^4.42.1"
+  },
+  "devDependencies": {
+    "jest": "^25.1.0"
   }
 }

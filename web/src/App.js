@@ -2,6 +2,7 @@ import React from 'react';
 import Franchises from './franchises';
 import Schedules from './schedules';
 import People from './people';
+import Ballparks from './ballparks';
 import Home from './home';
 import './App.css';
 import {
@@ -27,6 +28,9 @@ function App() {
               </Route>
               <Route path="/people">
                 <People />
+              </Route>
+              <Route path="/ballparks">
+                <Ballparks />
               </Route>
               <Route path="/">
                 <Home />
