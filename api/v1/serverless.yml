@@ -30,7 +30,7 @@ provider:
         - dynamodb:Scan
         - dynamodb:GetItem
       Resource:
-        arn:aws:dynamodb:us-west-2:941853961702:table/ballpark
+        arn:aws:dynamodb:us-west-2:941853961702:table/*        
 
 # you can overwrite defaults here
   stage: dev
@@ -77,6 +77,12 @@ functions:
     events:
       - http:
           path: v1/franchises
+          method: get
+  filterFranchises:
+    handler: handler.filterFranchises
+    events:
+      - http:
+          path: v1/franchises/{name}
           method: get
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
