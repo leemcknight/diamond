@@ -48,11 +48,10 @@ module.exports = {
         );
     },
 
-    filter: name => {
-        
+    filter: name => {        
         const params = {
             TableName: tableName,
-            FilterExpression: `contains (#location, ${name}) OR contains(nickname, ${name})`,
+            FilterExpression: `contains (#location, ${name})`,
             ExpressionAttributeNames: {
                 "#location": "location"
               }
