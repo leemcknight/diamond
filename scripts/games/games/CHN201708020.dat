@@ -1,0 +1,142 @@
+id,CHN201708020
+version,2
+info,visteam,ARI
+info,hometeam,CHN
+info,site,CHI11
+info,date,2017/08/02
+info,number,0
+info,starttime,7:05PM
+info,daynight,night
+info,usedh,false
+info,umphome,drakr901
+info,ump1b,hobep901
+info,ump2b,randt901
+info,ump3b,davig901
+info,howscored,park
+info,pitches,pitches
+info,oscorer,roseb701
+info,temp,78
+info,winddir,fromrf
+info,windspeed,11
+info,fieldcond,unknown
+info,precip,unknown
+info,sky,overcast
+info,timeofgame,164
+info,attendance,41321
+info,wp,godlz001
+info,lp,arrij001
+info,save,rodnf001
+start,perad001,"David Peralta",0,1,7
+start,polla001,"A.J. Pollock",0,2,8
+start,lambj001,"Jake Lamb",0,3,5
+start,goldp001,"Paul Goldschmidt",0,4,3
+start,martj006,"J.D. Martinez",0,5,9
+start,descd001,"Daniel Descalso",0,6,4
+start,iannc001,"Chris Iannetta",0,7,2
+start,reinj001,"Jack Reinheimer",0,8,6
+start,godlz001,"Zack Godley",0,9,1
+start,zobrb001,"Ben Zobrist",1,1,4
+start,bryak001,"Kris Bryant",1,2,5
+start,rizza001,"Anthony Rizzo",1,3,3
+start,schwk001,"Kyle Schwarber",1,4,7
+start,avila001,"Alex Avila",1,5,2
+start,russa002,"Addison Russell",1,6,6
+start,heywj001,"Jason Heyward",1,7,9
+start,jay-j001,"Jon Jay",1,8,8
+start,arrij001,"Jake Arrieta",1,9,1
+play,1,0,perad001,11,BCX,53/G
+play,1,0,polla001,01,CX,43/G
+play,1,0,lambj001,12,CBFS,K
+play,1,1,zobrb001,01,CX,S9/L
+play,1,1,bryak001,11,BFX,64(1)3/GDP
+play,1,1,rizza001,21,BCBX,7/F
+play,2,0,goldp001,10,BX,53/G
+play,2,0,martj006,12,CFFBX,6/P
+play,2,0,descd001,00,X,8/F+
+play,2,1,schwk001,11,CBX,S5/BG-
+play,2,1,avila001,12,CBSS,K
+play,2,1,russa002,22,CFBBX,S7/L.1-2
+play,2,1,heywj001,21,BF*BX,7/L
+play,2,1,jay-j001,22,BBCSS,K
+play,3,0,iannc001,20,BBX,S8/G+
+play,3,0,reinj001,10,BX,7/L
+play,3,0,godlz001,22,BBFCM,K
+play,3,0,perad001,11,BSX,3/G
+play,3,1,arrij001,12,CSBC,K
+play,3,1,zobrb001,32,BCBBCB,W
+play,3,1,bryak001,02,CSFFX,8/F
+play,3,1,rizza001,32,FBBS*B>F>B,W.1-2
+play,3,1,schwk001,02,CFFS,K
+play,4,0,polla001,00,X,8/F
+play,4,0,lambj001,20,BBX,7/F
+play,4,0,goldp001,32,BBCBSS,K
+play,4,1,avila001,22,FFFFBBX,63/G+
+play,4,1,russa002,00,X,23/G-
+play,4,1,heywj001,21,BBSX,43/G
+play,5,0,martj006,12,BCSS,K
+play,5,0,descd001,12,CFBC,K
+play,5,0,iannc001,31,BBBCB,W
+play,5,0,reinj001,02,CCS,K
+play,5,1,jay-j001,00,X,43/G
+play,5,1,arrij001,32,BBCSBX,9/F
+play,5,1,zobrb001,22,CBCBFFX,8/F
+play,6,0,godlz001,12,CSBC,K
+play,6,0,perad001,00,X,S8/L
+play,6,0,polla001,32,*BBF1BC>F>X,E6/TH/G.1-3
+play,6,0,lambj001,10,1*B>B,SB2
+play,6,0,lambj001,31,1*B>B.BFX,D9/G.3-H;2-H(UR)
+play,6,0,goldp001,00,H,HP
+play,6,0,martj006,22,CBBSX,54(1)3/GDP
+play,6,1,bryak001,31,BBBCX,7/F
+play,6,1,rizza001,22,SBBSX,9/L+
+play,6,1,schwk001,12,CBFC,K
+play,7,0,descd001,22,CBBFT,K
+play,7,0,iannc001,31,BBFBB,W
+play,7,0,reinj001,22,BCSBX,64(1)/FO/G-
+play,7,0,godlz001,00,,NP
+sub,drurb001,"Brandon Drury",0,9,11
+play,7,0,drurb001,00,.X,64(1)/FO/G
+play,7,1,avila001,00,,NP
+sub,chafa001,"Andrew Chafin",0,9,1
+play,7,1,avila001,00,,NP
+sub,contw001,"Willson Contreras",1,5,11
+play,7,1,contw001,32,..BLBBCC,K
+play,7,1,russa002,22,BCCBFFS,K
+play,7,1,heywj001,32,BBBCFX,43/G
+play,8,0,perad001,00,,NP
+sub,contw001,"Willson Contreras",1,5,2
+play,8,0,perad001,00,,NP
+sub,wilsj004,"Justin Wilson",1,9,1
+play,8,0,perad001,32,..SBBBSB,W
+play,8,0,polla001,12,B1CFFX,4/P
+play,8,0,lambj001,00,X,D7/L.1-H
+play,8,0,goldp001,01,CB,WP.2-3
+play,8,0,goldp001,22,CB.BFS,K
+play,8,0,martj006,30,VVVV,IW
+play,8,0,descd001,31,BBCBX,43/G
+play,8,1,jay-j001,00,,NP
+sub,brada001,"Archie Bradley",0,9,1
+play,8,1,jay-j001,22,.CBBFFFX,7/L
+play,8,1,wilsj004,00,,NP
+sub,almoa002,"Albert Almora",1,9,11
+play,8,1,almoa002,02,.CSX,43/G
+play,8,1,zobrb001,31,CBBBX,43/G+
+play,9,0,iannc001,00,,NP
+sub,uehak001,"Koji Uehara",1,9,1
+play,9,0,iannc001,01,.CX,4/P
+play,9,0,reinj001,02,SFFS,K
+play,9,0,brada001,00,,NP
+sub,herrc001,"Chris Herrmann",0,9,11
+play,9,0,herrc001,22,.BSBFC,K
+play,9,1,bryak001,00,,NP
+sub,rodnf001,"Fernando Rodney",0,9,1
+play,9,1,bryak001,00,.X,8/F
+play,9,1,rizza001,22,CBCBS,K
+play,9,1,schwk001,02,CSC,K
+data,er,godlz001,0
+data,er,chafa001,0
+data,er,brada001,0
+data,er,rodnf001,0
+data,er,arrij001,1
+data,er,wilsj004,1
+data,er,uehak001,0

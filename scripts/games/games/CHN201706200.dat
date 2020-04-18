@@ -1,0 +1,168 @@
+id,CHN201706200
+version,2
+info,visteam,SDN
+info,hometeam,CHN
+info,site,CHI11
+info,date,2017/06/20
+info,number,0
+info,starttime,7:06PM
+info,daynight,night
+info,usedh,false
+info,umphome,tumpj901
+info,ump1b,blasc901
+info,ump2b,diazl901
+info,ump3b,nelsj901
+info,howscored,park
+info,pitches,pitches
+info,oscorer,roseb701
+info,temp,57
+info,winddir,fromrf
+info,windspeed,11
+info,fieldcond,unknown
+info,precip,unknown
+info,sky,sunny
+info,timeofgame,158
+info,attendance,41607
+info,wp,montm002
+info,lp,chacj001
+info,save,
+start,pirej001,"Jose Pirela",0,1,7
+start,cordf003,"Franchy Cordero",0,2,8
+start,myerw001,"Wil Myers",0,3,3
+start,solay001,"Yangervis Solarte",0,4,4
+start,renfh001,"Hunter Renfroe",0,5,9
+start,spanc001,"Cory Spangenberg",0,6,5
+start,corda001,"Allen Cordoba",0,7,6
+start,torrl001,"Luis Torrens",0,8,2
+start,chacj001,"Jhoulys Chacin",0,9,1
+start,rizza001,"Anthony Rizzo",1,1,3
+start,bryak001,"Kris Bryant",1,2,5
+start,contw001,"Willson Contreras",1,3,7
+start,happi001,"Ian Happ",1,4,8
+start,russa002,"Addison Russell",1,5,6
+start,montm001,"Miguel Montero",1,6,2
+start,baezj001,"Javier Baez",1,7,4
+start,montm002,"Mike Montgomery",1,8,1
+start,jay-j001,"Jon Jay",1,9,9
+play,1,0,pirej001,10,BX,43/G+
+play,1,0,cordf003,12,FBCC,K
+play,1,0,myerw001,02,CSX,53/G-
+play,1,1,rizza001,00,,NP
+sub,darnc001,"Chase d'Arnaud",0,4,4
+com,"$Yangervis Solarte had a strained left oblique and did not"
+com,"take the field"
+play,1,1,rizza001,10,.BX,HR/8/F
+play,1,1,bryak001,32,BSSBBS,K
+play,1,1,contw001,00,X,53/G
+play,1,1,happi001,22,BBCCC,K
+play,2,0,darnc001,10,BX,53/G
+play,2,0,renfh001,12,BTFX,63/G
+play,2,0,spanc001,02,.CCS,K
+play,2,1,russa002,01,CX,63/G-
+play,2,1,montm001,30,BBBB,W
+play,2,1,baezj001,11,*BSX,14(1)3/GDP
+play,3,0,corda001,22,CFBBS,K
+play,3,0,torrl001,22,BCFFBFFFX,S8/G
+play,3,0,chacj001,00,,NP
+sub,rizza001,"Anthony Rizzo",1,1,4
+play,3,0,chacj001,00,,NP
+sub,baezj001,"Javier Baez",1,7,3
+play,3,0,chacj001,00,..X,S8/G+.1-2
+play,3,0,pirej001,00,,NP
+sub,rizza001,"Anthony Rizzo",1,1,3
+play,3,0,pirej001,00,,NP
+sub,baezj001,"Javier Baez",1,7,4
+play,3,0,pirej001,00,..X,54(1)3/GDP
+play,3,1,montm002,32,BSBSBX,43/G
+play,3,1,jay-j001,02,CCS,K
+play,3,1,rizza001,12,CFBX,6/L
+play,4,0,cordf003,10,BX,43/G
+play,4,0,myerw001,32,BCBBFF*B,W
+play,4,0,darnc001,11,111BCX,46(1)/FO/G
+play,4,0,renfh001,10,BX,S7/G+.1-2
+play,4,0,spanc001,11,*BCX,13/G-
+play,4,1,bryak001,02,CTH,HP
+play,4,1,contw001,10,*B*B,SB2
+play,4,1,contw001,22,*B*B.CFS,K
+play,4,1,happi001,30,*BBBV,IW
+play,4,1,russa002,02,TCX,S7/G.2-H;1-2
+play,4,1,montm001,01,FX,16(1)3/GDP
+play,5,0,corda001,12,CBSX,8/L
+play,5,0,torrl001,10,BX,43/G
+play,5,0,chacj001,00,X,9/F
+play,5,1,baezj001,22,BBSFS,K
+play,5,1,montm002,00,X,3/G
+play,5,1,jay-j001,02,CCH,HP
+play,5,1,rizza001,10,*BB,WP.1-2
+play,5,1,rizza001,30,*BB.VV,IW
+play,5,1,bryak001,32,*BCSBFB>X,43/G
+play,6,0,pirej001,32,CBBBSC,K
+play,6,0,cordf003,12,CCBX,43/G
+play,6,0,myerw001,32,CCBBBB,W
+play,6,0,darnc001,00,X,36(1)/FO/G
+play,6,1,contw001,00,X,S7/G
+play,6,1,happi001,22,B1FSF*BC,K
+play,6,1,russa002,00,X,S9/G.1-2
+play,6,1,montm001,01,FX,S6/G.2-3;1-2
+play,6,1,baezj001,12,CSFBX,32(3)/FO/G.2-3;1-2
+play,6,1,montm002,00,,NP
+sub,lastt001,"Tommy La Stella",1,8,11
+play,6,1,lastt001,02,.CCX,43/G-
+play,7,0,renfh001,00,,NP
+sub,edwac001,"Carl Edwards",1,8,1
+play,7,0,renfh001,11,.CBX,31/G-
+play,7,0,spanc001,02,FCC,K
+play,7,0,corda001,32,BBTSBB,W
+play,7,0,torrl001,22,FBFBX,S9/G.1-2
+play,7,0,chacj001,00,,NP
+sub,szczm001,"Matt Szczur",0,9,11
+play,7,0,szczm001,32,.B*BCBS>S,K
+play,7,1,jay-j001,00,,NP
+sub,buchr001,"Ryan Buchter",0,9,1
+play,7,1,jay-j001,32,.FBSFFFBFBFB,W
+play,7,1,rizza001,01,FX,1/BP
+play,7,1,bryak001,11,FB1X,S8/G.1-2
+play,7,1,contw001,10,*BX,54(1)3/GDP
+play,8,0,pirej001,00,,NP
+sub,strop001,"Pedro Strop",1,8,1
+play,8,0,pirej001,01,.CX,D7/G
+play,8,0,cordf003,12,SSBFS,K
+play,8,0,myerw001,30,BB*B*B,W
+play,8,0,darnc001,12,CF*BS,K
+play,8,0,renfh001,00,X,1/G-
+play,8,1,happi001,00,,NP
+sub,torrj001,"Jose Torres",0,9,1
+play,8,1,happi001,01,.FX,HR/78/F
+play,8,1,russa002,02,CFFS,K
+play,8,1,montm001,10,BX,43/G
+play,8,1,baezj001,02,CSX,S8/L+.B-3(E8)
+play,8,1,strop001,00,,NP
+sub,almoa002,"Albert Almora",1,8,11
+play,8,1,almoa002,00,,NP
+sub,valdj003,"Jose Valdez",0,9,1
+play,8,1,almoa002,21,..BFBX,D8/L/MREV.3-H;BX3(865)
+com,"replay,8,almoa002,CHN,nelsj901,CHI11,,N,M,CHN,A"
+com,"$when Albert Almora was called out at 3B, Cubs"
+com,"manager Joe Maddon challenged the ruling; the"
+com,"call was upheld by replay"
+play,9,0,spanc001,00,,NP
+sub,contw001,"Willson Contreras",1,3,2
+play,9,0,spanc001,00,,NP
+sub,happi001,"Ian Happ",1,4,9
+play,9,0,spanc001,00,,NP
+sub,almoa002,"Albert Almora",1,8,8
+play,9,0,spanc001,00,,NP
+sub,jay-j001,"Jon Jay",1,9,7
+play,9,0,spanc001,00,,NP
+sub,grimj002,"Justin Grimm",1,6,1
+play,9,0,spanc001,22,.....CBFBX,43/G-
+play,9,0,corda001,32,CBSFBBX,9/F
+play,9,0,torrl001,22,SBCBS,K
+data,er,chacj001,2
+data,er,buchr001,0
+data,er,torrj001,2
+data,er,valdj003,0
+data,er,montm002,0
+data,er,edwac001,0
+data,er,strop001,0
+data,er,grimj002,0

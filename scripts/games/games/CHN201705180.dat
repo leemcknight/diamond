@@ -1,0 +1,166 @@
+id,CHN201705180
+version,2
+info,visteam,CIN
+info,hometeam,CHN
+info,site,CHI11
+info,date,2017/05/18
+info,number,0
+info,starttime,1:21PM
+info,daynight,day
+info,usedh,false
+info,umphome,hicke901
+info,ump1b,mealj901
+info,ump2b,woodt901
+info,ump3b,kulpr901
+info,howscored,park
+info,pitches,pitches
+info,oscorer,frisd701
+info,temp,77
+info,winddir,torf
+info,windspeed,14
+info,fieldcond,unknown
+info,precip,unknown
+info,sky,sunny
+info,timeofgame,183
+info,attendance,36023
+info,wp,lestj001
+info,lp,garra001
+info,save,uehak001
+start,hamib001,"Billy Hamilton",0,1,8
+start,cozaz001,"Zack Cozart",0,2,6
+start,vottj001,"Joey Votto",0,3,3
+start,duvaa001,"Adam Duvall",0,4,7
+start,suare001,"Eugenio Suarez",0,5,5
+start,sches001,"Scott Schebler",0,6,9
+start,peraj003,"Jose Peraza",0,7,4
+start,barnt001,"Tucker Barnhart",0,8,2
+start,garra001,"Amir Garrett",0,9,1
+start,zobrb001,"Ben Zobrist",1,1,9
+start,bryak001,"Kris Bryant",1,2,5
+start,rizza001,"Anthony Rizzo",1,3,3
+start,happi001,"Ian Happ",1,4,7
+start,contw001,"Willson Contreras",1,5,2
+start,russa002,"Addison Russell",1,6,6
+start,baezj001,"Javier Baez",1,7,4
+start,lestj001,"Jon Lester",1,8,1
+start,almoa002,"Albert Almora",1,9,8
+play,1,0,hamib001,21,FBBX,63/G
+play,1,0,cozaz001,10,BX,8/F
+play,1,0,vottj001,00,X,D8/L
+play,1,0,duvaa001,01,CX,23/G-
+play,1,1,zobrb001,02,CFFX,8/F
+play,1,1,bryak001,32,CBBSBB,W
+play,1,1,rizza001,01,CX,S8/F.1-2
+play,1,1,happi001,12,BCFX,9/L
+play,1,1,contw001,32,F*BBFFB>F>B,W.2-3;1-2
+play,1,1,russa002,32,C*BCBB>B,W.3-H;2-3;1-2
+play,1,1,baezj001,12,BFCX,HR/78/F.3-H;2-H;1-H
+play,1,1,lestj001,00,X,43/G+
+play,2,0,suare001,22,CFBFBX,D8/L
+play,2,0,sches001,00,X,3/G.2-3
+play,2,0,peraj003,00,X,5/L-
+play,2,0,barnt001,22,*BSFBS,K
+play,2,1,almoa002,02,FCFFX,6/L+
+play,2,1,zobrb001,12,CBFX,S9/L
+play,2,1,bryak001,12,BF1SS,K
+play,2,1,rizza001,12,1CFB>X,43/G
+play,3,0,garra001,02,CLX,63/G
+play,3,0,hamib001,01,SX,43/G
+play,3,0,cozaz001,02,CFX,S8/L
+play,3,0,vottj001,20,BBX,53/G-
+play,3,1,happi001,20,BBX,D7/G
+play,3,1,contw001,10,BX,9/L
+play,3,1,russa002,02,SCS,K
+play,3,1,baezj001,30,VVVV,IW
+play,3,1,lestj001,01,CX,13/G
+play,4,0,duvaa001,01,CX,9/F
+play,4,0,suare001,22,BBSCFS,K
+play,4,0,sches001,01,CX,43/G
+play,4,1,almoa002,22,SFBBFFFC,K
+play,4,1,zobrb001,22,BCCBC,K
+play,4,1,bryak001,00,X,HR/8/F
+play,4,1,rizza001,12,SSBS,K
+play,5,0,peraj003,11,BCX,9/F
+play,5,0,barnt001,21,SBBX,E5/TH/G
+play,5,0,garra001,00,,NP
+sub,kivlp001,"Patrick Kivlehan",0,9,11
+play,5,0,kivlp001,10,.BX,54(1)/FO/G
+play,5,0,hamib001,22,SF*BBFX,6/L
+play,5,1,happi001,00,,NP
+sub,woodb004,"Blake Wood",0,9,1
+play,5,1,happi001,32,.BCBSBB,W
+play,5,1,contw001,01,CX,E5/G-.1-2
+play,5,1,russa002,02,CCX,46(1)/FO/G.2-3
+play,5,1,baezj001,22,CCBBX,S9/G.3-H;1-3
+play,5,1,lestj001,11,BSX,7/F/SF.3-H(UR)
+play,5,1,almoa002,32,BBCFB>B,W.1-2
+play,5,1,zobrb001,11,CBX,S9/G.2-H(UR);1-3;B-2(TH)
+play,5,1,bryak001,00,X,6/L
+play,6,0,cozaz001,22,BCCBS,K
+play,6,0,vottj001,31,BSBBB,W
+play,6,0,duvaa001,21,FBBX,S4.1-2
+com,"$originally scored as error, changed to single on 05-24-2017"
+play,6,0,suare001,22,BBCCS,K
+play,6,0,sches001,02,SFFFS,K23
+play,6,1,rizza001,00,,NP
+sub,stepr002,"Robert Stephenson",0,6,1
+play,6,1,rizza001,00,,NP
+sub,alcaa001,"Arismendy Alcantara",0,9,9
+play,6,1,rizza001,32,..BFBFFBB,W
+play,6,1,happi001,12,BFFS,K
+play,6,1,contw001,01,FX,64(1)3/GDP
+play,7,0,peraj003,00,,NP
+sub,jay-j001,"Jon Jay",1,1,9
+play,7,0,peraj003,11,.CBX,S7/L
+play,7,0,barnt001,32,BBCF*BX,S8/G.1-2
+play,7,0,alcaa001,22,*BBTCX,S9/G.2-H;1-2
+play,7,0,hamib001,00,,NP
+sub,rondh001,"Hector Rondon",1,8,1
+play,7,0,hamib001,32,.TS*BF*BBX,DGR/89/F.2-H;1-3
+play,7,0,cozaz001,01,SX,43/G-.3-H;2-3
+play,7,0,vottj001,12,FBSC,K
+play,7,0,duvaa001,22,CBBSX,S8/L.3-H
+play,7,0,suare001,00,X,S9/G.1-2
+play,7,0,stepr002,00,,NP
+sub,genns001,"Scooter Gennett",0,6,11
+play,7,0,genns001,11,.BCX,7/F
+play,7,1,russa002,00,,NP
+sub,lorem002,"Michael Lorenzen",0,6,1
+play,7,1,russa002,12,.BSFS,K
+play,7,1,baezj001,20,BBX,S8/G
+play,7,1,rondh001,00,,NP
+sub,lastt001,"Tommy La Stella",1,8,11
+play,7,1,lastt001,31,.BB*BCB,W.1-2
+play,7,1,almoa002,10,BX,E6/FO/G.2-3;1-2
+play,7,1,jay-j001,22,CBBFX,6(1)3/GDP
+play,8,0,peraj003,00,,NP
+sub,duenb001,"Brian Duensing",1,8,1
+play,8,0,peraj003,01,.CX,63/G
+play,8,0,barnt001,32,CSBBBC,K
+play,8,0,alcaa001,21,BCBX,53/G
+play,8,1,bryak001,00,,NP
+sub,stord001,"Drew Storen",0,6,1
+play,8,1,bryak001,12,.FBFX,9/F
+play,8,1,rizza001,32,SBBSBB,W
+play,8,1,happi001,01,CX,S7/G+.1-2
+play,8,1,contw001,20,*BBX,5(2)3/GDP
+play,9,0,hamib001,11,CBX,S8/L
+play,9,0,cozaz001,00,B,PB.1-2
+play,9,0,cozaz001,22,B.CBFX,S7/L.2-3
+play,9,0,vottj001,32,FCBBBFH,HP.1-2
+play,9,0,duvaa001,00,,NP
+sub,uehak001,"Koji Uehara",1,8,1
+play,9,0,duvaa001,02,.SSFX,7/F/SF.3-H
+play,9,0,suare001,02,FSC,K
+play,9,0,stord001,00,,NP
+sub,turns002,"Stuart Turner",0,6,11
+play,9,0,turns002,02,.CSS,K
+data,er,garra001,6
+data,er,woodb004,1
+data,er,stepr002,0
+data,er,lorem002,0
+data,er,stord001,0
+data,er,lestj001,3
+data,er,rondh001,1
+data,er,duenb001,1
+data,er,uehak001,0

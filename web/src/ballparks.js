@@ -9,8 +9,7 @@ class Ballparks extends Component {
         super(props);
         console.log('ballparks constructor');
         
-        this.state = { ballparks: [] };
-        //fetch(`${baseUrl}/ballparks`).then(resp => resp.json()).then(json => this.state = {ballparks: json}).catch(err => console.error(err));
+        this.state = { ballparks: [] };        
         this.getBallparks();
     }
     componentDidMount() {

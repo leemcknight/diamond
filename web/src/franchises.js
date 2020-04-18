@@ -4,6 +4,11 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+
+function filter(query, syncResults, asyncResults) {
+  
+}
+
 function Franchises() {
     return (
       <div className="Franchises">

@@ -1,0 +1,155 @@
+id,CHN201705240
+version,2
+info,visteam,SFN
+info,hometeam,CHN
+info,site,CHI11
+info,date,2017/05/24
+info,number,0
+info,starttime,7:05PM
+info,daynight,night
+info,usedh,false
+info,umphome,nelsj901
+info,ump1b,diazl901
+info,ump2b,eddid901
+info,ump3b,blasc901
+info,howscored,park
+info,pitches,pitches
+info,oscorer,roseb701
+info,temp,52
+info,winddir,ltor
+info,windspeed,18
+info,fieldcond,unknown
+info,precip,unknown
+info,sky,overcast
+info,timeofgame,185
+info,attendance,35617
+info,wp,hendk001
+info,lp,moorm003
+info,save,daviw001
+start,spand001,"Denard Span",0,1,8
+start,panij002,"Joe Panik",0,2,4
+start,beltb001,"Brandon Belt",0,3,3
+start,poseb001,"Buster Posey",0,4,2
+start,crawb001,"Brandon Crawford",0,5,6
+start,nunee002,"Eduardo Nunez",0,6,7
+start,arroc001,"Christian Arroyo",0,7,5
+start,willm008,"Mac Williamson",0,8,9
+start,moorm003,"Matt Moore",0,9,1
+start,baezj001,"Javier Baez",1,1,4
+start,almoa002,"Albert Almora",1,2,8
+start,bryak001,"Kris Bryant",1,3,5
+start,rizza001,"Anthony Rizzo",1,4,3
+start,happi001,"Ian Happ",1,5,7
+start,heywj001,"Jason Heyward",1,6,9
+start,russa002,"Addison Russell",1,7,6
+start,montm001,"Miguel Montero",1,8,2
+start,hendk001,"Kyle Hendricks",1,9,1
+play,1,0,spand001,22,CBCBX,13/G
+play,1,0,panij002,22,CBFFBX,6/P
+play,1,0,beltb001,32,BSBSFFBX,S6/G
+play,1,0,poseb001,11,BCX,53/G
+play,1,1,baezj001,11,FBX,S8/G
+play,1,1,almoa002,32,BB1BCFF1X,14(1)/FO/G
+play,1,1,bryak001,10,BX,4(1)3/GDP
+play,2,0,crawb001,21,BCBX,D8/L+
+play,2,0,nunee002,21,BBCX,S3/BG.2-3
+play,2,0,arroc001,11,1BC1X,46(1)/FO/G.3-H
+play,2,0,willm008,12,CCBS,K
+play,2,0,moorm003,01,CX,13/G
+play,2,1,rizza001,01,CX,HR/89/L
+play,2,1,happi001,02,SFC,K
+play,2,1,heywj001,01,FX,6/L
+play,2,1,russa002,20,BBX,9/F
+play,3,0,spand001,11,FBX,HR/89/F
+play,3,0,panij002,12,CBFS,K
+play,3,0,beltb001,22,FBBSX,7/F
+play,3,0,poseb001,22,CBBCX,4/L-
+play,3,1,montm001,22,CBSBFX,9/F
+play,3,1,hendk001,22,FBFBC,K
+play,3,1,baezj001,00,X,53/G
+play,4,0,crawb001,01,CX,8/F
+play,4,0,nunee002,12,CSBS,K
+play,4,0,arroc001,12,CFBC,K
+play,4,1,almoa002,10,BX,7/F
+play,4,1,bryak001,11,CBX,7/F
+play,4,1,rizza001,00,X,HR/8/F
+play,4,1,happi001,31,BBBCB,W
+play,4,1,heywj001,00,X,3/G
+play,5,0,willm008,01,CX,7/L
+play,5,0,moorm003,22,BFBFS,K
+play,5,0,spand001,22,BCBFX,9/L
+play,5,1,russa002,21,BBCX,S16/G+
+play,5,1,montm001,00,X,S9/L.1-3
+play,5,1,hendk001,02,CLL,K/BF
+play,5,1,baezj001,02,FSX,8/L/SF.3-H
+play,5,1,almoa002,01,FX,23/G-
+play,6,0,panij002,02,CFX,31/G
+play,6,0,beltb001,01,SX,S1/BG.B-2(E1/TH1)
+play,6,0,poseb001,22,BBCSX,4/P
+play,6,0,crawb001,11,CBX,5/P5F
+play,6,1,bryak001,32,SFFFBBBFFB,W
+play,6,1,rizza001,02,FFX,S5/G.1-2
+play,6,1,happi001,02,SCX,9/F
+play,6,1,heywj001,02,FFX,13/G/BINT.2-2;1-1
+com,"$Jason Heyward called for interference for running"
+com,"in fair territory when struck by the throw"
+play,6,1,russa002,22,SBFBS,K
+play,7,0,nunee002,10,BX,53/G
+play,7,0,arroc001,12,BCFX,3/L
+play,7,0,willm008,00,X,63/G
+play,7,1,montm001,00,X,D9/L
+play,7,1,hendk001,00,,NP
+sub,contw001,"Willson Contreras",1,9,11
+play,7,1,contw001,32,.*BSBFBB,W
+play,7,1,baezj001,00,,NP
+sub,kontg001,"George Kontos",0,9,1
+play,7,1,baezj001,00,.X,FC1/BG/SH.2-H(UR)(NR)(E1/TH);1-3;B-2
+play,7,1,almoa002,11,FBX,53/G
+play,7,1,bryak001,22,BFBFS,K
+play,7,1,rizza001,30,VVVV,IW
+play,7,1,happi001,22,BCSBS,K
+play,8,0,kontg001,00,,NP
+sub,uehak001,"Koji Uehara",1,8,1
+play,8,0,kontg001,00,,NP
+sub,contw001,"Willson Contreras",1,9,2
+play,8,0,kontg001,00,,NP
+sub,morsm001,"Michael Morse",0,9,11
+play,8,0,morsm001,12,...SBSX,S9/L
+play,8,0,spand001,22,CFBBX,36(1)/FO/G
+play,8,0,panij002,12,1BC1CX,5/P5F
+play,8,0,beltb001,32,BC1BBC>B,W.1-2
+play,8,0,poseb001,00,,NP
+sub,edwac001,"Carl Edwards",1,8,1
+play,8,0,poseb001,30,.BBBB,W.2-3;1-2
+play,8,0,crawb001,32,FBBBC>X,13/G
+play,8,1,heywj001,00,,NP
+sub,okers001,"Steven Okert",0,3,1
+play,8,1,heywj001,00,,NP
+sub,morsm001,"Michael Morse",0,9,3
+play,8,1,heywj001,01,..FX,T8/L+
+play,8,1,russa002,32,*BFBSBB,W
+play,8,1,edwac001,00,,NP
+sub,jay-j001,"Jon Jay",1,8,11
+play,8,1,jay-j001,10,.BX,9/F/SF.3-H
+play,8,1,contw001,00,,NP
+sub,gearc001,"Cory Gearrin",0,3,1
+play,8,1,contw001,10,.BX,46(1)3/GDP
+play,9,0,nunee002,00,,NP
+sub,daviw001,"Wade Davis",1,8,1
+play,9,0,nunee002,00,.X,S8/G+
+play,9,0,arroc001,12,BCSS,K
+play,9,0,willm008,22,BFS>FFFFF>FBFX,HR/8/F.1-H
+play,9,0,morsm001,32,BFFBBB,W
+play,9,0,spand001,00,,NP
+sub,herng001,"Gorkys Hernandez",0,9,12
+play,9,0,spand001,21,.*B1B+1C1X,4/P
+play,9,0,panij002,21,*BBF>B,SB2
+play,9,0,panij002,32,*BBF>B.CFC,K
+data,er,moorm003,3
+data,er,kontg001,0
+data,er,okers001,1
+data,er,gearc001,0
+data,er,hendk001,2
+data,er,uehak001,0
+data,er,edwac001,0
+data,er,daviw001,2

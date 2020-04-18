@@ -1,0 +1,163 @@
+id,CHN201704170
+version,2
+info,visteam,MIL
+info,hometeam,CHN
+info,site,CHI11
+info,date,2017/04/17
+info,number,0
+info,starttime,7:07PM
+info,daynight,night
+info,usedh,false
+info,umphome,torrc901
+info,ump1b,millb901
+info,ump2b,guccc901
+info,ump3b,demud901
+info,howscored,park
+info,pitches,pitches
+info,oscorer,roseb701
+info,temp,45
+info,winddir,fromlf
+info,windspeed,8
+info,fieldcond,unknown
+info,precip,unknown
+info,sky,cloudy
+info,timeofgame,180
+info,attendance,38636
+info,wp,andec001
+info,lp,lackj001
+info,save,felin001
+start,villj001,"Jonathan Villar",0,1,4
+start,thame001,"Eric Thames",0,2,3
+start,braur002,"Ryan Braun",0,3,7
+start,shawt001,"Travis Shaw",0,4,5
+start,santd002,"Domingo Santana",0,5,9
+start,broxk001,"Keon Broxton",0,6,8
+start,bandj001,"Jett Bandy",0,7,2
+start,arcio002,"Orlando Arcia",0,8,6
+start,andec001,"Chase Anderson",0,9,1
+start,schwk001,"Kyle Schwarber",1,1,7
+start,bryak001,"Kris Bryant",1,2,5
+start,rizza001,"Anthony Rizzo",1,3,3
+start,zobrb001,"Ben Zobrist",1,4,4
+start,russa002,"Addison Russell",1,5,6
+start,heywj001,"Jason Heyward",1,6,9
+start,montm001,"Miguel Montero",1,7,2
+start,lackj001,"John Lackey",1,8,1
+start,almoa002,"Albert Almora",1,9,8
+play,1,0,villj001,01,CX,13/G
+play,1,0,thame001,10,BX,D9/L
+play,1,0,braur002,11,CBX,HR/78/F.2-H
+play,1,0,shawt001,21,BBCX,31/G
+play,1,0,santd002,00,X,S8/G
+play,1,0,broxk001,12,BFC>S,K
+play,1,1,schwk001,00,X,S5/BG
+play,1,1,bryak001,10,BB,PB.1-2
+play,1,1,bryak001,32,BB.BCSFFFFX,53/G
+play,1,1,rizza001,12,CCBS,K
+play,1,1,zobrb001,00,X,S8/L.2-H(UR);B-2(TH)
+play,1,1,russa002,22,CBSBFS,K
+play,2,0,bandj001,11,CBX,HR/78/F
+play,2,0,arcio002,11,BFX,13/G
+play,2,0,andec001,11,CBX,8/L
+play,2,0,villj001,12,CFFBX,43/G
+play,2,1,heywj001,00,X,S8/L+
+play,2,1,montm001,11,BCX,S68/G.1-3
+play,2,1,lackj001,02,FSS,K
+play,2,1,almoa002,11,1BC1X,D7/L.3-H;1-H
+play,2,1,schwk001,21,CBBX,43/G.2-3
+play,2,1,bryak001,20,BBX,8/F+
+play,3,0,thame001,32,CBSBBFFFFX,HR/8/F
+play,3,0,braur002,12,FCBS,K
+play,3,0,shawt001,10,BX,3/L
+play,3,0,santd002,32,BBBCFFB,W
+play,3,0,broxk001,02,1CSF>B,SB2
+play,3,0,broxk001,12,1CSF>B.X,63/G
+play,3,1,rizza001,02,CSFX,7/L+
+play,3,1,zobrb001,22,BCBCX,S7/L
+play,3,1,russa002,31,BBBCB,W.1-2
+play,3,1,heywj001,02,CFFFX,9/F
+play,3,1,montm001,02,FFS,K
+play,4,0,bandj001,22,BCBFX,S8/L+
+play,4,0,arcio002,01,CX,9/F
+play,4,0,andec001,00,,NP
+sub,rizza001,"Anthony Rizzo",1,3,4
+play,4,0,andec001,00,,NP
+sub,zobrb001,"Ben Zobrist",1,4,3
+play,4,0,andec001,10,B..X,6(1)3/GDP
+play,4,1,lackj001,11,CBX,9/L
+play,4,1,almoa002,22,BBCCX,63/G
+play,4,1,schwk001,32,BBSCBS,K
+play,5,0,villj001,00,,NP
+sub,rizza001,"Anthony Rizzo",1,3,3
+play,5,0,villj001,00,,NP
+sub,zobrb001,"Ben Zobrist",1,4,4
+play,5,0,villj001,00,..X,3/G
+play,5,0,thame001,02,CFX,53/G
+play,5,0,braur002,21,BBFX,S7/G
+play,5,0,shawt001,11,CBX,3/G
+play,5,1,bryak001,01,CX,9/F
+play,5,1,rizza001,01,FX,S5/BG-
+play,5,1,zobrb001,01,C*B,SB2
+play,5,1,zobrb001,32,C*B.FBF*B2,PO2(16)
+play,5,1,zobrb001,32,C*B.FBF*B2.FX,53/G
+play,6,0,santd002,22,CBFFBX,8/F+
+play,6,0,broxk001,31,CBBBX,8/F
+play,6,0,bandj001,12,CBSX,53/G
+play,6,1,russa002,00,,NP
+sub,torrc001,"Carlos Torres",0,9,1
+play,6,1,russa002,22,.BBFFFC,K
+play,6,1,heywj001,20,BBX,9/F
+play,6,1,montm001,22,CTBFBX,S7/G
+play,6,1,lackj001,00,,NP
+sub,contw001,"Willson Contreras",1,8,11
+play,6,1,contw001,21,.BC*BX,64(1)/FO/G
+play,7,0,arcio002,00,,NP
+sub,strop001,"Pedro Strop",1,7,1
+play,7,0,arcio002,00,,NP
+sub,contw001,"Willson Contreras",1,8,2
+play,7,0,arcio002,22,..CBSBS,K
+play,7,0,torrc001,00,,NP
+sub,nieuk001,"Kirk Nieuwenhuis",0,9,11
+play,7,0,nieuk001,12,.BLFFT,K
+play,7,0,villj001,11,BCX,7/F+
+play,7,1,almoa002,00,,NP
+sub,barnj002,"Jacob Barnes",0,9,1
+play,7,1,almoa002,22,.SBFBS,K
+play,7,1,schwk001,22,BFSBC,K
+play,7,1,bryak001,12,SSBS,K
+play,8,0,thame001,00,,NP
+sub,montm002,"Mike Montgomery",1,7,1
+play,8,0,thame001,32,.BSSBBX,S9/L
+play,8,0,braur002,00,X,D8/L+.1-H
+play,8,0,shawt001,00,>B,SB3.2-H(E2/TH)(NR)(UR)
+play,8,0,shawt001,31,>B.BBCX,63/G
+play,8,0,santd002,11,TBX,53/G
+play,8,0,broxk001,12,CBSFS,K23
+play,8,1,rizza001,00,,NP
+sub,knebc001,"Corey Knebel",0,9,1
+play,8,1,rizza001,31,.BBBCB,W
+play,8,1,zobrb001,02,CCC,K
+play,8,1,russa002,00,1X,6/P
+play,8,1,heywj001,20,BBX,4/L+
+play,9,0,bandj001,12,CBFX,D7/G
+play,9,0,arcio002,02,LCX,8/F.2-3
+play,9,0,knebc001,00,,NP
+sub,aguij001,"Jesus Aguilar",0,9,11
+play,9,0,aguij001,00,.X,53/G
+play,9,0,villj001,22,CSBBX,23/G-
+play,9,1,montm002,00,,NP
+sub,felin001,"Neftali Feliz",0,9,1
+play,9,1,montm002,00,,NP
+sub,jay-j001,"Jon Jay",1,7,11
+play,9,1,jay-j001,11,..BCX,S8/L
+play,9,1,contw001,32,C*BCBBB,W.1-2
+play,9,1,almoa002,22,BBFFX,5(2)3/GDP.1-2
+play,9,1,schwk001,32,CFBFBF*BS,K
+data,er,andec001,2
+data,er,torrc001,0
+data,er,barnj002,0
+data,er,knebc001,0
+data,er,felin001,0
+data,er,lackj001,4
+data,er,strop001,0
+data,er,montm002,1

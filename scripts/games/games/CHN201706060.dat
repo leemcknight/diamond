@@ -1,0 +1,160 @@
+id,CHN201706060
+version,2
+info,visteam,MIA
+info,hometeam,CHN
+info,site,CHI11
+info,date,2017/06/06
+info,number,0
+info,starttime,7:05PM
+info,daynight,night
+info,usedh,false
+info,umphome,emmep901
+info,ump1b,wolcq901
+info,ump2b,barrs901
+info,ump3b,onorb901
+info,howscored,park
+info,pitches,pitches
+info,oscorer,roseb701
+info,temp,67
+info,winddir,fromlf
+info,windspeed,15
+info,fieldcond,unknown
+info,precip,unknown
+info,sky,sunny
+info,timeofgame,181
+info,attendance,34082
+info,wp,arrij001
+info,lp,lockj001
+info,save,
+start,gordd002,"Dee Gordon",0,1,4
+start,stanm004,"Giancarlo Stanton",0,2,9
+start,yelic001,"Christian Yelich",0,3,8
+start,ozunm001,"Marcell Ozuna",0,4,7
+start,realj001,"J.T. Realmuto",0,5,2
+start,riddj001,"J.T. Riddle",0,6,6
+start,moort002,"Tyler Moore",0,7,3
+start,coloc002,"Christian Colon",0,8,5
+start,lockj001,"Jeff Locke",0,9,1
+start,jay-j001,"Jon Jay",1,1,7
+start,bryak001,"Kris Bryant",1,2,5
+start,rizza001,"Anthony Rizzo",1,3,3
+start,contw001,"Willson Contreras",1,4,2
+start,heywj001,"Jason Heyward",1,5,9
+start,almoa002,"Albert Almora",1,6,8
+start,baezj001,"Javier Baez",1,7,4
+start,arrij001,"Jake Arrieta",1,8,1
+start,russa002,"Addison Russell",1,9,6
+play,1,0,gordd002,22,BBCFFFS,K
+play,1,0,stanm004,22,CBBSX,S8/L+
+play,1,0,yelic001,32,C1BS*BB>FF1>F>B,W.1-2
+play,1,0,ozunm001,32,BCBBCB,W.2-3;1-2
+play,1,0,realj001,02,CSX,64(1)/FO/G.3-H;2-3
+play,1,0,riddj001,12,CBS>S,K
+play,1,1,jay-j001,22,CBFBX,63/G
+play,1,1,bryak001,11,FBX,S8/L+
+play,1,1,rizza001,22,BCCBFFFFFX,9/F
+play,1,1,contw001,02,CS1X,13/G
+play,2,0,moort002,22,CBFBX,9/F
+play,2,0,coloc002,10,BX,63/G
+play,2,0,lockj001,02,CFS,K
+play,2,1,heywj001,11,CBX,S8/F
+play,2,1,almoa002,31,BBBC>B,W.1-2
+play,2,1,baezj001,11,C*BX,3/P/IF
+play,2,1,arrij001,02,CFC,K
+play,2,1,russa002,32,CBBFB>X,23/G-
+play,3,0,gordd002,02,SFFX,43/G
+play,3,0,stanm004,00,X,53/G+
+play,3,0,yelic001,21,BBFX,63/G+
+play,3,1,jay-j001,01,CX,9/L
+play,3,1,bryak001,32,BFBFBB,W
+play,3,1,rizza001,10,*BX,3/G+.1-2
+play,3,1,contw001,00,B,WP.2-3
+play,3,1,contw001,11,B.CX,53/G
+play,4,0,ozunm001,02,FFX,8/L+
+play,4,0,realj001,21,CBBX,63/G+
+play,4,0,riddj001,31,CBBBX,41/G
+play,4,1,heywj001,10,BX,5/P
+play,4,1,almoa002,22,BCBCS,K
+play,4,1,baezj001,12,BFFS,K
+play,5,0,moort002,01,FX,4/L
+play,5,0,coloc002,22,CCFBBC,K
+play,5,0,lockj001,22,BCFBFC,K
+play,5,1,arrij001,11,FBX,8/F
+play,5,1,russa002,01,CX,8/F
+play,5,1,jay-j001,32,BFFBBB,W
+play,5,1,bryak001,12,CBFB,WP.1-2
+play,5,1,bryak001,32,CBFB.BB,W+WP.2-3
+play,5,1,rizza001,10,BX,HR/89/L.3-H;1-H
+play,5,1,contw001,10,BX,E6/G
+play,5,1,heywj001,11,CBX,D9/L.1-H(UR)
+play,5,1,almoa002,00,,NP
+sub,ziegb001,"Brad Ziegler",0,9,1
+play,5,1,almoa002,22,.BSBCS,K
+play,6,0,gordd002,32,CBBFBFFX,63/G
+play,6,0,stanm004,10,BX,63/G
+play,6,0,yelic001,31,BBCBB,W
+play,6,0,ozunm001,02,CFX,53/G
+play,6,1,baezj001,00,,NP
+sub,barrk002,"Kyle Barraclough",0,9,1
+play,6,1,baezj001,32,.BBSSBB,W
+play,6,1,arrij001,00,X,13/BG-/SH.1-2
+play,6,1,russa002,12,CSBS,K23
+play,6,1,jay-j001,12,CC*BT,K
+play,7,0,realj001,11,CBX,T8/F
+play,7,0,riddj001,00,,NP
+sub,duenb001,"Brian Duensing",1,8,1
+play,7,0,riddj001,10,.BX,E6/G.3-H
+play,7,0,moort002,00,,NP
+sub,strop001,"Pedro Strop",1,8,1
+play,7,0,moort002,10,.BX,14(1)3/GDP
+play,7,0,coloc002,00,,NP
+sub,dietd001,"Derek Dietrich",0,8,11
+play,7,0,dietd001,22,.BBFFX,D7/L
+play,7,0,barrk002,00,,NP
+sub,suzui001,"Ichiro Suzuki",0,9,11
+play,7,0,suzui001,12,.CCBS,K
+play,7,1,bryak001,00,,NP
+sub,dietd001,"Derek Dietrich",0,8,5
+play,7,1,bryak001,00,,NP
+sub,ellib001,"Brian Ellington",0,9,1
+play,7,1,bryak001,11,..CBX,D7/F
+play,7,1,rizza001,22,BFBSX,S9/L.2-H;B-2(TH)
+play,7,1,contw001,12,FSBS,K
+play,7,1,heywj001,00,X,D9/L+.2-H
+play,7,1,almoa002,11,BFX,S8/L.2-3
+play,7,1,baezj001,11,FBX,D7/G+.3-H;1-H
+play,7,1,strop001,00,,NP
+sub,happi001,"Ian Happ",1,8,11
+play,7,1,happi001,31,.BCBBB,W
+play,7,1,russa002,00,,NP
+sub,mcgod001,"Dustin McGowan",0,9,1
+play,7,1,russa002,22,.CF*BBFX,9/F
+play,7,1,jay-j001,00,X,D7/L+.2-H;1-H
+play,7,1,bryak001,10,BX,7/F
+play,8,0,gordd002,00,,NP
+sub,grimj002,"Justin Grimm",1,1,1
+play,8,0,gordd002,00,,NP
+sub,happi001,"Ian Happ",1,8,7
+play,8,0,gordd002,32,..CBBBCX,43/G
+play,8,0,stanm004,30,BBBB,W
+play,8,0,yelic001,12,BCCS,K
+play,8,0,ozunm001,22,CCFBBS,K
+play,8,1,rizza001,00,X,43/G
+play,8,1,contw001,20,BBX,S8/L+
+play,8,1,heywj001,00,X,7/F
+play,8,1,almoa002,12,FF*BX,63/G
+play,9,0,realj001,00,,NP
+sub,rondh001,"Hector Rondon",1,1,1
+play,9,0,realj001,32,.CCBFBBFS,K
+play,9,0,riddj001,20,BBX,31/G
+play,9,0,moort002,12,FSBX,13/G
+data,er,lockj001,3
+data,er,ziegb001,0
+data,er,barrk002,0
+data,er,ellib001,6
+data,er,mcgod001,0
+data,er,arrij001,2
+data,er,duenb001,0
+data,er,strop001,0
+data,er,grimj002,0
+data,er,rondh001,0

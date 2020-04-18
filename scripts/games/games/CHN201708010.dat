@@ -1,0 +1,172 @@
+id,CHN201708010
+version,2
+info,visteam,ARI
+info,hometeam,CHN
+info,site,CHI11
+info,date,2017/08/01
+info,number,0
+info,starttime,7:06PM
+info,daynight,night
+info,usedh,false
+info,umphome,davig901
+info,ump1b,drakr901
+info,ump2b,hobep901
+info,ump3b,randt901
+info,howscored,park
+info,pitches,pitches
+info,oscorer,speaa701
+info,temp,84
+info,winddir,tolf
+info,windspeed,3
+info,fieldcond,unknown
+info,precip,unknown
+info,sky,unknown
+info,timeofgame,207
+info,attendance,40709
+info,wp,rondh001
+info,lp,corbp001
+info,save,montm002
+start,perad001,"David Peralta",0,1,7
+start,polla001,"A.J. Pollock",0,2,8
+start,rosaa001,"Adam Rosales",0,3,6
+start,goldp001,"Paul Goldschmidt",0,4,3
+start,martj006,"J.D. Martinez",0,5,9
+start,drurb001,"Brandon Drury",0,6,5
+start,descd001,"Daniel Descalso",0,7,4
+start,mathj001,"Jeff Mathis",0,8,2
+start,corbp001,"Patrick Corbin",0,9,1
+start,zobrb001,"Ben Zobrist",1,1,9
+start,bryak001,"Kris Bryant",1,2,5
+start,rizza001,"Anthony Rizzo",1,3,3
+start,contw001,"Willson Contreras",1,4,2
+start,almoa002,"Albert Almora",1,5,8
+start,russa002,"Addison Russell",1,6,6
+start,baezj001,"Javier Baez",1,7,4
+start,happi001,"Ian Happ",1,8,7
+start,lestj001,"Jon Lester",1,9,1
+play,1,0,perad001,32,BCSFFFBFFFBC,K
+play,1,0,polla001,11,CBX,7/F
+play,1,0,rosaa001,12,CBCC,K
+play,1,1,zobrb001,11,CBX,S9/L
+play,1,1,bryak001,22,BFS*BX,S8/F.1-3
+play,1,1,rizza001,02,SSS,K
+play,1,1,contw001,31,*BBBCB,W.1-2
+play,1,1,almoa002,10,BX,S8/L.3-H;2-H;1X3(835)
+play,1,1,russa002,00,1X,D7/G+.1-3
+play,1,1,baezj001,11,BSX,63/G
+play,2,0,goldp001,22,CBFBX,S8/L
+play,2,0,martj006,32,C+1BBBFB,W.1-2
+play,2,0,drurb001,02,FFS,K
+play,2,0,descd001,32,CBBTF*BB,W.2-3;1-2
+play,2,0,mathj001,22,BCBSS,K
+play,2,0,corbp001,22,BBSFS,K
+play,2,1,happi001,32,BFBBFX,HR/78/F
+play,2,1,lestj001,22,CBFBX,S9/G
+play,2,1,zobrb001,22,CS*B*BX,E5/FO/G.1-3;B-2
+play,2,1,bryak001,21,F*BBX,7/L/SF.3-H(UR)
+play,2,1,rizza001,10,BX,HR/78/F.2-H
+play,2,1,contw001,00,X,43/G
+play,2,1,almoa002,02,CCFS,K23
+play,3,0,perad001,22,CBFFFBS,K
+play,3,0,polla001,22,CBBFX,D9/L
+play,3,0,rosaa001,01,SX,53/G
+play,3,0,goldp001,22,BBCCX,S8/G.2-H
+play,3,0,martj006,12,CSBFT,K
+play,3,1,russa002,11,BCX,S8/L
+play,3,1,baezj001,00,X,46(1)3/GDP
+play,3,1,happi001,32,BBCSBX,S9/L
+play,3,1,lestj001,22,BBSSX,HR/78/L.1-H
+play,3,1,zobrb001,12,BCFFFS,K
+play,4,0,drurb001,31,BSBBX,4/P
+play,4,0,descd001,02,CFFC,K
+play,4,0,mathj001,32,BBBCFFFFFB,W
+play,4,0,corbp001,00,,NP
+sub,reinj001,"Jack Reinheimer",0,9,11
+play,4,0,reinj001,02,.SFB,WP.1-2
+play,4,0,reinj001,12,.SFB.S,K
+play,4,1,bryak001,00,,NP
+sub,mcfat001,"T.J. McFarland",0,9,1
+play,4,1,bryak001,21,.CBBX,53/G+
+play,4,1,rizza001,22,BBCFC,K
+play,4,1,contw001,20,BBX,S8/G.B-2(E8)
+play,4,1,almoa002,10,*BX,53/G
+play,5,0,perad001,00,H,HP
+play,5,0,polla001,11,C+1*BX,S8/L.1-2
+play,5,0,rosaa001,20,BBX,D7/L.2-H;1-3
+play,5,0,goldp001,00,,NP
+sub,rondh001,"Hector Rondon",1,9,1
+play,5,0,goldp001,21,.BBSX,7/F
+play,5,0,martj006,00,X,53/G.3-H;2-3
+play,5,0,drurb001,22,BSCBX,63/G+
+play,5,1,russa002,01,CX,8/L
+play,5,1,baezj001,21,BBSX,13/G-
+play,5,1,happi001,21,CBBX,53/G
+play,6,0,descd001,32,BCCBBC,K
+play,6,0,mathj001,01,CX,8/L
+play,6,0,mcfat001,02,CFX,S5/G-
+play,6,0,perad001,00,,NP
+sub,duenb001,"Brian Duensing",1,9,1
+play,6,0,perad001,22,.FCFBBX,46(1)/FO/G
+play,6,1,duenb001,00,,NP
+sub,schwk001,"Kyle Schwarber",1,9,11
+play,6,1,schwk001,32,.CBBCBB,W
+play,6,1,zobrb001,01,LX,S9/G.1-3
+play,6,1,bryak001,12,SBCX,E6/FO/G.3-H;1-2
+play,6,1,rizza001,01,CX,S7/G+.2-3;1-2
+play,6,1,contw001,11,BSX,D8/L.3-H(UR);2-H;1-3
+play,6,1,almoa002,11,BSX,31/G-.3-H;2-3
+play,6,1,russa002,32,F*BFBBB,W
+play,6,1,baezj001,21,BBFX,HR/78/F.3-H;1-H
+play,6,1,happi001,00,,NP
+sub,delaj001,"Jorge de la Rosa",0,9,1
+play,6,1,happi001,00,.X,6/P
+play,6,1,schwk001,00,X,S8/L
+play,6,1,zobrb001,32,*BC*BBF*B,W.1-2
+play,6,1,bryak001,21,CBBX,64(1)/FO/G
+play,7,0,polla001,00,,NP
+sub,happi001,"Ian Happ",1,8,9
+play,7,0,polla001,00,,NP
+sub,schwk001,"Kyle Schwarber",1,9,7
+play,7,0,polla001,00,,NP
+sub,montm002,"Mike Montgomery",1,1,1
+play,7,0,polla001,10,...BX,8/L+
+play,7,0,rosaa001,12,BFSC,K
+play,7,0,goldp001,12,CBFX,63/G
+play,7,1,rizza001,00,,NP
+sub,herrc001,"Chris Herrmann",0,9,3
+play,7,1,rizza001,00,,NP
+sub,delar003,"Rubby de la Rosa",0,4,1
+play,7,1,rizza001,11,..BCX,HR/8/F
+play,7,1,contw001,12,CCFBS,K
+play,7,1,almoa002,02,FSX,7/L
+play,7,1,russa002,12,FBFS,K
+play,8,0,martj006,32,SFBBFBFFS,K
+play,8,0,drurb001,12,BFFX,53/G
+play,8,0,descd001,10,BX,3/G-
+play,8,1,baezj001,00,,NP
+sub,iannc001,"Chris Iannetta",0,4,5
+play,8,1,baezj001,00,,NP
+sub,blang001,"Gregor Blanco",0,5,9
+play,8,1,baezj001,00,,NP
+sub,drurb001,"Brandon Drury",0,6,4
+play,8,1,baezj001,00,,NP
+sub,descd001,"Daniel Descalso",0,7,1
+play,8,1,baezj001,22,....BBCFFX,8/F
+play,8,1,happi001,32,BBFCBFX,7/F
+play,8,1,schwk001,00,X,7/F
+play,9,0,mathj001,00,X,S8/G
+play,9,0,herrc001,02,CCX,31/G.1-2
+play,9,0,perad001,12,CBFX,7/F
+play,9,0,polla001,21,FBBX,E6/TH/G.2-3
+play,9,0,rosaa001,11,BFX,S9/L.3-H(UR);1-3
+play,9,0,iannc001,32,*BCBSF*B>B,W.1-2
+play,9,0,blang001,12,BCFFX,43/G
+data,er,corbp001,7
+data,er,mcfat001,6
+data,er,delaj001,0
+data,er,delar003,1
+data,er,descd001,0
+data,er,lestj001,3
+data,er,rondh001,0
+data,er,duenb001,0
+data,er,montm002,0

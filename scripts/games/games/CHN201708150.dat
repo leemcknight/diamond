@@ -1,0 +1,162 @@
+id,CHN201708150
+version,2
+info,visteam,CIN
+info,hometeam,CHN
+info,site,CHI11
+info,date,2017/08/15
+info,number,0
+info,starttime,7:06PM
+info,daynight,night
+info,usedh,false
+info,umphome,hudsm901
+info,ump1b,blakr901
+info,ump2b,conrc901
+info,ump3b,kulpr901
+info,howscored,park
+info,pitches,pitches
+info,oscorer,roseb701
+info,temp,74
+info,winddir,unknown
+info,windspeed,11
+info,fieldcond,unknown
+info,precip,unknown
+info,sky,cloudy
+info,timeofgame,184
+info,attendance,36698
+info,wp,lorem002
+info,lp,strop001
+info,save,igler001
+start,hamib001,"Billy Hamilton",0,1,8
+start,cozaz001,"Zack Cozart",0,2,6
+start,vottj001,"Joey Votto",0,3,3
+start,duvaa001,"Adam Duvall",0,4,7
+start,genns001,"Scooter Gennett",0,5,4
+start,suare001,"Eugenio Suarez",0,6,5
+start,winkj002,"Jesse Winker",0,7,9
+start,barnt001,"Tucker Barnhart",0,8,2
+start,castl003,"Luis Castillo",0,9,1
+start,jay-j001,"Jon Jay",1,1,7
+start,lastt001,"Tommy La Stella",1,2,4
+start,bryak001,"Kris Bryant",1,3,5
+start,rizza001,"Anthony Rizzo",1,4,3
+start,carav001,"Victor Caratini",1,5,2
+start,almoa002,"Albert Almora",1,6,8
+start,heywj001,"Jason Heyward",1,7,9
+start,baezj001,"Javier Baez",1,8,6
+start,hendk001,"Kyle Hendricks",1,9,1
+play,1,0,hamib001,02,FFS,K
+play,1,0,cozaz001,12,BCSFX,S7/F
+play,1,0,vottj001,30,BBBB,W.1-2
+play,1,0,duvaa001,02,CFS,K
+play,1,0,genns001,10,BX,6/P
+play,1,1,jay-j001,22,CFBBT,K
+play,1,1,lastt001,22,BBFFX,31/G
+play,1,1,bryak001,31,BBBCB,W
+play,1,1,rizza001,02,FSX,S7/F.1-2
+play,1,1,carav001,02,FCS,K
+play,2,0,suare001,12,CFFBS,K
+play,2,0,winkj002,11,BSX,S9/L
+play,2,0,barnt001,01,CX,46(1)3/GDP
+play,2,1,almoa002,00,X,7/L+
+play,2,1,heywj001,22,CBCBX,3/G-
+play,2,1,baezj001,20,BBX,7/L
+play,3,0,castl003,01,CX,63/G
+play,3,0,hamib001,22,LBFBS,K
+play,3,0,cozaz001,12,CBSX,6/P
+play,3,1,hendk001,12,CSBFS,K
+play,3,1,jay-j001,02,SSX,9/F
+play,3,1,lastt001,32,BBSFBB,W
+play,3,1,bryak001,00,X,64(1)/FO/G
+play,4,0,vottj001,12,CSBC,K
+play,4,0,duvaa001,02,CFX,53/G
+play,4,0,genns001,32,CFBBBB,W
+play,4,0,suare001,00,X,S9/G.1-2
+play,4,0,winkj002,02,CFS,K
+play,4,1,rizza001,00,X,8/L
+play,4,1,carav001,12,FBFS,K
+play,4,1,almoa002,01,CX,S9/L
+play,4,1,heywj001,22,1BBFFX,7/F
+play,5,0,barnt001,10,BX,8/L
+play,5,0,castl003,12,CCFBX,63/G
+play,5,0,hamib001,32,CBSBBX,S9/L
+play,5,0,cozaz001,00,1,PO1(13)
+play,5,1,baezj001,02,SFS,K
+play,5,1,hendk001,02,FFC,K
+play,5,1,jay-j001,32,BBFSBX,31/G
+play,6,0,cozaz001,22,BFBCFX,13/G-
+play,6,0,vottj001,32,FFFBBBB,W
+play,6,0,duvaa001,11,FBX,7/F
+play,6,0,genns001,00,X,43/G
+play,6,1,lastt001,02,CSX,5/L
+play,6,1,bryak001,22,BCFBX,143/G
+com,"$Cubs challenged call that Bryant was out at first; call"
+com,"was upheld - ground out"
+play,6,1,rizza001,02,CFS,K
+play,7,0,suare001,32,CBBBCB,W
+play,7,0,winkj002,01,FX,S8/G.1-2
+play,7,0,barnt001,00,,NP
+sub,edwac001,"Carl Edwards",1,9,1
+play,7,0,barnt001,12,.LCFBS,K+WP.2-3
+play,7,0,castl003,00,,NP
+sub,kivlp001,"Patrick Kivlehan",0,9,11
+play,7,0,kivlp001,02,.SSC,K
+play,7,0,hamib001,02,CC>B,SB2
+play,7,0,hamib001,22,CC>B.*BFS,K
+play,7,1,carav001,00,,NP
+sub,lorem002,"Michael Lorenzen",0,9,1
+play,7,1,carav001,10,.BX,S13/G-
+play,7,1,almoa002,02,SLX,S7/L.1-3;BX2(74)
+play,7,1,heywj001,00,X,4/L
+play,7,1,baezj001,12,SF*BFFX,53/G
+play,8,0,cozaz001,00,,NP
+sub,strop001,"Pedro Strop",1,9,1
+play,8,0,cozaz001,32,.CBBCBX,63/G
+play,8,0,vottj001,32,CBBBCB,W
+play,8,0,duvaa001,11,BFX,S7/L.1-3
+play,8,0,genns001,11,F*BX,9/L/SF.3-H
+play,8,0,suare001,12,1BSSX,63/G
+play,8,1,strop001,00,,NP
+sub,peraw002,"Wandy Peralta",0,9,1
+play,8,1,strop001,00,,NP
+sub,zobrb001,"Ben Zobrist",1,9,11
+play,8,1,zobrb001,31,..BFBBB,W
+play,8,1,jay-j001,32,1BMBLB1B,W.1-2
+play,8,1,lastt001,00,,NP
+sub,happi001,"Ian Happ",1,2,11
+play,8,1,happi001,12,.FSBS,K
+play,8,1,bryak001,00,,NP
+sub,peraj003,"Jose Peraza",0,9,4
+play,8,1,bryak001,00,,NP
+sub,igler001,"Raisel Iglesias",0,5,1
+play,8,1,bryak001,20,..B*BX,4/P/IF
+play,8,1,rizza001,21,BFBH,HP.2-3;1-2
+play,8,1,carav001,02,FFS,K
+play,9,0,winkj002,00,,NP
+sub,zobrb001,"Ben Zobrist",1,9,4
+play,9,0,winkj002,00,,NP
+sub,wilsj004,"Justin Wilson",1,2,1
+play,9,0,winkj002,32,..BBBCCB,W
+play,9,0,barnt001,00,X,1/BP
+play,9,0,peraj003,10,BX,DGR/9/L.1-3
+play,9,0,hamib001,02,FCX,S7/F.3-H;2-3
+play,9,0,cozaz001,21,FBB>X,2/P2F-
+play,9,0,vottj001,12,>FBS>F>B,SB2
+play,9,0,vottj001,22,>FBS>F>B.FFFS,K
+play,9,1,almoa002,00,,NP
+sub,schwk001,"Kyle Schwarber",1,6,11
+play,9,1,schwk001,32,.BBCCFBFFX,S9/L
+play,9,1,heywj001,12,BFFFX,S7/G.1-2
+play,9,1,baezj001,01,MX,54/BG/SH.2-3;1-2
+play,9,1,zobrb001,01,CX,S9/L+.3-H;2-3
+play,9,1,jay-j001,12,FBST,K
+play,9,1,wilsj004,00,,NP
+sub,avila001,"Alex Avila",1,2,11
+play,9,1,avila001,12,.CSBFC,K
+data,er,castl003,0
+data,er,lorem002,0
+data,er,peraw002,0
+data,er,igler001,1
+data,er,hendk001,0
+data,er,edwac001,0
+data,er,strop001,1
+data,er,wilsj004,1

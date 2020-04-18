@@ -1,0 +1,158 @@
+id,CHN201709160
+version,2
+info,visteam,SLN
+info,hometeam,CHN
+info,site,CHI11
+info,date,2017/09/16
+info,number,0
+info,starttime,3:05PM
+info,daynight,day
+info,usedh,false
+info,umphome,torrc901
+info,ump1b,drecb901
+info,ump2b,welkb901
+info,ump3b,bakej902
+info,howscored,park
+info,pitches,pitches
+info,oscorer,seipb701
+info,temp,85
+info,winddir,rtol
+info,windspeed,11
+info,fieldcond,unknown
+info,precip,unknown
+info,sky,sunny
+info,timeofgame,169
+info,attendance,40959
+info,wp,hendk001
+info,lp,wachm001
+info,save,daviw001
+start,carpm002,"Matt Carpenter",0,1,5
+start,phamt001,"Tommy Pham",0,2,7
+start,dejop001,"Paul DeJong",0,3,6
+start,martj008,"Jose Martinez",0,4,3
+start,fowld001,"Dexter Fowler",0,5,8
+start,moliy001,"Yadier Molina",0,6,2
+start,piscs001,"Stephen Piscotty",0,7,9
+start,garcg002,"Greg Garcia",0,8,4
+start,wachm001,"Michael Wacha",0,9,1
+start,zobrb001,"Ben Zobrist",1,1,9
+start,bryak001,"Kris Bryant",1,2,5
+start,rizza001,"Anthony Rizzo",1,3,3
+start,contw001,"Willson Contreras",1,4,2
+start,almoa002,"Albert Almora",1,5,8
+start,happi001,"Ian Happ",1,6,4
+start,baezj001,"Javier Baez",1,7,6
+start,jay-j001,"Jon Jay",1,8,7
+start,hendk001,"Kyle Hendricks",1,9,1
+play,1,0,carpm002,31,CBBBX,8/F
+play,1,0,phamt001,01,CX,63/G
+play,1,0,dejop001,22,BCFBS,K
+play,1,1,zobrb001,00,X,9/L+
+play,1,1,bryak001,22,CSBBC,K
+play,1,1,rizza001,01,CX,S9/G
+play,1,1,contw001,00,X,54(1)/FO/G
+play,2,0,martj008,32,CBCBFBX,13/G-
+play,2,0,fowld001,22,BCBFT,K
+play,2,0,moliy001,01,FX,7/F
+play,2,1,almoa002,00,X,9/F
+play,2,1,happi001,12,CBFS,K
+play,2,1,baezj001,01,FX,53/G
+play,3,0,piscs001,00,X,S7/L
+play,3,0,garcg002,11,CB1X,S9/L.1-3
+play,3,0,wachm001,11,BL1X,34/BG/SH.3-3;1-2
+play,3,0,carpm002,30,BBBB,W
+play,3,0,phamt001,21,CB*BX,64(1)3/GDP
+play,3,1,jay-j001,11,CBX,7/F
+play,3,1,hendk001,12,CSBFS,K
+play,3,1,zobrb001,00,X,3/G
+play,4,0,dejop001,22,SCBBFC,K
+play,4,0,martj008,10,BX,S9/L
+play,4,0,fowld001,11,SB1,PO1(13)
+com,"$Cubs challenged call that Martinez was safe at 1st on"
+com,"pickoff attempt; call was overturned - pickoff out"
+play,4,0,fowld001,12,SB1.SX,S8/G
+play,4,0,moliy001,11,BFX,6/P
+play,4,1,bryak001,10,BX,53/G
+play,4,1,rizza001,00,X,S9/L
+play,4,1,contw001,32,1BCFFBBB,W.1-2
+play,4,1,almoa002,00,X,S8/G.2-H;1-3;B-2(TH)
+play,4,1,happi001,00,X,S9/L.3-H;2-3
+play,4,1,baezj001,12,1FBSFFS,K
+play,4,1,jay-j001,30,BBBB,W.1-2
+play,4,1,hendk001,12,FBFFS,K
+play,5,0,piscs001,22,CFBBX,43/G
+play,5,0,garcg002,02,CFFX,43/G
+play,5,0,wachm001,12,CCBX,63/G
+play,5,1,zobrb001,00,X,8/F+
+play,5,1,bryak001,22,SBBCT,K
+play,5,1,rizza001,32,CBBBFFFFB,W
+play,5,1,contw001,32,1SFF1*BBB>F>F>F>F>B,W.1-2
+play,5,1,almoa002,00,X,D7/L+.2-H;1-3
+play,5,1,happi001,22,CBFBFS,K
+play,6,0,carpm002,11,CBX,3/L3F
+play,6,0,phamt001,32,BCBBCC,K
+play,6,0,dejop001,00,X,53/G
+play,6,1,baezj001,10,BX,2/BG
+play,6,1,jay-j001,22,CBBFFX,S7/L
+play,6,1,hendk001,00,>S,SB2
+play,6,1,hendk001,01,>S.X,4/P3F
+play,6,1,zobrb001,32,ST*BBBB,W
+play,6,1,bryak001,00,,NP
+sub,brebj001,"John Brebbia",0,9,1
+play,6,1,bryak001,02,.FSS,K
+play,7,0,martj008,22,CBCBFS,K
+play,7,0,fowld001,22,BCCBX,S8/L
+play,7,0,moliy001,11,CB+1X,43/G.1-2
+play,7,0,piscs001,01,CX,63/G
+play,7,1,rizza001,01,SX,43/G
+play,7,1,contw001,00,X,S8/L+
+play,7,1,almoa002,00,,NP
+sub,martl004,"Leonys Martin",1,4,12
+play,7,1,almoa002,20,.1BBX,D7/L+.1-3
+play,7,1,happi001,30,VVVV,IW
+play,7,1,baezj001,12,*BSSS,K
+play,7,1,jay-j001,00,,NP
+sub,sherr001,"Ryan Sherriff",0,9,1
+play,7,1,jay-j001,00,.X,54(1)/FO/G
+play,8,0,garcg002,00,,NP
+sub,zobrb001,"Ben Zobrist",1,1,7
+play,8,0,garcg002,00,,NP
+sub,river003,"Rene Rivera",1,4,2
+play,8,0,garcg002,00,,NP
+sub,heywj001,"Jason Heyward",1,8,9
+play,8,0,garcg002,32,...BBBCCX,7/L
+play,8,0,sherr001,00,,NP
+sub,gricr001,"Randal Grichuk",0,9,11
+play,8,0,gricr001,20,.BBX,9/F
+play,8,0,carpm002,11,CBX,HR/7/F
+play,8,0,phamt001,00,,NP
+sub,edwac001,"Carl Edwards",1,9,1
+play,8,0,phamt001,02,.SFC,K
+play,8,1,edwac001,00,,NP
+sub,lyont001,"Tyler Lyons",0,9,1
+play,8,1,edwac001,00,,NP
+sub,russa002,"Addison Russell",1,9,11
+play,8,1,russa002,12,..CSBX,HR/78/F
+play,8,1,zobrb001,22,CSBBT,K
+play,8,1,bryak001,32,BSBFBX,DGR/7/L+
+play,8,1,rizza001,02,CCX,2/P2F
+play,8,1,river003,12,FBCX,7/L
+play,9,0,dejop001,00,,NP
+sub,happi001,"Ian Happ",1,6,7
+play,9,0,dejop001,00,,NP
+sub,baezj001,"Javier Baez",1,7,4
+play,9,0,dejop001,00,,NP
+sub,russa002,"Addison Russell",1,9,6
+play,9,0,dejop001,00,,NP
+sub,daviw001,"Wade Davis",1,1,1
+play,9,0,dejop001,22,....BSBSS,K
+play,9,0,martj008,32,FBBFBS,K
+play,9,0,fowld001,12,SFBFH,HP
+play,9,0,moliy001,01,F>X,6/L
+data,er,wachm001,3
+data,er,brebj001,0
+data,er,sherr001,0
+data,er,lyont001,1
+data,er,hendk001,1
+data,er,edwac001,0
+data,er,daviw001,0

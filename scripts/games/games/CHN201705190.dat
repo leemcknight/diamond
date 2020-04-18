@@ -1,0 +1,166 @@
+id,CHN201705190
+version,2
+info,visteam,MIL
+info,hometeam,CHN
+info,site,CHI11
+info,date,2017/05/19
+info,number,0
+info,starttime,1:20PM
+info,daynight,day
+info,usedh,false
+info,umphome,timmt901
+info,ump1b,hoyej901
+info,ump2b,littw901
+info,ump3b,kellj901
+info,howscored,park
+info,pitches,pitches
+info,oscorer,frisd701
+info,temp,46
+info,winddir,fromcf
+info,windspeed,18
+info,fieldcond,unknown
+info,precip,unknown
+info,sky,overcast
+info,timeofgame,207
+info,attendance,36923
+info,wp,peraw001
+info,lp,montm002
+info,save,torrc001
+start,sogae001,"Eric Sogard",0,1,7
+start,thame001,"Eric Thames",0,2,3
+start,villj001,"Jonathan Villar",0,3,4
+start,shawt001,"Travis Shaw",0,4,5
+start,santd002,"Domingo Santana",0,5,9
+start,bandj001,"Jett Bandy",0,6,2
+start,broxk001,"Keon Broxton",0,7,8
+start,arcio002,"Orlando Arcia",0,8,6
+start,espip001,"Paolo Espino",0,9,1
+start,schwk001,"Kyle Schwarber",1,1,7
+start,bryak001,"Kris Bryant",1,2,5
+start,rizza001,"Anthony Rizzo",1,3,3
+start,happi001,"Ian Happ",1,4,8
+start,zobrb001,"Ben Zobrist",1,5,4
+start,contw001,"Willson Contreras",1,6,2
+start,baezj001,"Javier Baez",1,7,6
+start,butle001,"Eddie Butler",1,8,1
+start,jay-j001,"Jon Jay",1,9,9
+play,1,0,sogae001,32,BBCBFB,W
+play,1,0,thame001,32,C*BBBCB,W.1-2
+play,1,0,villj001,22,SBBSFC,K
+play,1,0,shawt001,22,CBBSS,K
+play,1,0,santd002,10,B>B,SB3
+play,1,0,santd002,30,B>B.*BB,W.1-2
+play,1,0,bandj001,32,BTF*BFB>F>X,S8/G.3-H;2-H;1-3
+play,1,0,broxk001,31,1B*BBCX,4/L
+play,1,1,schwk001,12,CBCS,K
+play,1,1,bryak001,01,CX,63/G
+play,1,1,rizza001,10,BX,9/F
+play,2,0,arcio002,11,BCX,43/G
+play,2,0,espip001,21,BCBX,43/G
+play,2,0,sogae001,32,BCBBCB,W
+play,2,0,thame001,32,B1BSBC>F*B,W.1-2
+play,2,0,villj001,32,C*BS*B*B>X,23/G-
+play,2,1,happi001,31,CBBBX,7/L+
+play,2,1,zobrb001,20,BBX,63/G
+play,2,1,contw001,22,FBFBS,K
+play,3,0,shawt001,01,FX,31/G+
+play,3,0,santd002,32,FBBBFS,K
+play,3,0,bandj001,32,BBSTBX,S7/L+
+play,3,0,broxk001,32,C*BFF*BB>F>X,7/L+
+play,3,1,baezj001,32,CBBFBFFFX,E8/F.B-2
+play,3,1,butle001,00,X,3/BG/SH.2-3
+play,3,1,jay-j001,31,CBBBX,D9/G.3-H(UR)
+play,3,1,schwk001,31,BF*BBX,8/L+
+play,3,1,bryak001,21,BFBX,9/F
+play,4,0,arcio002,12,BCSX,S2/G-
+play,4,0,espip001,00,,NP
+sub,montm002,"Mike Montgomery",1,8,1
+play,4,0,espip001,11,.BLX,24/BG/SH.1-2
+play,4,0,sogae001,11,BCX,3/G.2-3
+play,4,0,thame001,32,BCBBSS,K
+play,4,1,rizza001,12,CBFX,S9/L
+play,4,1,happi001,32,BF11BSBX,S8/L.1-2
+play,4,1,zobrb001,32,BBCSBX,S9/G.2-3;1-2
+play,4,1,contw001,10,BX,S8/G+.3-H;2-H;1-2
+play,4,1,baezj001,10,BX,2/BP
+play,4,1,montm002,02,CCL,K/BF
+play,4,1,jay-j001,02,SCX,43/G
+play,5,0,villj001,21,BBCX,53/G
+play,5,0,shawt001,11,BCX,D9/L
+play,5,0,santd002,32,BBCF*BX,53/G
+play,5,0,bandj001,30,BB*BB,W
+play,5,0,broxk001,31,BSBBB,W.2-3;1-2
+play,5,0,arcio002,22,CC*BBX,S4/G.3-H;2-3;1-2
+play,5,0,espip001,00,,NP
+sub,aguij001,"Jesus Aguilar",0,9,11
+play,5,0,aguij001,32,.CC*BF*BF*B>B,W.3-H;2-3;1-2
+play,5,0,sogae001,00,X,7/F
+play,5,1,schwk001,00,,NP
+sub,scahr001,"Rob Scahill",0,9,1
+play,5,1,schwk001,22,.CBBCS,K
+play,5,1,bryak001,12,BFFFX,9/F9LF
+play,5,1,rizza001,00,X,43/G
+play,6,0,thame001,00,,NP
+sub,johnp001,"Pierce Johnson",1,8,1
+play,6,0,thame001,11,.BSX,S8/L
+play,6,0,villj001,31,FBBBX,E7/F.1-3(E7/TH);B-2
+play,6,0,shawt001,02,SFC,K
+play,6,0,santd002,22,BFBFX,S8/L.3-H(UR);2-H(UR);B-2(E8/TH)
+play,6,0,bandj001,30,BBBB,W
+play,6,0,broxk001,02,CCS,K
+play,6,0,arcio002,32,BS*BCB>X,63/G
+play,6,1,happi001,00,,NP
+sub,drako001,"Oliver Drake",0,9,1
+play,6,1,happi001,12,.FSBFFFFX,31/G
+play,6,1,zobrb001,00,X,63/G+
+play,6,1,contw001,02,CSS,K
+play,7,0,drako001,00,,NP
+sub,duenb001,"Brian Duensing",1,5,1
+play,7,0,drako001,00,,NP
+sub,lastt001,"Tommy La Stella",1,8,4
+play,7,0,drako001,00,,NP
+sub,frann001,"Nick Franklin",0,9,11
+play,7,0,frann001,32,...CBBBSFS,K
+play,7,0,sogae001,01,CX,13/BG-
+play,7,0,thame001,00,X,63/G+
+play,7,1,baezj001,00,,NP
+sub,peraw001,"Wily Peralta",0,9,1
+play,7,1,baezj001,01,.CX,63/G
+play,7,1,lastt001,32,CSBBBFFFB,W
+play,7,1,jay-j001,22,CCBBFFS,K
+play,7,1,schwk001,22,SBBSS,K
+play,8,0,villj001,22,FBFFBS,K
+play,8,0,shawt001,22,CBFBX,31/G
+play,8,0,santd002,31,FBBBB,W
+play,8,0,bandj001,02,FFS,K
+play,8,1,bryak001,12,CSBFC,K
+play,8,1,rizza001,12,FBFS,K
+play,8,1,happi001,02,CFS,K
+play,9,0,broxk001,00,,NP
+sub,strop001,"Pedro Strop",1,5,1
+play,9,0,broxk001,00,.X,S8/G
+play,9,0,arcio002,01,CX,S5/G-.1-2
+play,9,0,peraw001,00,,NP
+sub,pereh001,"Hernan Perez",0,9,11
+play,9,0,pereh001,21,.BCBX,46(1)3/GDP.2-3
+play,9,0,sogae001,02,CFFX,9/F
+play,9,1,strop001,00,,NP
+sub,torrc001,"Carlos Torres",0,1,1
+play,9,1,strop001,00,,NP
+sub,pereh001,"Hernan Perez",0,9,7
+play,9,1,strop001,00,,NP
+sub,montm001,"Miguel Montero",1,5,11
+play,9,1,montm001,00,...X,7/F
+play,9,1,contw001,22,CBCBX,8/F
+play,9,1,baezj001,22,BSFBX,S49/P
+play,9,1,lastt001,12,>FB>FX,3/G
+data,er,espip001,2
+data,er,scahr001,0
+data,er,drako001,0
+data,er,peraw001,0
+data,er,torrc001,0
+data,er,butle001,2
+data,er,montm002,2
+data,er,johnp001,0
+data,er,duenb001,0
+data,er,strop001,0

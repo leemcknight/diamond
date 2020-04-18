@@ -1,0 +1,172 @@
+id,CHN201707070
+version,2
+info,visteam,PIT
+info,hometeam,CHN
+info,site,CHI11
+info,date,2017/07/07
+info,number,0
+info,starttime,1:21PM
+info,daynight,day
+info,usedh,false
+info,umphome,cedeg901
+info,ump1b,morag901
+info,ump2b,johna901
+info,ump3b,coope901
+info,howscored,park
+info,pitches,pitches
+info,oscorer,frisd701
+info,temp,77
+info,winddir,fromcf
+info,windspeed,14
+info,fieldcond,unknown
+info,precip,unknown
+info,sky,unknown
+info,timeofgame,226
+info,attendance,41294
+info,wp,edwac001
+info,lp,willt002
+info,save,
+start,fraza001,"Adam Frazier",0,1,4
+start,harrj002,"Josh Harrison",0,2,5
+start,mccua001,"Andrew McCutchen",0,3,8
+start,bellj005,"Josh Bell",0,4,3
+start,jasoj001,"John Jaso",0,5,7
+start,polag001,"Gregory Polanco",0,6,9
+start,cervf001,"Francisco Cervelli",0,7,2
+start,mercj002,"Jordy Mercer",0,8,6
+start,willt002,"Trevor Williams",0,9,1
+start,zobrb001,"Ben Zobrist",1,1,4
+start,bryak001,"Kris Bryant",1,2,5
+start,rizza001,"Anthony Rizzo",1,3,3
+start,happi001,"Ian Happ",1,4,8
+start,schwk001,"Kyle Schwarber",1,5,7
+start,heywj001,"Jason Heyward",1,6,9
+start,carav001,"Victor Caratini",1,7,2
+start,russa002,"Addison Russell",1,8,6
+start,butle001,"Eddie Butler",1,9,1
+play,1,0,fraza001,02,FFX,4/P
+play,1,0,harrj002,02,FFX,3/G-
+play,1,0,mccua001,32,BSCBFBX,D7/L
+com,"$Unclear if McCutchen's double went through basket;"
+com,"umpires reviewed and confirmed call of double"
+play,1,0,bellj005,30,B*B*BB,W
+play,1,0,jasoj001,32,FFBBF*B>B,W.2-3;1-2
+play,1,0,polag001,12,BSFFT,K
+play,1,1,zobrb001,12,BCCX,S7/L
+play,1,1,bryak001,12,CBFX,S5/G-.1-3(E5/TH);B-2
+play,1,1,rizza001,32,FBFFFBFBX,2/P2F
+play,1,1,happi001,12,FSBX,6/L
+play,1,1,schwk001,22,CBBFX,13/G-
+play,2,0,cervf001,32,BBSSFBX,S9/L
+play,2,0,mercj002,10,BX,E8/F+.1-3;B-2
+play,2,0,willt002,12,FFBX,FC3/G.3XH(32);2-3
+play,2,0,fraza001,30,BBBX,7/F
+play,2,0,harrj002,00,X,64(1)/FO/G
+play,2,1,heywj001,22,BCBFFS,K
+play,2,1,carav001,30,BBBB,W
+play,2,1,russa002,01,CX,E4/G.1-2
+play,2,1,butle001,01,CX,E3/TH/BG/SH.2-3;1-2
+play,2,1,zobrb001,02,CFFC,K
+play,2,1,bryak001,22,*BCBFFT,K
+play,3,0,mccua001,11,FBX,S8/G+
+play,3,0,bellj005,01,F*B,OA.1X2(26)
+play,3,0,bellj005,32,F*B.SBFBX,31/G
+play,3,0,jasoj001,11,CBX,8/L+
+play,3,1,rizza001,32,BCFFFBBX,13/G
+play,3,1,happi001,22,CFBBX,S8/G+
+play,3,1,schwk001,00,1>B,SB2
+play,3,1,schwk001,22,1>B.BSSX,4/P
+play,3,1,heywj001,32,B+2CCFFBFBB,W
+play,3,1,carav001,11,FBX,31/G
+play,4,0,polag001,22,BCBCFX,S9/L+.B-2(E6/TH)
+play,4,0,cervf001,32,C*BB*BFB,W
+play,4,0,mercj002,31,BBCBX,3/P/IF
+play,4,0,willt002,22,OFBBFX,14/BG/SH.2-3;1-2
+play,4,0,fraza001,00,X,9/F
+play,4,1,russa002,00,X,7/L+
+play,4,1,butle001,22,CBSFFBFX,9/L
+play,4,1,zobrb001,10,BX,S9/G+
+play,4,1,bryak001,00,X,T57/G.1-H
+play,4,1,rizza001,22,SFBBFX,HR/9/L.3-H
+play,4,1,happi001,00,,NP
+sub,leblw001,"Wade LeBlanc",0,9,1
+play,4,1,happi001,22,.LBSBX,53/G
+play,5,0,harrj002,01,CH,HP
+play,5,0,mccua001,00,,NP
+sub,edwac001,"Carl Edwards",1,9,1
+play,5,0,mccua001,02,.CSS,K
+play,5,0,bellj005,21,C*BBX,7/F
+play,5,0,jasoj001,32,BFBBF>F>B,W.1-2
+play,5,0,polag001,00,X,43/G
+play,5,1,schwk001,02,CCX,D9/L+
+play,5,1,heywj001,00,X,43/G.2-3
+play,5,1,carav001,11,BSX,FC3/G.3XH(32)
+play,5,1,russa002,32,FFF*BBB>X,8/L+
+play,6,0,cervf001,32,BFCBBFS,K
+play,6,0,mercj002,32,FBFBFB*B,W
+play,6,0,leblw001,00,,NP
+sub,osunj001,"Jose Osuna",0,9,11
+play,6,0,osunj001,02,.FSS,K
+play,6,0,fraza001,00,,NP
+sub,contw001,"Willson Contreras",1,9,2
+play,6,0,fraza001,00,,NP
+sub,strop001,"Pedro Strop",1,7,1
+play,6,0,fraza001,20,..B+1BB,WP.1-2
+play,6,0,fraza001,32,..B+1BB.CCFX,31/G
+play,6,1,contw001,00,,NP
+sub,marij001,"Jhan Marinez",0,9,1
+play,6,1,contw001,02,.LSFFX,S7/L
+play,6,1,zobrb001,00,X,64(1)3/GDP
+play,6,1,bryak001,31,BBBCX,HR/78/F
+play,6,1,rizza001,32,BCBTBS,K
+play,7,0,harrj002,11,BFX,4/L
+play,7,0,mccua001,32,BBSFFFBX,S7/G+
+play,7,0,bellj005,21,BBFB,PB.1-2
+play,7,0,bellj005,31,BBFB.X,S8/G.2-H(UR);B-2(E5/TH)
+play,7,0,jasoj001,32,BCBBFX,31/G.2-3
+play,7,0,polag001,11,CBX,7/L
+play,7,1,happi001,31,CBBBB,W
+play,7,1,schwk001,30,BBBB,W.1-2
+play,7,1,heywj001,01,CX,3/L+/DP.1X1(3)
+com,"$Schwarber out returning to first; Cubs challenged call"
+com,"which was upheld"
+play,7,1,strop001,00,,NP
+sub,baezj001,"Javier Baez",1,7,11
+play,7,1,baezj001,00,.X,53/G
+play,8,0,cervf001,00,,NP
+sub,zobrb001,"Ben Zobrist",1,1,7
+play,8,0,cervf001,00,,NP
+sub,baezj001,"Javier Baez",1,7,4
+play,8,0,cervf001,00,,NP
+sub,uehak001,"Koji Uehara",1,5,1
+play,8,0,cervf001,02,...CFT,K
+play,8,0,mercj002,01,CX,7/L
+play,8,0,marij001,00,,NP
+sub,morom001,"Max Moroff",0,9,11
+play,8,0,morom001,11,.BCX,8/L
+play,8,1,russa002,00,,NP
+sub,basta001,"Antonio Bastardo",0,9,1
+play,8,1,russa002,12,.CFBT,K
+play,8,1,contw001,32,BBFBFB,W
+play,8,1,zobrb001,00,X,63/G.1-2
+play,8,1,bryak001,32,B*BCFBX,HR/8/F.2-H
+play,8,1,rizza001,12,FBFFX,7/F
+play,9,0,fraza001,00,,NP
+sub,happi001,"Ian Happ",1,4,7
+play,9,0,fraza001,00,,NP
+sub,almoa002,"Albert Almora",1,5,8
+play,9,0,fraza001,00,,NP
+sub,daviw001,"Wade Davis",1,1,1
+play,9,0,fraza001,11,...BCX,53/G
+play,9,0,harrj002,22,CBFFFBX,9/F
+play,9,0,mccua001,32,BFBSFBF*B,W
+play,9,0,bellj005,02,FFS,K
+data,er,willt002,3
+data,er,leblw001,0
+data,er,marij001,1
+data,er,basta001,2
+data,er,butle001,0
+data,er,edwac001,0
+data,er,strop001,0
+data,er,uehak001,0
+data,er,daviw001,0

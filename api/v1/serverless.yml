@@ -67,22 +67,34 @@ provider:
 
 functions:  
   getBallparks:
-    handler: handler.getBallparks
+    handler: http/handler.getBallparks
     events:
       - http:
           path: v1/ballparks
           method: get
   getFranchises:
-    handler: handler.getFranchises
+    handler: http/handler.getFranchises
     events:
       - http:
           path: v1/franchises
           method: get
   filterFranchises:
-    handler: handler.filterFranchises
+    handler: http/handler.filterFranchises
     events:
       - http:
           path: v1/franchises/{name}
+          method: get  
+  daySchedule:
+      handler: http/handler.getDaySchedule
+      events:
+      - http:
+          path: v1/schedule/{year}/{month}/{day}
+          method: get
+  gameDetail:
+      handler: http/handler.getGameDetails
+      events:
+      - http:
+          path: v1/game/{id}/playByPlay
           method: get
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events

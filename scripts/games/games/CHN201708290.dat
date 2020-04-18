@@ -1,0 +1,158 @@
+id,CHN201708290
+version,2
+info,visteam,PIT
+info,hometeam,CHN
+info,site,CHI11
+info,date,2017/08/29
+info,number,0
+info,starttime,7:06PM
+info,daynight,night
+info,usedh,false
+info,umphome,sches901
+info,ump1b,cedeg901
+info,ump2b,coope901
+info,ump3b,johna901
+info,howscored,park
+info,pitches,pitches
+info,oscorer,roseb701
+info,temp,71
+info,winddir,fromcf
+info,windspeed,5
+info,fieldcond,unknown
+info,precip,unknown
+info,sky,cloudy
+info,timeofgame,169
+info,attendance,37370
+info,wp,arrij001
+info,lp,kuhlc001
+info,save,daviw001
+start,marts002,"Starling Marte",0,1,7
+start,harrj002,"Josh Harrison",0,2,4
+start,mccua001,"Andrew McCutchen",0,3,8
+start,bellj005,"Josh Bell",0,4,3
+start,freed001,"David Freese",0,5,5
+start,jasoj001,"John Jaso",0,6,9
+start,mercj002,"Jordy Mercer",0,7,6
+start,stewc001,"Chris Stewart",0,8,2
+start,kuhlc001,"Chad Kuhl",0,9,1
+start,zobrb001,"Ben Zobrist",1,1,9
+start,schwk001,"Kyle Schwarber",1,2,7
+start,bryak001,"Kris Bryant",1,3,5
+start,rizza001,"Anthony Rizzo",1,4,3
+start,lastt001,"Tommy La Stella",1,5,4
+start,avila001,"Alex Avila",1,6,2
+start,heywj001,"Jason Heyward",1,7,8
+start,baezj001,"Javier Baez",1,8,6
+start,arrij001,"Jake Arrieta",1,9,1
+play,1,0,marts002,12,CFBFFS,K
+play,1,0,harrj002,22,FBBFX,D7/L
+play,1,0,mccua001,32,FFBB*BFFX,43/G.2-3
+play,1,0,bellj005,32,BBBCCC,K
+play,1,1,zobrb001,21,BCBX,S8/G
+play,1,1,schwk001,02,CCX,16(1)3/GDP
+play,1,1,bryak001,32,BFCBBFB,W
+play,1,1,rizza001,22,BFBF1X,S7/L-.1-2
+play,1,1,lastt001,00,B,WP.2-3;1-2
+play,1,1,lastt001,31,B.F*BBX,43/G+
+play,2,0,freed001,20,BBX,43/G
+play,2,0,jasoj001,22,SBBFH,HP
+play,2,0,mercj002,10,BX,S8/G.1-2
+play,2,0,stewc001,01,CX,8/F
+play,2,0,kuhlc001,01,CB,WP.2-3;1-2
+play,2,0,kuhlc001,12,CB.FC,K
+play,2,1,avila001,12,BCCC,K
+play,2,1,heywj001,01,CX,S6/P
+play,2,1,baezj001,12,SBSFFS,K
+play,2,1,arrij001,12,BCSC,K
+play,3,0,marts002,10,BX,63/G
+play,3,0,harrj002,11,BCX,8/F
+play,3,0,mccua001,12,CCBX,53/G
+play,3,1,zobrb001,21,BBCX,31/G
+play,3,1,schwk001,01,CX,4/P
+play,3,1,bryak001,12,FBCS,K
+play,4,0,bellj005,32,BFBFBB,W
+play,4,0,freed001,22,BFFFBFS,K
+play,4,0,jasoj001,31,BCBBB,W.1-2
+play,4,0,mercj002,02,CCX,54(1)3/GDP
+play,4,1,rizza001,22,BCBCX,8/F
+play,4,1,lastt001,11,CBX,7/F
+play,4,1,avila001,22,FBFFBS,K
+play,5,0,stewc001,11,BCX,9/L
+play,5,0,kuhlc001,12,CCBFX,9/L
+play,5,0,marts002,12,CBFFX,13/G
+play,5,1,heywj001,10,BX,S9/L+
+play,5,1,baezj001,31,1BC*BBX,4/P
+play,5,1,arrij001,10,1B>B,CS2(24)
+play,5,1,arrij001,32,1B>B.BCCC,K
+play,6,0,harrj002,32,BCBBFX,53/G
+play,6,0,mccua001,20,BBX,8/F
+play,6,0,bellj005,21,BBCX,43/G
+play,6,1,zobrb001,00,X,HR/8/F
+play,6,1,schwk001,32,CBFFBFFBB,W
+play,6,1,bryak001,02,FFC,K
+play,6,1,rizza001,10,BX,D9/L+.1-3
+play,6,1,lastt001,30,VVVV,IW
+play,6,1,avila001,21,CB*BX,S9/L+.3-H;2-3;1-2
+play,6,1,heywj001,00,,NP
+sub,schua001,"A.J. Schugel",0,9,1
+play,6,1,heywj001,00,.X,7/L+/SF.3-H
+play,6,1,baezj001,12,SBSS,K
+play,7,0,freed001,00,,NP
+sub,zobrb001,"Ben Zobrist",1,1,7
+play,7,0,freed001,00,,NP
+sub,heywj001,"Jason Heyward",1,7,9
+play,7,0,freed001,00,,NP
+sub,almoa002,"Albert Almora",1,9,8
+play,7,0,freed001,00,,NP
+sub,uehak001,"Koji Uehara",1,2,1
+play,7,0,freed001,22,....CBFBS,K
+play,7,0,jasoj001,00,X,HR/89/F
+play,7,0,mercj002,11,CBX,53/G
+play,7,0,stewc001,00,,NP
+sub,diaze005,"Elias Diaz",0,8,11
+play,7,0,diaze005,02,.CFX,S7/L
+play,7,0,schua001,00,,NP
+sub,osunj001,"Jose Osuna",0,9,11
+play,7,0,osunj001,00,,NP
+sub,strop001,"Pedro Strop",1,2,1
+play,7,0,osunj001,12,..BFSS,K
+play,7,1,almoa002,00,,NP
+sub,diaze005,"Elias Diaz",0,8,2
+play,7,1,almoa002,00,,NP
+sub,neved001,"Dovydas Neverauskas",0,9,1
+play,7,1,almoa002,11,..FBX,7/F
+play,7,1,zobrb001,11,BCX,6/P
+play,7,1,strop001,10,BX,8/L+
+play,8,0,marts002,00,X,S5/BG
+play,8,0,harrj002,10,BX,8/F
+play,8,0,mccua001,01,FX,64(1)/FO/G
+play,8,0,bellj005,00,,NP
+sub,duenb001,"Brian Duensing",1,2,1
+play,8,0,bellj005,01,.CX,8/F
+play,8,1,bryak001,00,,NP
+sub,hudsd001,"Daniel Hudson",0,9,1
+play,8,1,bryak001,30,.BBBB,W
+play,8,1,rizza001,01,SX,D8/L+.1-H
+play,8,1,lastt001,00,X,5/P5F
+play,8,1,avila001,12,BSSS,K
+play,8,1,heywj001,22,FBBFC,K
+play,9,0,freed001,00,,NP
+sub,zobrb001,"Ben Zobrist",1,1,4
+play,9,0,freed001,00,,NP
+sub,happi001,"Ian Happ",1,2,7
+play,9,0,freed001,00,,NP
+sub,daviw001,"Wade Davis",1,5,1
+play,9,0,freed001,32,...BBFBFFX,8/F
+play,9,0,jasoj001,02,CFX,S9/F
+play,9,0,mercj002,32,CB*BBSX,54(1)/FO/G
+play,9,0,diaze005,00,>C,DI.1-2
+play,9,0,diaze005,02,>C.CX,13/G
+data,er,kuhlc001,3
+data,er,schua001,0
+data,er,neved001,0
+data,er,hudsd001,1
+data,er,arrij001,0
+data,er,uehak001,1
+data,er,strop001,0
+data,er,duenb001,0
+data,er,daviw001,0

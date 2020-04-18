@@ -1,0 +1,165 @@
+id,CHN201708190
+version,2
+info,visteam,TOR
+info,hometeam,CHN
+info,site,CHI11
+info,date,2017/08/19
+info,number,0
+info,starttime,1:21PM
+info,daynight,day
+info,usedh,false
+info,umphome,westj901
+info,ump1b,fleta901
+info,ump2b,wendh902
+info,ump3b,may-b901
+info,howscored,park
+info,pitches,pitches
+info,oscorer,frisd701
+info,temp,79
+info,winddir,fromrf
+info,windspeed,7
+info,fieldcond,unknown
+info,precip,unknown
+info,sky,sunny
+info,timeofgame,189
+info,attendance,41558
+info,wp,quinj001
+info,lp,barnd002
+info,save,daviw001
+start,bautj002,"Jose Bautista",0,1,9
+start,donaj001,"Josh Donaldson",0,2,5
+start,smoaj001,"Justin Smoak",0,3,3
+start,pears001,"Steve Pearce",0,4,7
+start,pillk001,"Kevin Pillar",0,5,8
+start,barnd001,"Darwin Barney",0,6,6
+start,loper002,"Rafael Lopez",0,7,2
+start,refsr001,"Rob Refsnyder",0,8,4
+start,tepen001,"Nick Tepesch",0,9,1
+start,jay-j001,"Jon Jay",1,1,8
+start,schwk001,"Kyle Schwarber",1,2,7
+start,bryak001,"Kris Bryant",1,3,5
+start,rizza001,"Anthony Rizzo",1,4,3
+start,happi001,"Ian Happ",1,5,4
+start,avila001,"Alex Avila",1,6,2
+start,heywj001,"Jason Heyward",1,7,9
+start,baezj001,"Javier Baez",1,8,6
+start,quinj001,"Jose Quintana",1,9,1
+play,1,0,bautj002,22,CFBBFC,K
+play,1,0,donaj001,10,BX,6/P
+play,1,0,smoaj001,12,BFCFC,K
+play,1,1,jay-j001,32,CBBBCB,W
+play,1,1,schwk001,31,BBBCX,5/P
+play,1,1,bryak001,02,CFH,HP.1-2
+play,1,1,rizza001,32,BBBCFFB,W.2-3;1-2
+play,1,1,happi001,00,X,S9/L.3-H;2-3;1-2
+play,1,1,avila001,10,BX,46(1)3/GDP
+play,2,0,pears001,11,CBX,D7/G
+play,2,0,pillk001,00,X,5/L+
+play,2,0,barnd001,01,FX,E5/TH/G.2-3
+play,2,0,loper002,02,FS>S,K+SB2
+play,2,0,refsr001,30,VVVV,IW
+play,2,0,tepen001,02,SCFS,K
+play,2,1,heywj001,22,CBFBX,S68/P
+play,2,1,baezj001,22,C>FBF1BS,K
+play,2,1,quinj001,02,SLX,1/BL/DP.1X1(13)
+play,3,0,bautj002,32,CBFBFBX,53/G
+play,3,0,donaj001,32,SCFBBFBFB,W
+play,3,0,smoaj001,01,FX,43/G-.1-2
+play,3,0,pears001,32,BS*BC*BS,K
+play,3,1,jay-j001,12,CBFS,K
+play,3,1,schwk001,32,BFSBFBS,K
+play,3,1,bryak001,20,BBX,D7/L+
+play,3,1,rizza001,12,BCFX,13/G
+play,4,0,pillk001,12,CFFBX,S9/L
+play,4,0,barnd001,32,1B11BC1BC1X,D7/G.1-3
+play,4,0,loper002,01,FX,S7/L.3-H;2-H;B-2(TH)
+play,4,0,refsr001,20,BBX,53/G
+play,4,0,tepen001,22,SFBBS,K
+play,4,0,bautj002,02,FSS,K
+play,4,1,happi001,21,CBBX,HR/8/F
+play,4,1,avila001,20,BBX,S9/L+
+play,4,1,heywj001,10,BX,36(1)/FO/G.B-2(E6/TH)
+play,4,1,baezj001,30,VVVV,IW
+play,4,1,quinj001,10,*BX,14/BG/SH.2-3;1-2
+play,4,1,jay-j001,00,,NP
+sub,barnd002,"Danny Barnes",0,9,1
+play,4,1,jay-j001,32,.BBBCCC,K
+play,5,0,donaj001,11,FBX,63/G
+play,5,0,smoaj001,32,BFFBFBX,4/L
+play,5,0,pears001,12,FBFFC,K
+play,5,1,schwk001,12,BCFC,K
+play,5,1,bryak001,00,X,7/F
+play,5,1,rizza001,01,FX,8/L
+play,6,0,pillk001,22,CFFBBX,3/P
+play,6,0,barnd001,00,X,63/G
+play,6,0,loper002,32,CBBCBX,31/G
+play,6,1,happi001,32,BCFBFFBFB,W
+play,6,1,avila001,22,B1BFCX,3/G.1-2
+play,6,1,heywj001,22,CBSBFFS,K
+play,6,1,baezj001,12,SBCFX,S6/G.2-H
+play,6,1,quinj001,00,,NP
+sub,montm001,"Miguel Montero",0,9,2
+play,6,1,quinj001,00,,NP
+sub,dermm001,"Matt Dermody",0,7,1
+play,6,1,quinj001,00,,NP
+sub,zobrb001,"Ben Zobrist",1,9,11
+play,6,1,zobrb001,02,...CF1X,53/G
+play,7,0,refsr001,00,,NP
+sub,penaf002,"Felix Pena",1,9,1
+play,7,0,refsr001,00,,NP
+sub,goinr001,"Ryan Goins",0,8,11
+play,7,0,goinr001,12,..FBSFS,K23
+play,7,0,montm001,12,FBFFC,K
+play,7,0,bautj002,22,CBFBFFFFFS,K
+play,7,1,jay-j001,00,,NP
+sub,barnd001,"Darwin Barney",0,6,4
+play,7,1,jay-j001,00,,NP
+sub,goinr001,"Ryan Goins",0,8,6
+play,7,1,jay-j001,00,..X,7/L
+play,7,1,schwk001,00,,NP
+sub,almoa002,"Albert Almora",1,2,11
+play,7,1,almoa002,20,.BBX,S94/L
+play,7,1,bryak001,31,*BBBCX,53/G.1-2
+play,7,1,rizza001,21,BCBX,S4/P.2-H
+play,7,1,happi001,00,1X,9/F
+play,8,0,donaj001,00,,NP
+sub,jay-j001,"Jon Jay",1,1,7
+play,8,0,donaj001,00,,NP
+sub,almoa002,"Albert Almora",1,2,8
+play,8,0,donaj001,00,,NP
+sub,rondh001,"Hector Rondon",1,9,1
+play,8,0,donaj001,00,...X,9/F
+play,8,0,smoaj001,32,CFBFBBX,9/L+
+play,8,0,pears001,10,BX,S5/G.B-2(E5/TH)
+play,8,0,pillk001,22,CSB*BFX,S7/G.2-H(UR)
+play,8,0,barnd001,00,,NP
+sub,morak001,"Kendrys Morales",0,6,11
+play,8,0,morak001,00,.1X,3/G
+play,8,1,avila001,00,,NP
+sub,bautj002,"Jose Bautista",0,1,5
+play,8,1,avila001,00,,NP
+sub,donaj001,"Josh Donaldson",0,2,6
+play,8,1,avila001,00,,NP
+sub,carre001,"Ezequiel Carrera",0,6,9
+play,8,1,avila001,00,,NP
+sub,goinr001,"Ryan Goins",0,8,4
+play,8,1,avila001,22,....CFFBFFBFS,K
+play,8,1,heywj001,22,SSBBFX,9/L
+play,8,1,baezj001,00,,NP
+sub,aokin001,"Nori Aoki",0,7,9
+play,8,1,baezj001,00,,NP
+sub,leond003,"Dominic Leone",0,6,1
+play,8,1,baezj001,22,..CSBFBS,K
+play,9,0,aokin001,00,,NP
+sub,daviw001,"Wade Davis",1,9,1
+play,9,0,aokin001,12,.SSFBX,63/G
+play,9,0,goinr001,11,BFX,563/G
+play,9,0,montm001,01,CX,8/F
+data,er,tepen001,2
+data,er,barnd002,1
+data,er,dermm001,1
+data,er,leond003,0
+data,er,quinj001,2
+data,er,penaf002,0
+data,er,rondh001,0
+data,er,daviw001,0

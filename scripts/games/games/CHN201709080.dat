@@ -1,0 +1,155 @@
+id,CHN201709080
+version,2
+info,visteam,MIL
+info,hometeam,CHN
+info,site,CHI11
+info,date,2017/09/08
+info,number,0
+info,starttime,7:07PM
+info,daynight,night
+info,usedh,false
+info,umphome,mealj901
+info,ump1b,kulpr901
+info,ump2b,conrc901
+info,ump3b,blakr901
+info,howscored,park
+info,pitches,pitches
+info,oscorer,frisd701
+info,temp,65
+info,winddir,rtol
+info,windspeed,8
+info,fieldcond,unknown
+info,precip,unknown
+info,sky,unknown
+info,timeofgame,171
+info,attendance,41020
+info,wp,nelsj004
+info,lp,lackj001
+info,save,knebc001
+start,thame001,"Eric Thames",0,1,3
+start,walkn001,"Neil Walker",0,2,4
+start,braur002,"Ryan Braun",0,3,7
+start,shawt001,"Travis Shaw",0,4,5
+start,santd002,"Domingo Santana",0,5,9
+start,vogts001,"Stephen Vogt",0,6,2
+start,broxk001,"Keon Broxton",0,7,8
+start,arcio002,"Orlando Arcia",0,8,6
+start,nelsj004,"Jimmy Nelson",0,9,1
+start,jay-j001,"Jon Jay",1,1,7
+start,bryak001,"Kris Bryant",1,2,5
+start,rizza001,"Anthony Rizzo",1,3,3
+start,zobrb001,"Ben Zobrist",1,4,4
+start,avila001,"Alex Avila",1,5,2
+start,happi001,"Ian Happ",1,6,8
+start,heywj001,"Jason Heyward",1,7,9
+start,baezj001,"Javier Baez",1,8,6
+start,lackj001,"John Lackey",1,9,1
+play,1,0,thame001,22,BFCBX,D7/L
+play,1,0,walkn001,32,CFF*BBBX,63/G-.2-3
+play,1,0,braur002,01,FX,HR/8/F.3-H
+play,1,0,shawt001,00,X,8/F+
+play,1,0,santd002,22,SBSBX,9/F
+play,1,1,jay-j001,12,CFBS,K
+play,1,1,bryak001,32,CSBBFBX,53/G
+play,1,1,rizza001,12,CBSS,K
+play,2,0,vogts001,22,CSBBX,31/G
+play,2,0,broxk001,11,BCX,S9/F
+play,2,0,arcio002,02,FSX,8/L
+play,2,0,nelsj004,01,FS,WP.1-2
+play,2,0,nelsj004,02,FS.S,K
+play,2,1,zobrb001,01,CX,D7/L
+play,2,1,avila001,02,CSS,K
+play,2,1,happi001,10,BB,WP.2-3
+play,2,1,happi001,21,BB.CX,13/G-
+play,2,1,heywj001,31,B*BFBB,W
+play,2,1,baezj001,10,BX,8/L
+play,3,0,thame001,22,CBFBS,K
+play,3,0,walkn001,20,BBX,7/F
+play,3,0,braur002,01,FH,HP
+play,3,0,shawt001,01,CX,6(1)/FO/G
+play,3,1,lackj001,02,CCFC,K
+play,3,1,jay-j001,21,BBFX,7/L
+play,3,1,bryak001,22,BSBSX,S9/G-
+play,3,1,rizza001,12,CFB>X,S9/L+.1-3
+play,3,1,zobrb001,32,BCB*BC>C,K
+play,4,0,santd002,12,FFBS,K
+play,4,0,vogts001,00,X,31/G
+play,4,0,broxk001,32,BCBSBC,K
+play,4,1,avila001,00,X,S7/L
+play,4,1,happi001,12,SFBC,K
+play,4,1,heywj001,11,SBX,46(1)3/GDP
+play,5,0,arcio002,01,FX,13/G-
+play,5,0,nelsj004,11,CBX,S7/L
+play,5,0,thame001,22,FBFF*BX,36(1)1/GDP
+play,5,1,baezj001,20,BBX,53/G
+play,5,1,lackj001,22,CSBBC,K
+play,5,1,jay-j001,00,H,HP
+play,5,1,bryak001,12,B1CF>B,SB2
+play,5,1,bryak001,32,B1CF>B.*BB,W+WP.2-3
+play,5,1,rizza001,01,CX,8/F+
+play,6,0,walkn001,31,FBBBB,W
+play,6,0,braur002,12,F1FBC,K
+play,6,0,shawt001,22,FCBBS,K
+play,6,0,santd002,32,BSS*BB>S,K
+play,6,1,zobrb001,00,,NP
+sub,hadej001,"Josh Hader",0,9,1
+com,"$Jimmy Nelson left with injured shoulder"
+play,6,1,zobrb001,22,.CBBSFX,9/F
+play,6,1,avila001,00,,NP
+sub,almoa002,"Albert Almora",1,5,11
+play,6,1,almoa002,00,..X,53/G
+play,6,1,happi001,02,FCX,9/F
+play,7,0,vogts001,00,,NP
+sub,carav001,"Victor Caratini",1,5,2
+play,7,0,vogts001,12,.CBFX,8/F
+play,7,0,broxk001,22,SBBFS,K
+play,7,0,arcio002,30,VVVV,IW
+play,7,0,hadej001,32,BBBCS>F>F>S,K
+play,7,1,heywj001,00,,NP
+sub,pinam001,"Manny Pina",0,6,2
+play,7,1,heywj001,12,.CCBFS,K
+play,7,1,baezj001,11,BCX,8/F
+play,7,1,lackj001,00,,NP
+sub,davit004,"Taylor Davis",1,9,11
+play,7,1,davit004,12,.CFBT,K
+play,8,0,thame001,00,,NP
+sub,duenb001,"Brian Duensing",1,9,1
+play,8,0,thame001,00,,NP
+sub,aguij001,"Jesus Aguilar",0,1,11
+play,8,0,aguij001,21,..CBBX,8/L+
+play,8,0,walkn001,11,BCX,4/P
+play,8,0,braur002,30,BBBB,W
+play,8,0,shawt001,11,S*BX,8/F+
+play,8,1,jay-j001,00,,NP
+sub,aguij001,"Jesus Aguilar",0,1,3
+play,8,1,jay-j001,00,,NP
+sub,sogae001,"Eric Sogard",0,2,4
+play,8,1,jay-j001,31,..BCBBB,W
+play,8,1,bryak001,00,,NP
+sub,swara001,"Anthony Swarzak",0,9,1
+play,8,1,bryak001,22,.CBFBFC,K
+play,8,1,rizza001,01,CX,8/F+
+play,8,1,zobrb001,02,FFC,K
+play,9,0,santd002,00,,NP
+sub,rondh001,"Hector Rondon",1,9,1
+play,9,0,santd002,22,.CBCBC,K
+play,9,0,pinam001,12,CBCX,1/L+
+play,9,0,broxk001,12,BFCS,K
+play,9,1,carav001,00,,NP
+sub,pereh001,"Hernan Perez",0,9,9
+play,9,1,carav001,00,,NP
+sub,knebc001,"Corey Knebel",0,5,1
+play,9,1,carav001,00,,NP
+sub,lastt001,"Tommy La Stella",1,5,11
+play,9,1,lastt001,21,...BCBX,9/F
+play,9,1,happi001,11,BCX,8/L+
+play,9,1,heywj001,22,BBCCX,S7/G
+play,9,1,baezj001,01,C>S,DI.1-2
+play,9,1,baezj001,02,C>S.S,K
+data,er,nelsj004,0
+data,er,hadej001,0
+data,er,swara001,0
+data,er,knebc001,0
+data,er,lackj001,2
+data,er,duenb001,0
+data,er,rondh001,0

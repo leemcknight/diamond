@@ -1,0 +1,173 @@
+id,CHN201707210
+version,2
+info,visteam,SLN
+info,hometeam,CHN
+info,site,CHI11
+info,date,2017/07/21
+info,number,0
+info,starttime,1:20PM
+info,daynight,day
+info,usedh,false
+info,umphome,ticht901
+info,ump1b,hamaa901
+info,ump2b,belld901
+info,ump3b,danlk901
+info,howscored,park
+info,pitches,pitches
+info,oscorer,frisd701
+info,temp,86
+info,winddir,rtol
+info,windspeed,5
+info,fieldcond,unknown
+info,precip,unknown
+info,sky,cloudy
+info,timeofgame,197
+info,attendance,42186
+info,wp,bowmm001
+info,lp,edwac001
+info,save,
+start,carpm002,"Matt Carpenter",0,1,3
+start,phamt001,"Tommy Pham",0,2,7
+start,fowld001,"Dexter Fowler",0,3,8
+start,gyorj001,"Jedd Gyorko",0,4,5
+start,dejop001,"Paul DeJong",0,5,6
+start,wongk001,"Kolten Wong",0,6,4
+start,gricr001,"Randal Grichuk",0,7,9
+start,kellc002,"Carson Kelly",0,8,2
+start,martc006,"Carlos Martinez",0,9,1
+start,heywj001,"Jason Heyward",1,1,9
+start,zobrb001,"Ben Zobrist",1,2,4
+start,rizza001,"Anthony Rizzo",1,3,3
+start,contw001,"Willson Contreras",1,4,2
+start,schwk001,"Kyle Schwarber",1,5,7
+start,happi001,"Ian Happ",1,6,8
+start,russa002,"Addison Russell",1,7,6
+start,baezj001,"Javier Baez",1,8,5
+start,arrij001,"Jake Arrieta",1,9,1
+play,1,0,carpm002,12,BCCS,K
+play,1,0,phamt001,12,CCBS,K
+play,1,0,fowld001,10,BX,S7/L
+play,1,0,gyorj001,32,F1BB11BF>F>X,53/G
+play,1,1,heywj001,00,X,63/G
+play,1,1,zobrb001,21,BCBX,S8/L+
+play,1,1,rizza001,12,FFFFBS,K
+play,1,1,contw001,12,BSS>B,SB2
+play,1,1,contw001,22,BSS>B.X,HR/78/F.2-H
+play,1,1,schwk001,12,FFBFX,S8/L
+play,1,1,happi001,01,SX,3/G
+play,2,0,dejop001,32,CBFBBS,K
+play,2,0,wongk001,32,BBCFFBFFS,K
+play,2,0,gricr001,22,BFBFX,HR/78/F
+play,2,0,kellc002,12,CCBFFX,53/G-
+play,2,1,russa002,12,BSCX,S8/L
+play,2,1,baezj001,00,X,64(1)3/GDP
+play,2,1,arrij001,21,BCBX,S9/L
+play,2,1,heywj001,21,BBFX,8/F
+play,3,0,martc006,22,CBCBX,13/G
+play,3,0,carpm002,11,CBX,8/L
+play,3,0,phamt001,22,BCSBX,D7/L+
+play,3,0,fowld001,01,SX,D7/L.2-H
+play,3,0,gyorj001,12,FBSX,4/L
+play,3,1,zobrb001,01,CX,D9/L
+play,3,1,rizza001,00,X,43/G.2-3
+play,3,1,contw001,01,FX,4/L
+play,3,1,schwk001,10,BX,3/G
+play,4,0,dejop001,02,FCS,K
+play,4,0,wongk001,12,CBCS,K
+play,4,0,gricr001,32,BBFBFX,9/F
+play,4,1,happi001,22,CBBFX,43/G
+play,4,1,russa002,01,FX,9/L+
+play,4,1,baezj001,22,CBFBX,8/F+
+play,5,0,kellc002,01,CX,43/G
+play,5,0,martc006,32,SBCBFBFX,63/G-
+play,5,0,carpm002,00,X,8/F
+play,5,1,arrij001,10,BX,E6/G
+play,5,1,heywj001,01,SX,S9/L+.1-2
+play,5,1,zobrb001,12,FBSFX,65(2)/FO/G.1-2
+play,5,1,rizza001,10,BX,S9/G+.2-H(UR);1-3
+play,5,1,contw001,20,BBX,46(1)3/GDP
+play,6,0,phamt001,12,FFBX,9/F
+play,6,0,fowld001,00,X,S8/L
+play,6,0,gyorj001,00,X,7/L+
+play,6,0,dejop001,10,11*B+1>B,SB2
+play,6,0,dejop001,22,11*B+1>B.FSX,3/P
+play,6,1,schwk001,32,BBCSBX,S8/G+
+play,6,1,happi001,00,X,S8/G+.1-2
+play,6,1,russa002,12,SBLC,K
+play,6,1,baezj001,02,CFS,K
+play,6,1,arrij001,00,,NP
+sub,lastt001,"Tommy La Stella",1,9,11
+play,6,1,lastt001,31,.*BB+1FBB,W.2-3;1-2
+play,6,1,heywj001,12,F*BFX,63/G
+play,7,0,wongk001,00,,NP
+sub,strop001,"Pedro Strop",1,9,1
+play,7,0,wongk001,30,.BBBB,W
+play,7,0,gricr001,32,BCBSFBS,K
+play,7,0,kellc002,01,CB,WP.1-2
+play,7,0,kellc002,31,CB.BBX,63/G.2-3
+play,7,0,martc006,00,,NP
+sub,garcg002,"Greg Garcia",0,9,11
+play,7,0,garcg002,32,.BBCBFX,31/G
+play,7,1,zobrb001,00,,NP
+sub,dukez001,"Zach Duke",0,9,1
+play,7,1,zobrb001,10,.BX,7/L
+play,7,1,rizza001,21,BCBX,1/L-
+play,7,1,contw001,00,,NP
+sub,bowmm001,"Matt Bowman",0,9,1
+play,7,1,contw001,01,.LX,13/BG
+play,8,0,carpm002,00,,NP
+sub,edwac001,"Carl Edwards",1,9,1
+play,8,0,carpm002,11,.BFX,D9/L
+play,8,0,phamt001,32,CBFF*BBB,W
+play,8,0,fowld001,32,*BBFCB*B,W.2-3;1-2
+play,8,0,gyorj001,00,,NP
+sub,rondh001,"Hector Rondon",1,9,1
+play,8,0,gyorj001,32,.BSFBBB,W.3-H;2-3;1-2
+play,8,0,dejop001,02,FFX,DGR/8/F+.3-H;2-H;1-3
+play,8,0,wongk001,31,B*BSBB,W
+play,8,0,gricr001,21,BFBX,S7/G.3-H;2-3;1-2
+play,8,0,kellc002,00,,NP
+sub,grimj002,"Justin Grimm",1,9,1
+play,8,0,kellc002,11,.FBX,D78/F.3-H;2-H;1-3
+play,8,0,bowmm001,00,,NP
+sub,voitl001,"Luke Voit",0,9,11
+play,8,0,voitl001,31,.BCBBB,W
+play,8,0,carpm002,11,BFX,S9/L.3-H;2-3;1-2
+play,8,0,phamt001,10,*BX,S8/L.3-H;2-H;1-3
+play,8,0,fowld001,12,FC*BX,3/G/DP.3XH(35);1-2
+play,8,0,gyorj001,31,*BFBB*B,W
+play,8,0,dejop001,00,B,WP.2-3;1-2
+play,8,0,dejop001,12,B.FCFS,K23
+play,8,1,schwk001,00,,NP
+sub,siegk001,"Kevin Siegrist",0,9,1
+play,8,1,schwk001,02,.CSC,K
+play,8,1,happi001,22,BCBFS,K
+play,8,1,russa002,21,FBBX,7/F+
+play,9,0,wongk001,01,CX,7/L
+play,9,0,gricr001,32,CBBFBB,W
+play,9,0,kellc002,11,CBX,8/F
+play,9,0,siegk001,00,,NP
+sub,leakm001,"Mike Leake",0,9,11
+play,9,0,leakm001,22,.CSBBT,K
+play,9,1,baezj001,00,,NP
+sub,oh--s001,"Seung Hwan Oh",0,9,1
+play,9,1,baezj001,22,.CSBBFX,S8/L+
+play,9,1,grimj002,00,,NP
+sub,carav001,"Victor Caratini",1,9,11
+play,9,1,carav001,12,.CBFFFS,K
+play,9,1,heywj001,12,FFBX,E3/G-.1-2
+play,9,1,zobrb001,00,X,S9/G+.2-3;1-2
+play,9,1,rizza001,00,,NP
+sub,almoa002,"Albert Almora",1,3,11
+play,9,1,almoa002,00,.X,8/F/SF.3-H(UR)
+play,9,1,contw001,00,X,5(2)/FO/G.1-2
+data,er,martc006,2
+data,er,dukez001,0
+data,er,bowmm001,0
+data,er,siegk001,0
+data,er,oh--s001,0
+data,er,arrij001,2
+data,er,strop001,0
+data,er,edwac001,3
+data,er,rondh001,4
+data,er,grimj002,2

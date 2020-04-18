@@ -1,0 +1,121 @@
+id,CHN201705230
+version,2
+info,visteam,SFN
+info,hometeam,CHN
+info,site,CHI11
+info,date,2017/05/23
+info,number,0
+info,starttime,7:10PM
+info,daynight,night
+info,usedh,false
+info,umphome,blasc901
+info,ump1b,nelsj901
+info,ump2b,diazl901
+info,ump3b,eddid901
+info,howscored,park
+info,pitches,pitches
+info,oscorer,roseb701
+info,temp,58
+info,winddir,unknown
+info,windspeed,2
+info,fieldcond,unknown
+info,precip,unknown
+info,sky,unknown
+info,timeofgame,125
+info,attendance,32905
+info,wp,lestj001
+info,lp,cuetj001
+info,save,
+start,panij002,"Joe Panik",0,1,4
+start,arroc001,"Christian Arroyo",0,2,5
+start,beltb001,"Brandon Belt",0,3,3
+start,poseb001,"Buster Posey",0,4,2
+start,ruggj001,"Justin Ruggiano",0,5,9
+start,crawb001,"Brandon Crawford",0,6,6
+start,nunee002,"Eduardo Nunez",0,7,7
+start,herng001,"Gorkys Hernandez",0,8,8
+start,cuetj001,"Johnny Cueto",0,9,1
+start,zobrb001,"Ben Zobrist",1,1,4
+start,schwk001,"Kyle Schwarber",1,2,7
+start,bryak001,"Kris Bryant",1,3,5
+start,rizza001,"Anthony Rizzo",1,4,3
+start,happi001,"Ian Happ",1,5,8
+start,heywj001,"Jason Heyward",1,6,9
+start,contw001,"Willson Contreras",1,7,2
+start,russa002,"Addison Russell",1,8,6
+start,lestj001,"Jon Lester",1,9,1
+play,1,0,panij002,22,BFBFFC,K
+play,1,0,arroc001,22,BFBSS,K
+play,1,0,beltb001,12,BFFS,K
+play,1,1,zobrb001,22,FBBFS,K
+play,1,1,schwk001,32,BBBCFX,HR/9/F
+play,1,1,bryak001,12,CSBS,K
+play,1,1,rizza001,12,SBFX,7/L
+play,2,0,poseb001,11,BCX,23/G-
+play,2,0,ruggj001,22,SSBBX,S7/L
+play,2,0,crawb001,11,BFX,64(1)3/GDP
+play,2,1,happi001,11,BCX,43/G+
+play,2,1,heywj001,00,X,HR/89/L
+play,2,1,contw001,02,SSS,K
+play,2,1,russa002,11,CBX,7/L
+play,3,0,nunee002,12,FFBX,53/G
+play,3,0,herng001,21,CBBX,8/L
+play,3,0,cuetj001,12,CCBC,K
+play,3,1,lestj001,22,CSBFBS,K
+play,3,1,zobrb001,12,CBFX,S7/L
+play,3,1,schwk001,11,BC11,PO1(13)
+play,3,1,schwk001,22,BC11.CBFC,K
+play,4,0,panij002,10,BX,53/G-
+play,4,0,arroc001,02,SFC,K
+play,4,0,beltb001,02,FSS,K
+play,4,1,bryak001,22,FBBSX,S9/L
+play,4,1,rizza001,00,X,HR/9/F.1-H
+play,4,1,happi001,21,SBBX,43/G
+play,4,1,heywj001,22,CBFBS,K
+play,4,1,contw001,02,CSS,K
+play,5,0,poseb001,00,X,D7/G
+play,5,0,ruggj001,02,CFS,K
+play,5,0,crawb001,10,*BX,D9/L+.2-H
+play,5,0,nunee002,00,X,S8/F.2-3
+play,5,0,herng001,11,>FB>B,CS2(24)
+play,5,0,herng001,22,>FB>B.FS,K
+play,5,1,russa002,01,CX,63/G
+play,5,1,lestj001,32,CSBBBFX,43/G
+play,5,1,zobrb001,01,SX,4/P
+play,6,0,cuetj001,11,CBX,23/BG
+play,6,0,panij002,22,CFBFBX,8/L
+play,6,0,arroc001,10,BX,43/G+
+play,6,1,schwk001,11,SBX,13/G-
+play,6,1,bryak001,32,BBCSFB*B,W
+play,6,1,rizza001,12,BFSB,WP.1-2
+play,6,1,rizza001,32,BFSB.BFX,63/G.2-3
+play,6,1,happi001,32,BBFBFFC,K
+play,7,0,beltb001,11,BFX,8/L+
+play,7,0,poseb001,20,BBX,13/G-
+play,7,0,ruggj001,22,TBSBX,9/F
+play,7,1,heywj001,00,,NP
+sub,morrb002,"Bryan Morris",0,9,1
+play,7,1,heywj001,20,.BBX,8/F
+play,7,1,contw001,02,FFX,9/L
+play,7,1,russa002,31,FBBBX,63/G
+play,8,0,crawb001,01,SX,43/G
+play,8,0,nunee002,11,CBX,8/F
+play,8,0,herng001,11,BFX,4/P
+play,8,1,lestj001,00,,NP
+sub,osicj001,"Josh Osich",0,9,1
+play,8,1,lestj001,22,.BCBCS,K
+play,8,1,zobrb001,00,X,9/L+
+play,8,1,schwk001,12,BCCFS,K
+play,9,0,osicj001,00,,NP
+sub,zobrb001,"Ben Zobrist",1,1,7
+play,9,0,osicj001,00,,NP
+sub,baezj001,"Javier Baez",1,2,4
+play,9,0,osicj001,00,,NP
+sub,morsm001,"Michael Morse",0,9,11
+play,9,0,morsm001,12,...CFBS,K
+play,9,0,panij002,02,CFS,K
+play,9,0,arroc001,02,CSFX,7/F7LF
+data,er,cuetj001,4
+data,er,morrb002,0
+data,er,osicj001,0
+data,er,lestj001,1

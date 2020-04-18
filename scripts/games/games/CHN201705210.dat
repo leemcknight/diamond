@@ -1,0 +1,175 @@
+id,CHN201705210
+version,2
+info,visteam,MIL
+info,hometeam,CHN
+info,site,CHI11
+info,date,2017/05/21
+info,number,0
+info,starttime,1:20PM
+info,daynight,day
+info,usedh,false
+info,umphome,hoyej901
+info,ump1b,littw901
+info,ump2b,ortir901
+info,ump3b,timmt901
+info,howscored,park
+info,pitches,pitches
+info,oscorer,frisd701
+info,temp,63
+info,winddir,torf
+info,windspeed,11
+info,fieldcond,unknown
+info,precip,unknown
+info,sky,unknown
+info,timeofgame,212
+info,attendance,41671
+info,wp,arrij001
+info,lp,andec001
+info,save,
+start,villj001,"Jonathan Villar",0,1,4
+start,thame001,"Eric Thames",0,2,3
+start,braur002,"Ryan Braun",0,3,7
+start,shawt001,"Travis Shaw",0,4,5
+start,pereh001,"Hernan Perez",0,5,9
+start,bandj001,"Jett Bandy",0,6,2
+start,broxk001,"Keon Broxton",0,7,8
+start,arcio002,"Orlando Arcia",0,8,6
+start,andec001,"Chase Anderson",0,9,1
+start,zobrb001,"Ben Zobrist",1,1,4
+start,schwk001,"Kyle Schwarber",1,2,7
+start,bryak001,"Kris Bryant",1,3,5
+start,rizza001,"Anthony Rizzo",1,4,3
+start,happi001,"Ian Happ",1,5,8
+start,heywj001,"Jason Heyward",1,6,9
+start,contw001,"Willson Contreras",1,7,2
+start,russa002,"Addison Russell",1,8,6
+start,arrij001,"Jake Arrieta",1,9,1
+play,1,0,villj001,22,CBBCX,D7/F+
+play,1,0,thame001,32,BSBBSFX,7/F
+play,1,0,braur002,11,BSX,63/G.2-3
+play,1,0,shawt001,11,BCX,31/G
+play,1,1,zobrb001,20,BBX,HR/89/F
+play,1,1,schwk001,31,BSBBB,W
+play,1,1,bryak001,22,FBC*BFX,S9/F.1-2
+play,1,1,rizza001,21,BCBX,8/F.2-3
+play,1,1,happi001,00,1X,D9/L+.3-H;1-3
+play,1,1,heywj001,30,B*BBB,W
+play,1,1,contw001,11,FBX,9/L/SF.3-H
+play,1,1,russa002,01,CX,6/L
+play,2,0,pereh001,00,X,43/G+
+play,2,0,bandj001,11,CBX,9/F
+play,2,0,broxk001,12,CBTS,K
+play,2,1,arrij001,02,SCX,53/G
+play,2,1,zobrb001,10,BX,9/L+
+play,2,1,schwk001,01,TX,7/F
+play,3,0,arcio002,22,CBBSX,4/P
+play,3,0,andec001,02,CFC,K
+play,3,0,villj001,32,BBSCBX,S9/G+
+play,3,0,thame001,02,CS>B,SB2
+play,3,0,thame001,22,CS>B.*BFX,3/G
+play,3,1,bryak001,31,BBFBX,HR/8/F
+play,3,1,rizza001,32,BBBCSB,W
+play,3,1,happi001,02,CSFT,K
+play,3,1,heywj001,22,BFSFBX,36(1)3/GDP
+play,4,0,braur002,00,X,63/G+
+play,4,0,shawt001,12,CBCX,S9/L
+play,4,0,pereh001,12,BFSFX,7/L+
+play,4,0,bandj001,00,H,HP.1-2
+play,4,0,broxk001,00,B,WP.2-3;1-2
+play,4,0,broxk001,32,B.*BF*BFFFC,K
+play,4,1,contw001,01,SX,D7/L
+play,4,1,russa002,12,BCFFX,D9/L.2-H
+play,4,1,arrij001,01,FX,63/G
+play,4,1,zobrb001,22,CFB*BS,K
+play,4,1,schwk001,11,B2CX,13/G
+play,5,0,arcio002,10,BX,S9/L+
+play,5,0,andec001,12,CLFBX,E1/G.1-2
+play,5,0,villj001,30,BBBB,W.2-3;1-2
+play,5,0,thame001,12,*BSSFX,31/G.3-H(UR);2-3;1-2
+play,5,0,braur002,32,CBBBTFFX,5/P
+play,5,0,shawt001,22,BBCFS,K
+play,5,1,bryak001,00,,NP
+sub,aguij001,"Jesus Aguilar",0,2,3
+com,"Brewers first baseman Eric Thames left the game due to an injured leg"
+play,5,1,bryak001,20,.BBX,HR/7/L
+play,5,1,rizza001,21,BCBH,HP
+play,5,1,happi001,00,,NP
+sub,scahr001,"Rob Scahill",0,9,1
+play,5,1,happi001,12,..SBTX,6(1)3/GDP
+play,5,1,heywj001,00,X,53/G
+play,6,0,pereh001,11,BCX,S6/G-
+play,6,0,bandj001,12,FBFC,K
+play,6,0,broxk001,12,S+1SBC,K
+play,6,0,arcio002,00,B,WP.1-2
+play,6,0,arcio002,21,B.BSB,WP.2-3
+play,6,0,arcio002,32,B.BSB.CX,8/F
+play,6,1,contw001,00,X,S56/G
+play,6,1,russa002,00,X,7/L+
+play,6,1,arrij001,00,,NP
+sub,jay-j001,"Jon Jay",1,9,11
+play,6,1,jay-j001,11,.FBX,S7/L.1-2
+play,6,1,zobrb001,12,FFBX,8/F+.2-3
+play,6,1,schwk001,22,FBBFB,WP.3-H(NR);1-2
+play,6,1,schwk001,32,FBBFB.FX,E4/TH.2-H(NR)(UR)
+com,"$originally scored as single, changed to error on"
+com,"06-01-2017, removing RBI and changing run to earned run"
+play,6,1,bryak001,12,FBFH,HP.1-2
+play,6,1,rizza001,10,*BX,31/G
+play,7,0,scahr001,00,,NP
+sub,strop001,"Pedro Strop",1,2,1
+play,7,0,scahr001,00,,NP
+sub,jay-j001,"Jon Jay",1,9,7
+play,7,0,scahr001,00,,NP
+sub,sogae001,"Eric Sogard",0,9,11
+play,7,0,sogae001,32,...BCFBBX,S5/G-
+play,7,0,villj001,22,CBC*BX,16(1)3/GDP
+play,7,0,aguij001,00,H,HP
+play,7,0,braur002,11,SBS,PB.1-2
+play,7,0,braur002,12,SBS.FX,53/G
+play,7,1,happi001,00,,NP
+sub,felin001,"Neftali Feliz",0,9,1
+play,7,1,happi001,32,.BSBBCFFFS,K
+play,7,1,heywj001,32,BBFBFX,D8/L+
+play,7,1,contw001,00,B,PB.2-3
+play,7,1,contw001,10,B.X,8/L/SF.3-H(UR)
+play,7,1,russa002,12,CBSFS,K
+play,8,0,shawt001,00,,NP
+sub,flord002,"Dylan Floro",1,2,1
+play,8,0,shawt001,12,.SCBS,K
+play,8,0,pereh001,00,X,9/F
+play,8,0,bandj001,00,X,S8/G
+play,8,0,broxk001,10,BX,S9/G.1-2
+play,8,0,arcio002,00,X,43/G
+play,8,1,jay-j001,00,,NP
+sub,hughj001,"Jared Hughes",0,9,1
+play,8,1,jay-j001,00,.X,D8/L+
+play,8,1,zobrb001,11,BCX,7/F.2-3
+play,8,1,flord002,12,F*BSS,K
+play,8,1,bryak001,22,BBCFH,HP
+play,8,1,rizza001,00,B,WP.3-H(NR);1-2
+play,8,1,rizza001,31,B.CB*BX,HR/89/F.2-H
+play,8,1,happi001,22,SFBFBX,D8/L+
+play,8,1,heywj001,31,BCBB*B,W
+play,8,1,contw001,00,X,S7/G.2-H;1-2
+play,8,1,russa002,00,,NP
+sub,drako001,"Oliver Drake",0,9,1
+play,8,1,russa002,12,.CF*BFX,64(1)/FO/G
+play,9,0,drako001,00,,NP
+sub,frann001,"Nick Franklin",0,9,11
+play,9,0,frann001,31,.BBFBB,W
+play,9,0,villj001,01,CX,S6/G-.1-2
+play,9,0,aguij001,20,BBX,D7/L.2-H;1-3
+play,9,0,braur002,02,FSX,13/G-.3-H;2-3
+play,9,0,shawt001,10,BX,HR/89/F.3-H
+play,9,0,pereh001,11,SBX,S9/F
+play,9,0,bandj001,22,BB>FSF>X,53/G.1-2
+play,9,0,broxk001,11,SBX,D9/L.2-H
+play,9,0,arcio002,00,X,63/G
+data,er,andec001,6
+data,er,scahr001,1
+data,er,felin001,0
+data,er,hughj001,4
+data,er,drako001,0
+data,er,arrij001,0
+data,er,strop001,0
+data,er,flord002,5

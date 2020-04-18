@@ -1,0 +1,165 @@
+id,CHN201708180
+version,2
+info,visteam,TOR
+info,hometeam,CHN
+info,site,CHI11
+info,date,2017/08/18
+info,number,0
+info,starttime,1:21PM
+info,daynight,day
+info,usedh,false
+info,umphome,may-b901
+info,ump1b,westj901
+info,ump2b,fleta901
+info,ump3b,wendh902
+info,howscored,park
+info,pitches,pitches
+info,oscorer,frisd701
+info,temp,80
+info,winddir,ltor
+info,windspeed,9
+info,fieldcond,unknown
+info,precip,unknown
+info,sky,cloudy
+info,timeofgame,182
+info,attendance,41814
+info,wp,arrij001
+info,lp,happj001
+info,save,daviw001
+start,bautj002,"Jose Bautista",0,1,9
+start,donaj001,"Josh Donaldson",0,2,5
+start,smoaj001,"Justin Smoak",0,3,3
+start,pears001,"Steve Pearce",0,4,7
+start,montm001,"Miguel Montero",0,5,2
+start,pillk001,"Kevin Pillar",0,6,8
+start,goinr001,"Ryan Goins",0,7,6
+start,barnd001,"Darwin Barney",0,8,4
+start,happj001,"J.A. Happ",0,9,1
+start,almoa002,"Albert Almora",1,1,8
+start,bryak001,"Kris Bryant",1,2,5
+start,rizza001,"Anthony Rizzo",1,3,3
+start,zobrb001,"Ben Zobrist",1,4,7
+start,happi001,"Ian Happ",1,5,4
+start,carav001,"Victor Caratini",1,6,2
+start,heywj001,"Jason Heyward",1,7,9
+start,baezj001,"Javier Baez",1,8,6
+start,arrij001,"Jake Arrieta",1,9,1
+play,1,0,bautj002,32,CCBBBX,3/P2F
+play,1,0,donaj001,11,CBX,8/F
+play,1,0,smoaj001,32,BBTFBX,D9/L+
+play,1,0,pears001,12,CFFBX,S9/G.2-H
+play,1,0,montm001,10,*BX,43/G
+play,1,1,almoa002,32,CFBBBT,K
+play,1,1,bryak001,22,CBBFS,K
+play,1,1,rizza001,12,BSCFFX,63/G
+play,2,0,pillk001,12,CFBS,K
+play,2,0,goinr001,22,SCBBS,K
+play,2,0,barnd001,00,X,8/L
+play,2,1,zobrb001,30,BBBB,W
+play,2,1,happi001,22,FSBBS,K
+play,2,1,carav001,31,BSBBX,D9/L.1-3
+play,2,1,heywj001,11,BFX,S3/G.3-H;2-3
+play,2,1,baezj001,12,TBSX,S9/F.3-H;1-2
+play,2,1,arrij001,22,C*BBSX,9/F
+play,2,1,almoa002,10,BX,S9/F.2-H;1XH(96362)
+com,"$Cubs challenged call that Baez was out at home, claiming"
+com,"that he was safe and that catcher had illegally blocked"
+com,"the plate; call was upheld - out at home"
+play,3,0,happj001,12,BCFFS,K
+play,3,0,bautj002,00,X,S1/G-
+play,3,0,donaj001,32,BC11CB*B>S,K+CS2(243)/DP
+play,3,1,bryak001,22,FSBBX,53/G
+play,3,1,rizza001,01,FX,S7/L
+play,3,1,zobrb001,21,BCBX,8/L
+play,3,1,happi001,22,BC1FB>S,K
+play,4,0,smoaj001,12,CSBX,S8/G
+play,4,0,pears001,00,X,4/P
+play,4,0,montm001,11,BFX,S9/L.1-2
+play,4,0,pillk001,01,CX,8/F
+play,4,0,goinr001,01,FX,8/F
+play,4,1,carav001,31,BBBCX,S7/L
+play,4,1,heywj001,00,X,3/G.1-2
+play,4,1,baezj001,12,BCST,K
+play,4,1,arrij001,02,CCS,K
+play,5,0,barnd001,02,CFFX,3/P
+play,5,0,happj001,00,X,4/L
+play,5,0,bautj002,12,CFFBX,43/G
+play,5,1,almoa002,21,SBBX,S8/G+
+play,5,1,bryak001,32,CFFBF*B*B>F>X,D7/L.1-3
+play,5,1,rizza001,00,X,S7/L.3-H;2-H
+play,5,1,zobrb001,10,B1X,9/L
+play,5,1,happi001,22,BBCTC,K
+play,5,1,carav001,01,F>B,SB2
+play,5,1,carav001,31,F>B.*BVV,IW
+play,5,1,heywj001,02,CFFFS,K
+play,6,0,donaj001,32,FBBBSB,W
+play,6,0,smoaj001,12,SSBC,K
+play,6,0,pears001,12,FF*BC,K
+play,6,0,montm001,21,BBFX,5/P
+play,6,1,baezj001,00,,NP
+sub,loupa001,"Aaron Loup",0,9,1
+play,6,1,baezj001,01,.CX,4/P
+play,6,1,arrij001,12,BTCX,S7/G
+play,6,1,almoa002,02,SCS,K
+play,6,1,bryak001,12,CBFX,9/L
+play,7,0,pillk001,10,BX,D6/L
+play,7,0,goinr001,01,CX,43/G.2-3
+play,7,0,barnd001,00,,NP
+sub,carre001,"Ezequiel Carrera",0,8,11
+play,7,0,carre001,31,.CBBBB,W
+play,7,0,loupa001,00,,NP
+sub,morak001,"Kendrys Morales",0,9,11
+play,7,0,morak001,00,,NP
+sub,edwac001,"Carl Edwards",1,9,1
+play,7,0,morak001,00,..X,FC3/G.3XH(3251);1-3
+play,7,0,bautj002,32,SBFBF*B>F>F>S,K
+play,7,1,rizza001,00,,NP
+sub,bautj002,"Jose Bautista",0,1,5
+play,7,1,rizza001,00,,NP
+sub,donaj001,"Josh Donaldson",0,2,6
+play,7,1,rizza001,00,,NP
+sub,goinr001,"Ryan Goins",0,7,4
+play,7,1,rizza001,00,,NP
+sub,carre001,"Ezequiel Carrera",0,8,9
+play,7,1,rizza001,00,,NP
+sub,mayzt001,"Tim Mayza",0,9,1
+play,7,1,rizza001,32,.....CBBBFFFS,K
+play,7,1,zobrb001,00,X,D7/L
+play,7,1,happi001,02,FF>B,CS3(25)
+play,7,1,happi001,12,FF>B.S,K
+play,8,0,donaj001,00,,NP
+sub,strop001,"Pedro Strop",1,9,1
+play,8,0,donaj001,22,.BBCFX,9/F
+play,8,0,smoaj001,00,X,43/G+
+play,8,0,pears001,10,BX,S9/F
+play,8,0,montm001,00,X,S8/L.1-2
+play,8,0,pillk001,12,BCSX,D7/L+.2-H;1-3
+play,8,0,goinr001,12,CBSX,S9/G.3-H;2-H
+play,8,0,carre001,00,X,8/F
+play,8,1,carav001,12,CSBX,S8/L+
+play,8,1,heywj001,00,X,36(1)/FO/G
+com,"$Blue Jays challenged call that Heyward was safe at 1st; call"
+com,"was upheld - force out, no double play"
+play,8,1,baezj001,01,FX,HR/7/F.1-H
+play,8,1,strop001,00,,NP
+sub,jay-j001,"Jon Jay",1,9,11
+play,8,1,jay-j001,31,.CBBBB,W
+play,8,1,almoa002,00,,NP
+sub,aokin001,"Nori Aoki",0,9,9
+play,8,1,almoa002,00,,NP
+sub,teper001,"Ryan Tepera",0,8,1
+play,8,1,almoa002,00,..X,8/F+
+play,8,1,bryak001,00,X,9/F
+play,9,0,aokin001,00,,NP
+sub,daviw001,"Wade Davis",1,9,1
+play,9,0,aokin001,32,.SBBBCFX,13/G
+play,9,0,bautj002,12,CSBX,63/G
+play,9,0,donaj001,22,FBBSFS,K
+data,er,happj001,5
+data,er,loupa001,0
+data,er,mayzt001,2
+data,er,teper001,0
+data,er,arrij001,1
+data,er,edwac001,0
+data,er,strop001,3
+data,er,daviw001,0
