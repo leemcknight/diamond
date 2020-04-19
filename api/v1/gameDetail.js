@@ -9,7 +9,9 @@ function parseGame(item) {
     const blob = item.data;
     let game = {        
         plays: [],
-        info: []
+        info: {},
+        starters: [],
+        data: []
     };
     const lines = blob.split('\n');
     game.game_id = item.game_id;    
@@ -24,15 +26,25 @@ function parseGame(item) {
                 game.plays.push(line);
                 break;
             case 'sub':
+                game.plays.push(line);
                 break;
             case 'start':
+                game.starters.push({
+                    id: parts[1],
+                    name: parts[2],
+                    team: parts[3] == 0 ? "visitor" : "home",
+                    battingOrder: parts[4],
+                    fieldPosition: parts[5]
+                });
                 break;
-            case 'info':
-                game.info[line[1]] = line[2];
+            case 'info':                
+                game.info[parts[1]] = parts[2];
                 break;
             case 'com':
-                break;            
-        }
+                break;          
+            case 'data':
+                game.data.push(line);
+        }   
     }
     return game;
 }

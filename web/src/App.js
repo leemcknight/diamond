@@ -3,6 +3,7 @@ import Franchises from './franchises';
 import Schedules from './schedules';
 import People from './people';
 import Ballparks from './ballparks';
+import PlayByPlay from './playByPlay';
 import Home from './home';
 import './App.css';
 import {
@@ -28,6 +29,8 @@ function App() {
               </Route>
               <Route path="/people">
                 <People />
+              </Route>
+              <Route path="/games/:gameId/playByPlay" render={(props) => <PlayByPlay {...props} />}>                  
               </Route>
               <Route path="/ballparks">
                 <Ballparks />
