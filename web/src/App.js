@@ -30,7 +30,8 @@ function App() {
               <Route path="/people">
                 <People />
               </Route>
-              <Route path="/games/:gameId/playByPlay" render={(props) => <PlayByPlay {...props} />}>                  
+              <Route path="/games/:gameId/playByPlay">                  
+                <PlayByPlay />
               </Route>
               <Route path="/ballparks">
                 <Ballparks />
