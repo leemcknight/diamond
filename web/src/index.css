@@ -20,8 +20,23 @@ ul {
   background-color: #333;
 }
 
+#teamsColumn {
+  border-radius: 3px;
+  border-color: #333;
+}
+
+#teamList {
+  background-color: lightgray;
+  color: black;
+  display: block;
+}
+
 li {
   float: left;
+}
+
+#scheduleWrapper {
+  display: inline;
 }
 
 li a {
