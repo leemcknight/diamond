@@ -5,6 +5,7 @@ import People from './people';
 import Ballparks from './ballparks';
 import PlayByPlay from './playByPlay';
 import Home from './home';
+import MainHeader from './header';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -56,36 +57,12 @@ function Footer() {
      parties may contact Retrosheet at 20 Sunset Rd.,
      Newark, DE 19711.
 </p>
+<p>
+Icons made by <a href="https://www.flaticon.com/<?=_('authors/')?>surang" title="surang">surang</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+</p>
     </div>
   );
 } 
 
-function MainHeader() {
-  let style = {
-    float: "right"
-  };
-
-  return(
-    
-
-    <div id="mainheader">
-      <div id="titlebar">
-        <ul>
-        <li><a href="https://icon-library.net/icon/baseball-icon-vector-2.html" title="Baseball Icon Vector #366708"><img src="https://icon-library.net//images/baseball-icon-vector/baseball-icon-vector-2.jpg" width="48" /></a></li>
-        <li>Diamond</li>
-        </ul>
-      </div>      
-      <div id="mainmenu">        
-        <ul>
-          <li><Link to="franchises">Teams</Link></li>
-          <li><Link to="schedules">Find a game</Link></li>
-          <li><Link to="people">Players</Link></li>
-          <li><Link to="ballparks">ballparks</Link></li>
-          <li style={style}><a href="#about">About</a></li>
-        </ul>
-      </div>      
-    </div>
-  );
-}
 
 export default App;

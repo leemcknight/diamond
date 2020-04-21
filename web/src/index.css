@@ -17,7 +17,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: cornflowerblue;
 }
 
 #teamsColumn {
@@ -29,6 +29,7 @@ ul {
   background-color: lightgray;
   color: black;
   display: block;
+  
 }
 
 li {
@@ -45,9 +46,10 @@ li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  border-radius: 5px;
 }
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-  background-color: #111;
+  background-color: mediumblue;
 }
