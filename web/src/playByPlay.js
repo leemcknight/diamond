@@ -2,6 +2,26 @@ import React from 'react';
 import {useParams} from "react-router-dom";
 import { useFetch  } from 'react-async';
 
+
+function groupPlays(plays) {
+    let innings = [];
+    let currentInning = {};
+    let play;
+    for(play of plays) {
+        if(play.inning == currentInning.inning) {
+            currentInning.plays.push(play);
+        } else {
+            currentInning = {
+                plays: [],
+                inning: play.inning
+            }
+            innings.push(currentInning);
+        }
+    }
+
+    return innings;
+}
+
 function PlayByPlay() {
     const {gameId} = useParams();
     const headers = { Accept: "application/json" }
@@ -12,23 +32,29 @@ function PlayByPlay() {
         return <h2>Loading...</h2>
     if(error)
         return <h2>We encountered an error.</h2>
-    if(data)
-    return (
-        <div>     
-            <h1>{data.info.visteam} at {data.info.hometeam}</h1>
-            <h2>{data.info.date}</h2>
-            <h2>GameId: {gameId}</h2>                         
-            <h2>Game Info:</h2>
-            <div id="gameinfo">
-
+    if(data) {
+        const innings = groupPlays(data.plays);
+        return (
+            <div>     
+                <h1>{data.info.visteam} at {data.info.hometeam}</h1>
+                <h2>{data.info.date}</h2>
+                <h2>GameId: {gameId}</h2>                         
+                <h2>Game Info:</h2>
+                <div id="gameinfo">
+                </div>
+                <div>   
+                    {innings.map(inning => (
+                        <div>
+                            <div><h3>{inning.inning}</h3></div>
+                            <div>{inning.plays.map(play => (
+                                <div>{play.event}</div>
+                                ))}
+                            </div>
+                        </div>
+                    ))}                                                                 
+                </div>            
             </div>
-            <div>   
-                {data.plays.map(play => (
-                    <div>{JSON.stringify(play)}</div>
-
-                ))}                                                                 
-            </div>            
-        </div>
-    );
+        );
+    }
 }
 export default PlayByPlay;

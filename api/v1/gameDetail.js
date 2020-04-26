@@ -1,7 +1,7 @@
 
 const aws = require('aws-sdk');
-const dynamo = new aws.DynamoDB();
 const tableName = "game";
+const {parsePlay} = require('./parsePlay');
 
 const docClient = new aws.DynamoDB.DocumentClient();
 
@@ -23,7 +23,7 @@ function parseGame(item) {
             case 'id':
                 break;
             case 'play':
-                game.plays.push(line);
+                game.plays.push(parsePlay(line));
                 break;
             case 'sub':
                 game.plays.push(line);

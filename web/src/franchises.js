@@ -1,23 +1,27 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { useFetch  } from 'react-async';
 
-
-function filter(query, syncResults, asyncResults) {
-  
-}
 
 function Franchises() {
-    return (
-      <div className="Franchises">
-          <label>
-              Team Name: 
-            <input type="text" name="name"></input>
-        </label>
-      </div>
-    );
+    const headers = { Accept: "application/json" }
+    const baseUrl = "https://bmkj033bof.execute-api.us-west-2.amazonaws.com/dev/v1";
+    const { data, error, isPending } = useFetch(`${baseUrl}/franchises`, { headers });
+    const teams = data;
+    if(isPending)
+      return <h2>Loading...</h2>
+    if(error)
+      return <h2>We encountered an error.</h2>
+    if(data)
+      return (        
+        <div className="Franchises">
+            <div id="teamsColumn">
+                  <ul id="teamList">
+                      {teams.map(team => <li id="team"><a href="#"> {team.location} {team.nickname}</a></li>)}
+                  </ul>
+              </div>
+        </div>
+      );
   } 
 
   export default Franchises;
