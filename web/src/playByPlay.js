@@ -1,6 +1,7 @@
 import React from 'react';
 import {useParams} from "react-router-dom";
 import { useFetch  } from 'react-async';
+import './playByPlay.css'
 
 
 function groupPlays(plays) {
@@ -40,20 +41,28 @@ function PlayByPlay() {
                 <h2>{data.info.date}</h2>
                 <h2>GameId: {gameId}</h2>                         
                 <h2>Game Info:</h2>
-                <div id="gameinfo">
-                </div>
-                <div>   
-                    {innings.map(inning => (
-                        <div>
-                            <div><h3>{inning.inning}</h3></div>
-                            <div>{inning.plays.map(play => (
-                                <div>{play.event}</div>
-                                ))}
+                <div id="gameinfo">                
+                    <div>   
+                        {innings.map(inning => (
+                            <div>
+                                <div><h3>{inning.inning}</h3></div>
+                                <div>{inning.plays.map(play => (
+                                    <div>
+                                        <div class="play-event">{play.event}</div>
+                                        <div class="play-pitches">
+                                            <div>{play.pitches.map(pitch => (
+                                                <div class="play-pitch">{pitch.result}</div>
+                                            ))}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ))}                                
+                                </div>                            
                             </div>
-                        </div>
-                    ))}                                                                 
+                            ))} 
+                    </div>                                                                                    
                 </div>            
-            </div>
+            </div>            
         );
     }
 }
