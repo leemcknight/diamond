@@ -44,17 +44,20 @@ function PlayByPlay() {
                 <div id="gameinfo">                
                     <div>   
                         {innings.map(inning => (
-                            <div>
+                            <div class="shadow-sm p-3 mb-5 bg-white rounded border border-primary">
                                 <div><h3>{inning.inning}</h3></div>
                                 <div>{inning.plays.map(play => (
                                     <div>
-                                        <div class="play-event">{play.event}</div>
-                                        <div class="play-pitches">
-                                            <div>{play.pitches.map(pitch => (
-                                                <div class="play-pitch">{pitch.result}</div>
-                                            ))}
+                                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                            {play.event}
+                                        </button>
+                                        <div class="collapse" id="collapseExample">
+                                            {play.pitches.map(pitch => (
+                                                <div class="card card-body">
+                                                {pitch.result}
                                             </div>
-                                        </div>
+                                            ))} 
+                                        </div>                                                                                
                                     </div>
                                     ))}                                
                                 </div>                            
