@@ -11,8 +11,7 @@ test('parse dynamo json', () => {
   buf = fs.readFileSync('./v1/test/dynamo_ballparks.json');
   let dynamoResponse = JSON.parse(buf);
   let parks = [];
-  for(const item of dynamoResponse.Items) {
-      console.log(JSON.stringify(item));
+  for(const item of dynamoResponse.Items) {      
         let league;
         let end;
         if(item.league != undefined) {
@@ -31,16 +30,4 @@ test('parse dynamo json', () => {
             state: item.state.S
         })
 }
-})
-/*
-test('ballpark dynamo parser', () => {
-    dynamo.scan = jest.fn((params, callback) => {
-        buf = fs.readFileSync('./test/dynamo_ballparks.json');
-        return buf;
-    });
-
-    json = api.getAll();
-    expect(json).not.toBe(undefined);
-    console.log(json);
-})
-*/
+});

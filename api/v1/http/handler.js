@@ -4,6 +4,7 @@ const ballpark = require('../ballpark');
 const franchise = require('../franchise');
 const schedule = require('../schedule');
 const gameDetail = require('../gameDetail');
+const {getPeople} = require('../person');
 
 const dynamo = new aws.DynamoDB();
 
@@ -61,19 +62,12 @@ module.exports.getGameDetails = async event => {
   return Promise.resolve(response);
 }
 
-module.exports.getPerson = async event => {
+module.exports.batchGetPerson = async event => {
+  const ids = JSON.parse(event.body);
+  const people = getPeople(ids);
   return {
     statusCode: 200,
-    body: JSON.stringify(
-      {
-        message: 'Go Serverless v1.0! Your function executed successfully!',
-        input: event,
-      },
-      null,
-      2
-    ),
+    headers: {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*"},
+    body: JSON.stringify(people)
   };
-
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // return { message: 'Go Serverless v1.0! Your function executed successfully!', event };
-};
+}

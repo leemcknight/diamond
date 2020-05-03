@@ -17,7 +17,7 @@ function MainHeader() {
       <div id="mainheader">        
         <div id="mainmenu">        
           <ul>
-            <li><Link to="home"><img src="./diamond.png" width="32" /></Link></li>              
+            <li><Link to="home"><img src="/diamond.png" width="32" /></Link></li>              
             <li>
               <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
