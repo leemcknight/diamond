@@ -1,3 +1,16 @@
+const fs = require('fs');
+
+
+const locations = function() {
+    const csv = fs.readFileSync('config/field_locations.csv').toString();
+    const lines = csv.split(/\r?\n/);
+    let locs = {};
+    for(line of lines) {
+        parts = line.split(',');
+        locs[parts[0].trim()] = parts[1];
+    }    
+    return locs;
+}();
 
 function parsePitches(pitchString) {
     
@@ -109,8 +122,16 @@ function parsePitches(pitchString) {
 }
 
 function locationModifier(modifierCode) {
-    const battedBallType = modifierCode.substring(0,1);
-    let type, location;
+    
+    let battedBallType;
+    for(c of 'GLPFB') {
+        if(modifierCode.startsWith(c)) {
+            battedBallType = c;
+            break;
+        }
+    }
+    let type;
+
     switch(battedBallType) {
         case 'G':
             type = 'Ground ball';
@@ -128,6 +149,15 @@ function locationModifier(modifierCode) {
             type = 'Bunt'
             break;
     }
+
+    const locationCode = modifierCode.substring(1, modifierCode.length);    
+    let val;
+    if(type == undefined) {
+        val =  `to ${locations[locationCode]}`;    
+    } else {
+        val =  `${type} to ${locations[locationCode]}`;    
+    }    
+    return val;
 }
 
 function buildModifiers(modifierCode) {     
@@ -266,8 +296,14 @@ function buildModifiers(modifierCode) {
             modifier = 'umpire review of call on the field';
             break;
         default:
-            return locationModifier(modifier);
+            if(modifierCode == undefined) {
+                return null;
+            } else {
+                return locationModifier(modifierCode);
+            }
     }            
+
+    return modifier;
         
 }
 
@@ -283,27 +319,27 @@ function buildDescription(code) {
             desc.long = "Pop out to catcher";
             desc.short = "Pop out";
         case '3':
-            desc.long = "Pop out to first";
+            desc.long = "Pop out to first baseman";
             desc.short = "Pop out";
         case '4':
-            desc.long = "Pop out to second";
+            desc.long = "Pop out to second baseman";
             desc.short = "Pop out";
         case '5':
-            desc.long = "Pop out to third";
+            desc.long = "Pop out to third baseman";
             desc.short = "Pop out";
         case '6':
-            desc.long = "Pop out to short";
+            desc.long = "Pop out to shortstop";
             desc.short = "Pop out";
             break;
         case '7':
-            desc.long = "Flyout to left";
+            desc.long = "Flyout to left fielder";
             desc.short = "Flyout"
         case '8':
-            desc.long = "Flyout to center";
+            desc.long = "Flyout to center fielder";
             desc.short = "Flyout";
             break;
         case '9':
-            desc.long = "Flyout to right";
+            desc.long = "Flyout to right fielder";
             desc.short = "Flyout";
             break;
         case 'K':
@@ -331,7 +367,7 @@ function buildDescription(code) {
         case 'T':
             desc.short = 'Triple';
             desc.long = code;
-            break;
+            break;        
         default:
             desc.long = desc.short =  code;
             break;
@@ -345,7 +381,7 @@ function parseEvent(eventString) {
     let event = {
         modifiers: []
     };     
-    for(i = 0; i <= parts.length; i++) {
+    for(i = 0; i < parts.length; i++) {
         if(i == 0) {
             const  desc = buildDescription(parts[i]);
             event.description = desc.long;
@@ -354,9 +390,9 @@ function parseEvent(eventString) {
             const subparts = parts[i].split('.');
             if(subparts.length > 1) {
                 event.advance = subparts[1];
-            }
+            }            
             event.modifiers.push(buildModifiers(subparts[0]));
-        } else {
+        } else {            
             event.modifiers.push(buildModifiers(parts[i]));
         }
     }
@@ -373,6 +409,7 @@ function parsePlay(playCsv) {
     play.count = playParts[4];
     play.pitches = parsePitches(playParts[5]);
     play.event = parseEvent(playParts[6]);
+    play.substitutions = [];    
     return play;
 
 }

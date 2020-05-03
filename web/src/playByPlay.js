@@ -68,38 +68,41 @@ function PlayByPlay() {
         const innings = groupPlays(data.plays);
         return (
             <div>     
-                <h1><img src={`/team_logos/${data.info.visteam}.svg`} width="64" height="64"/> at <img src={`/team_logos/${data.info.hometeam}.svg`} width="64" height="64"/></h1>
-                <h2>{data.info.date}</h2>
-                <h2>GameId: {gameId}</h2>                         
-                <h2>Game Info:</h2>
+                <h1><img src={`/team_logos/${data.info.visteam}.svg`} width="128" height="128"/> at <img src={`/team_logos/${data.info.hometeam}.svg`} width="128" height="128"/></h1>
+                <h2>{data.info.date}</h2>         
+                <h3>{data.info.starttime}</h3>                       
                 <div id="gameinfo">                
                     <div class="container">   
                         {innings.map(inning => (
-                            <div class="shadow-sm p-3 mb-5 bg-white rounded border border-primary">
-                                <div><h3>{inning.side == 0 ? "Top" : "Bottom"} {inning.inning}</h3></div>
+                            <div class="border border-primary mt-4 p-4">
+                                <div class="bg-primary text-white"><h3>{inning.side == 0 ? "Top" : "Bottom"} {inning.inning}</h3></div>
                                 <div>{inning.plays.map(play => (
-                                    <div class="clearfix border-dark">
-                                        <div class="float-left">
-                                            {play.playerId + " - " + play.event.description}
-                                            <ul>
-                                                {play.event.modifiers.map(modifier => (
-                                                    <li>
-                                                        {modifier}
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                        <div class="card float-right">
-                                            <button class="btn btn-primary btn-block btn-sm" type="button" data-toggle="collapse" data-target={`#${play.playerId}${play.inning}${play.side}`} aria-expanded="false" aria-controls={`${play.playerId}${play.inning}${play.side}`}>
-                                                {play.event.shortDescription}
-                                            </button>
-                                            <div class="collapse" id={`${play.playerId}${play.inning}${play.side}`}>
-                                                {play.pitches.map(pitch => (
-                                                    <div class="card card-body">
-                                                        {pitch.result}
-                                                    </div>
-                                                ))} 
-                                            </div>                                                                                
+                                    <div class="container">                                                               
+                                        {play.comment ? <div class="alert alert-primary row" role="alert"><div class="col">{play.comment}</div></div> : null}
+                                        {play.substitutions.map(substitution => 
+                                            <div class="alert alert-secondary row" role="alert"><div class="col">{substitution}</div></div>
+                                            )}
+                                        <div class="clearfix border-dark bg-white d-inline row-cols-2">
+                                            <div class="col">
+                                                {play.playerId + " - " + play.event.description}                                                
+                                                <div>
+                                                    {play.event.modifiers.map(modifier => (
+                                                        <div>{modifier}</div>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                            <div class="card col-md-auto">
+                                                <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target={`#${play.playerId}${play.inning}${play.side}`} aria-expanded="false" aria-controls={`${play.playerId}${play.inning}${play.side}`}>
+                                                    {play.event.shortDescription}
+                                                </button>
+                                                <div class="collapse" id={`${play.playerId}${play.inning}${play.side}`}>
+                                                    {play.pitches.map(pitch => (
+                                                        <div class="m-1 p-1">
+                                                            {pitch.result}
+                                                        </div>
+                                                    ))} 
+                                                </div>                                                                                
+                                            </div>
                                         </div>
                                     </div>
                                     ))}                                
