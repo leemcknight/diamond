@@ -3,6 +3,7 @@ const aws = require('aws-sdk');
 const tableName = "game";
 const {parsePlay} = require('./parsePlay');
 const {getLocationString} = require('./fieldLocations');
+const {parseGameLog} = require('./gamelog');
 
 const docClient = new aws.DynamoDB.DocumentClient();
 
@@ -24,11 +25,13 @@ function parseSubstitution(substitutionString) {
 
 function parseGame(item) {
     const blob = item.data;
+    const log = parseGameLog(item.log);
     let game = {        
         plays: [],
         info: {},
         starters: [],
-        data: []
+        data: [],
+        log: log
     };
     const lines = blob.split('\n');
     game.game_id = item.game_id;    
@@ -42,10 +45,7 @@ function parseGame(item) {
                 break;
             case 'play':
                 play = parsePlay(line);
-                game.plays.push(play);
-                //if(play.event.description != 'NP') {
-                 //   game.plays.push(play);
-               // }
+                game.plays.push(play);                
                 break;
             case 'sub':
                 play.substitutions.push(parseSubstitution(line));                

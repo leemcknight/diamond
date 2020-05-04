@@ -12,15 +12,6 @@ code {
     monospace;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: cornflowerblue;
-  vertical-align: center;  
-  vertical-align: middle;
-}
 
 #teamsColumn {
   border-radius: 3px;
@@ -33,26 +24,7 @@ ul {
   display: block;
   
 }
-
-li {
-  float: left;  
-  display: block;
-}
-
 #scheduleWrapper {
   display: inline;
 }
 
-li a {  
-  color: white;
-  text-align: center;
-  padding: 10px 16px;
-  text-decoration: none;  
-  display: table-cell;
-  vertical-align: middle;
-}
-
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-  background-color: dodgerblue;
-}

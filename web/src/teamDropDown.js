@@ -20,7 +20,7 @@ function TeamDropDown() {
       return <h2>We encountered an error.</h2>
     if(teams)
         return (                    
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">            
+        <div class="dropdown-menu scroll-window" aria-labelledby="dropdownMenuButton">            
             {teams.map(team => <a class="dropdown-item" href="#">{team.location} {team.nickname}</a>)}            
         </div>        
     );
