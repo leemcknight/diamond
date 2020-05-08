@@ -1,5 +1,5 @@
 const fs = require('fs');
-
+const {getLocationString} = require('./fieldLocations');
 
 const locations = function() {
     const csv = fs.readFileSync('config/field_locations.csv').toString();
@@ -312,61 +312,65 @@ function buildDescription(code) {
     const initial = code.substring(0,1);
     switch(initial) {
         case '1':
-            desc.long = "Pop out to pitcher";
+            desc.long = "pops out to pitcher";
             desc.short = "Pop out";
             break;
         case '2':
-            desc.long = "Pop out to catcher";
+            desc.long = "pops out to catcher";
             desc.short = "Pop out";
         case '3':
-            desc.long = "Pop out to first baseman";
+            desc.long = "pops out to first baseman";
             desc.short = "Pop out";
         case '4':
-            desc.long = "Pop out to second baseman";
+            desc.long = "pops out to second baseman";
             desc.short = "Pop out";
         case '5':
-            desc.long = "Pop out to third baseman";
+            desc.long = "pops out to third baseman";
             desc.short = "Pop out";
         case '6':
-            desc.long = "Pop out to shortstop";
+            desc.long = "pops out to shortstop";
             desc.short = "Pop out";
             break;
         case '7':
-            desc.long = "Flyout to left fielder";
+            desc.long = "flies out to left";
             desc.short = "Flyout"
         case '8':
-            desc.long = "Flyout to center fielder";
+            desc.long = "flies out to center";
             desc.short = "Flyout";
             break;
         case '9':
-            desc.long = "Flyout to right fielder";
+            desc.long = "flies out right";
             desc.short = "Flyout";
             break;
         case 'K':
-            desc.long = desc.short = "Strikeout";
+            desc.long = "stikes out";
+            desc.short = "Strikeout"
             break;
         case 'W':
-            desc.long = desc.short = "Walk";
+            desc.long = "walks";
+            desc.short = "Walk";
             break;
         case 'I':
         case 'IW':
-            desc.long = desc.short = "Intentional Walk";
+            desc.long = "intentionally walked";
+            desc.short = "Intentional Walk";
             break;
         case 'H':
         case 'HR':
-            desc.long = desc.short = "Homerun";
+            desc.long = "homers";
+            desc.short = "Homerun";
             break;
         case 'S':
             desc.short = "Single";
-            desc.long = code;
+            desc.long = `singles to ${getLocationString(code.substring(1,2))}`;
             break;
         case 'D':
             desc.short = 'Double';
-            desc.long = code;
+            desc.long = `doubles to ${getLocationString(code.substring(1,2))}`;
             break;
         case 'T':
             desc.short = 'Triple';
-            desc.long = code;
+            desc.long = `triples to ${getLocationString(code.substring(1,2))}`;
             break;        
         default:
             desc.long = desc.short =  code;

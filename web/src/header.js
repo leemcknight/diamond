@@ -27,13 +27,13 @@ function MainHeader() {
               </div>
             </li>
             <li class="nav-item mx-2">
-              <Link class="nav-link" to="/schedules">Find a game</Link>
+              <Link class="nav-link" to="/schedules">Schedules</Link>
             </li>
             <li class="nav-item mx-2">
               <Link class="nav-link" to="/people">Players</Link>
             </li>
             <li class="nav-item mx-2">
-              <Link class="nav-link" to="/Ballparks">Ballparks</Link>
+              <Link class="nav-link" to="/ballparks">Ballparks</Link>
             </li>
             <li class="nav-item mx-2">
               <Link class="nav-link" to="About">About</Link>

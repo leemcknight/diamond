@@ -31,7 +31,7 @@ function App() {
                 <Route path="/people">
                   <People />
                 </Route>
-                <Route path="/games/:gameId/playByPlay">                  
+                <Route path="/games/:gameId">                  
                   <PlayByPlay />
                 </Route>
                 <Route path="/ballparks">

@@ -27,7 +27,7 @@ function Schedules() {
                 </select>
             </label>
                         
-            <Link to={`/games/${gameId}/playByPlay`}>Game Link</Link>
+            <Link to={`/games/${gameId}`}>Game Link</Link>
         </div>
     </div>
     );    

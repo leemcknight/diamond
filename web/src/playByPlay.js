@@ -58,8 +58,8 @@ function PlayByPlay() {
     const {gameId} = useParams();
     const headers = { Accept: "application/json" }
     const baseUrl = "https://bmkj033bof.execute-api.us-west-2.amazonaws.com/dev/v1";
-    const { data, error, isPending } = useFetch(`${baseUrl}/game/${gameId}/playByPlay`, { headers })
-      
+    const { data, error, isPending } = useFetch(`${baseUrl}/game/${gameId}/playByPlay`, { headers });
+    const [currentInning, setCurrentInning] = React.useState(1);    
     if(isPending)
         return <h2>Loading...</h2>
     if(error)
@@ -68,52 +68,53 @@ function PlayByPlay() {
         const innings = groupPlays(data.plays);
         return (
             <div>     
-                <h1><img src={`/team_logos/${data.info.visteam}.svg`} width="128" height="128"/> at <img src={`/team_logos/${data.info.hometeam}.svg`} width="128" height="128"/></h1>
+                <div class="m-4"><img src={`/team_logos/${data.info.visteam}.svg`} width="128" height="128"/> at <img src={`/team_logos/${data.info.hometeam}.svg`} width="128" height="128"/></div>
                 <h2>{data.info.date}</h2>         
                 <h3>{data.info.starttime}</h3>    
 
                 <div class="container border">
-                    <div class="row border-bottom">
-                        <div class="col">Final</div>
+                    <div class="row border-bottom row-md-auto">
+                        <div class="col col-md-auto">Final</div>
                             {data.log.box.map(inning => (
-                                <div class="col">{inning.i}</div>
+                                <div class="col col-md-auto">{inning.i}</div>
                             ))}                            
-                            <div class="col">R</div>
-                            <div class="col">H</div>
-                            <div class="col">E</div>
+                            <div class="col col-md-auto">R</div>
+                            <div class="col col-md-auto">H</div>
+                            <div class="col col-md-auto">E</div>
                     </div>
                     <div class="row border-bottom">
-                        <div class="col">{data.info.visteam}</div>
+                        <div class="col col-md-auto">{data.info.visteam}</div>
                             {data.log.box.map(inning => (
-                                <div class="col">{inning.v}</div>
+                                <div class="col col-md-auto">{inning.v}</div>
                             ))}
-                            <div class="col">{data.log.visitorScore}</div>
-                            <div class="col">{data.log.visitorHits}</div>
-                            <div class="col">{data.log.visitorErrors}</div>
+                            <div class="col col-md-auto">{data.log.visitorScore}</div>
+                            <div class="col col-md-auto">{data.log.visitorHits}</div>
+                            <div class="col col-md-auto">{data.log.visitorErrors}</div>
                     </div>
                     <div class="row">
-                        <div class="col">{data.info.hometeam}</div>
+                        <div class="col col-md-auto">{data.info.hometeam}</div>
                             {data.log.box.map(inning => (
-                                <div class="col">{inning.h}</div>
+                                <div class="col col-md-auto">{inning.h}</div>
                             ))}
-                            <div class="col">{data.log.homeScore}</div>
-                            <div class="col">{data.log.homeHits}</div>
-                            <div class="col">{data.log.homeErrors}</div>
+                            <div class="col col-md-auto">{data.log.homeScore}</div>
+                            <div class="col col-md-auto">{data.log.homeHits}</div>
+                            <div class="col col-md-auto">{data.log.homeErrors}</div>
                     </div>
                     
                 </div>                   
                 <div id="gameinfo">   
 
-                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-toolbar justify-content-md-center m-4" role="toolbar" aria-label="Toolbar with button groups">
                     <div class="btn-group mr-2" role="group" aria-label="First group">
                     {innings.map(inning => 
-                            inning.side == 0 ? <button type="button" class="btn btn-secondary">{inning.inning}</button> : null
+                            inning.side == 0 ? <button type="button" class="btn btn-secondary" onClick={() => setCurrentInning(inning.inning)}>{inning.inning}</button> : null
                         )}
                     </div>                    
                 </div>
 
                     <div>   
-                        {innings.map(inning => (
+                        {innings.filter(inning => inning.inning == currentInning)
+                                .map(inning => (
                             <div class="m-4 w-50 card">
                                 <div class="card-header">{inning.side == 0 ? "Top" : "Bottom"} {inning.inning}</div>
                                 <div class="card-body">{inning.plays.map(play => (
@@ -125,7 +126,7 @@ function PlayByPlay() {
                                         {play.event.shortDescription != 'NP' ?     
                                         <div class="clearfix bg-white">
                                             <div class="float-left">
-                                                {play.playerId + " - " + play.event.description}                                                                                                
+                                                { `${play.playerId} ${play.event.description}`}
                                                     {play.event.modifiers.map(modifier => (
                                                         <div>{modifier}</div>
                                                     ))}                                                
