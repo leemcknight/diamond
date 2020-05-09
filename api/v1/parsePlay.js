@@ -380,6 +380,30 @@ function buildDescription(code) {
     return desc;
 }
 
+function advanceDescription(advanceString) {
+    const fromBases = {
+        'B': 'batter',
+        '1': 'runner on 1st',
+        '2': 'runner on 2nd',
+        '3': 'runner on 3rd'
+    };
+
+    const toBases = {
+        '1': 'takes 1st',
+        '2': 'advances to 2nd',
+        '3': 'advances to 3rd',
+        'H': 'scores'
+    }
+
+    const from = advanceString.substring(0,1);
+    const to = advanceString.substring(2,3);
+    return `The ${fromBases[from]} ${toBases[to]}`;
+}
+
+function parseAdvances(advanceString) {
+    return advanceString.split(';').map(advance => advanceDescription(advance));    
+}
+
 function parseEvent(eventString) {
     const parts = eventString.split('/');
     let event = {
@@ -393,7 +417,7 @@ function parseEvent(eventString) {
         } else if(i == (parts.length - 1)) {
             const subparts = parts[i].split('.');
             if(subparts.length > 1) {
-                event.advance = subparts[1];
+                event.advance = parseAdvances(subparts[1]);
             }            
             event.modifiers.push(buildModifiers(subparts[0]));
         } else {            

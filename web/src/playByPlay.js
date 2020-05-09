@@ -118,18 +118,22 @@ function PlayByPlay() {
                             <div class="m-4 w-50 card">
                                 <div class="card-header">{inning.side == 0 ? "Top" : "Bottom"} {inning.inning}</div>
                                 <div class="card-body">{inning.plays.map(play => (
-                                    <div>                                                               
-                                        
+                                    <div class="border p-2">                                                                                                       
                                         {play.substitutions.map(substitution => 
                                             <div class="alert alert-secondary" role="alert"><div class="col">{substitution}</div></div>
                                             )}
                                         {play.event.shortDescription != 'NP' ?     
                                         <div class="clearfix bg-white">
                                             <div class="float-left">
-                                                { `${play.playerId} ${play.event.description}`}
-                                                    {play.event.modifiers.map(modifier => (
-                                                        <div>{modifier}</div>
-                                                    ))}                                                
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">{ `${play.playerId} ${play.event.description}`}
+                                                        {play.event.modifiers.map(modifier => (
+                                                            ` on a ${modifier}`
+                                                        ))}
+                                                    </li> 
+                                                    {play.event.advance ? play.event.advance.map(advance => (
+                                                        <li class="list-group-item list-group-item-success">{advance}</li>
+                                                    )) : null}</ul>
                                             </div>
                                             <div class="float-right">
                                                 <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target={`#${play.playerId}${play.inning}${play.side}`} aria-expanded="false" aria-controls={`${play.playerId}${play.inning}${play.side}`}>
