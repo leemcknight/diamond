@@ -107,7 +107,7 @@ function PlayByPlay() {
                 <div class="btn-toolbar justify-content-md-center m-4" role="toolbar" aria-label="Toolbar with button groups">
                     <div class="btn-group mr-2" role="group" aria-label="First group">
                     {innings.map(inning => 
-                            inning.side == 0 ? <button type="button" class="btn btn-secondary" onClick={() => setCurrentInning(inning.inning)}>{inning.inning}</button> : null
+                            inning.side == 0 ? <button type="button" class="btn btn-success" onClick={() => setCurrentInning(inning.inning)}>{inning.inning}</button> : null
                         )}
                     </div>                    
                 </div>
@@ -118,7 +118,7 @@ function PlayByPlay() {
                             <div class="m-4 w-50 card">
                                 <div class="card-header">{inning.side == 0 ? "Top" : "Bottom"} {inning.inning}</div>
                                 <div class="card-body">{inning.plays.map(play => (
-                                    <div class="border p-2">                                                                                                       
+                                    <div class="p-2">                                                                                                       
                                         {play.substitutions.map(substitution => 
                                             <div class="alert alert-secondary" role="alert"><div class="col">{substitution}</div></div>
                                             )}
@@ -128,7 +128,7 @@ function PlayByPlay() {
                                                 <ul class="list-group">
                                                     <li class="list-group-item">{ `${play.playerId} ${play.event.description}`}
                                                         {play.event.modifiers.map(modifier => (
-                                                            ` on a ${modifier}`
+                                                            ` ${modifier}`
                                                         ))}
                                                     </li> 
                                                     {play.event.advance ? play.event.advance.map(advance => (
@@ -149,7 +149,7 @@ function PlayByPlay() {
                                             </div>
                                         </div>
                                         : null}
-                                        {play.comment ? <div class="alert alert-primary" role="alert"><div class="col">{play.comment}</div></div> : null}
+                                        {play.comment ? <div class="alert alert-primary p-2" role="alert"><div class="col">{play.comment}</div></div> : null}
                                     </div>
                                     ))}                                
                                 </div>                            

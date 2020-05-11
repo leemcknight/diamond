@@ -6,8 +6,6 @@ const schedule = require('../schedule');
 const gameDetail = require('../gameDetail');
 const {getPeople} = require('../person');
 
-const dynamo = new aws.DynamoDB();
-
 module.exports.getFranchises = async (event) => {
   const franchises = await franchise.all();
   let response = {
@@ -32,13 +30,16 @@ module.exports.filterFranchises = async (event) => {
 };
 
 module.exports.getMonthSchedule = async event => {
-    const {month, year} =  event.pathParameters;
+    const {year, month} =  event.pathParameters;
+    const results = await schedule.getMonthlyGames(year, month);
+    const response = {
+      isBase64Encoded: false,
+      statusCode: 200,    
+      headers: {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*"},
+      body: JSON.stringify(results)
+    };
+    return Promise.resolve(response);
 }
-
-module.exports.getDaySchedule = async event => {
-    const {month, year, day} =  event.pathParameters;    
-}
-
 
 module.exports.getBallparks = async event => {  
   const parks = await ballpark.getAll();
@@ -62,7 +63,7 @@ module.exports.getGameDetails = async event => {
   return Promise.resolve(response);
 }
 
-module.exports.batchGetPerson = async event => {
+module.exports.batchGetPerson = async event => {  
   const ids = JSON.parse(event.body);
   const people = getPeople(ids);
   return {
@@ -70,4 +71,4 @@ module.exports.batchGetPerson = async event => {
     headers: {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*"},
     body: JSON.stringify(people)
   };
-}
+};

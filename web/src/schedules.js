@@ -19,14 +19,31 @@ function Schedules() {
                     <TeamDropDown />
                 </div>
             </label>
-            <label>Year: <select name="year">
-                </select> </label>
-            <label>Month:
-                <select name="month">
-                    <option name="01">Janurary</option>
+            <label>Year: 
+                <select class="form-control" id="year">                    
+                    <option>2020</option>
+                    <option>2019</option>
+                    <option>2018</option>
+                    <option>2017</option>
+                    <option>2016</option>
                 </select>
             </label>
-                        
+            <label>Month:
+            <select class="form-control" id="month">                    
+                    <option>Jan</option>
+                    <option>Feb</option>
+                    <option>Mar</option>
+                    <option>Apr</option>
+                    <option>May</option>
+                    <option>Jun</option>
+                    <option>Jul</option>
+                    <option>Aug</option>
+                    <option>Sep</option>
+                    <option>Oct</option>
+                    <option>Nov</option>
+                    <option>Dec</option>
+                </select>
+            </label>                        
             <Link to={`/games/${gameId}`}>Game Link</Link>
         </div>
     </div>

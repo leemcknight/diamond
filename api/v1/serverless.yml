@@ -84,11 +84,11 @@ functions:
       - http:
           path: v1/franchises/{name}
           method: get  
-  daySchedule:
-      handler: http/handler.getDaySchedule
+  monthSchedule:
+      handler: http/handler.getMonthSchedule
       events:
       - http:
-          path: v1/schedule/{year}/{month}/{day}
+          path: v1/schedule/{year}/{month}
           method: get
   gameDetail:
       handler: http/handler.getGameDetails
@@ -96,6 +96,12 @@ functions:
       - http:
           path: v1/game/{id}/playByPlay
           method: get
+  getPeople:
+      handler: http/handler.batchGetPerson
+      events:
+      - http:
+          path: v1/people/batchGet
+          method: post
   
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events

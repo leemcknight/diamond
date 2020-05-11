@@ -1,16 +1,9 @@
-const fs = require('fs');
-const {getLocationString} = require('./fieldLocations');
+const {getLocationString, getPlayerAtPosition} = require('./fieldLocations');
+const {parseAdvances} = require('./advances');
+const {fromBases} = require('./bases');
+const {buildModifiers} = require('./modifiers');
 
-const locations = function() {
-    const csv = fs.readFileSync('config/field_locations.csv').toString();
-    const lines = csv.split(/\r?\n/);
-    let locs = {};
-    for(line of lines) {
-        parts = line.split(',');
-        locs[parts[0].trim()] = parts[1];
-    }    
-    return locs;
-}();
+
 
 function parsePitches(pitchString) {
     
@@ -120,228 +113,74 @@ function parsePitches(pitchString) {
 
     return pitches;
 }
-
-function locationModifier(modifierCode) {
-    
-    let battedBallType;
-    for(c of 'GLPFB') {
-        if(modifierCode.startsWith(c)) {
-            battedBallType = c;
-            break;
+function buildOutDescription(code) {
+    let desc = {
+        long: ''
+    };    
+    if(code.length == 1) {     
+        //unassisted   
+        switch(code) {
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+            case '5':
+            case '6':
+                desc.short = "Pop out";
+                desc.long = `pops out to ${getPlayerAtPosition(code)}`
+                break;
+            case '7':
+            case '8':
+            case '9':
+                desc.short = "Flyout";
+                desc.long = `flies out to ${getPlayerAtPosition(code)}`
         }
-    }
-    let type;
-
-    switch(battedBallType) {
-        case 'G':
-            type = 'Ground ball';
-            break;
-        case 'L':
-            type = 'Line drive';
-            break;
-        case 'P':
-            type = 'Popup';
-            break;
-        case 'F':
-            type = 'Fly';
-            break;
-        case 'B':
-            type = 'Bunt'
-            break;
-    }
-
-    const locationCode = modifierCode.substring(1, modifierCode.length);    
-    let val;
-    if(type == undefined) {
-        val =  `to ${locations[locationCode]}`;    
     } else {
-        val =  `${type} to ${locations[locationCode]}`;    
-    }    
-    return val;
-}
-
-function buildModifiers(modifierCode) {     
-    let modifier;
-    switch(modifierCode) {
-        case 'AP':
-            modifier = 'appeal play';
-            break;
-        case 'BP':
-            modifier = 'pop up bunt';
-            break;
-        case 'BG':
-            modifier = 'ground ball bunt';
-            break;
-        case 'BGDP':
-            modifier = 'bunt grounded into double play';
-            break;
-        case 'BINT':
-            modifier = 'batter interference';
-            break;
-        case 'BL':
-            modifier = 'line drive bunt';
-            break;
-        case 'BOOT':
-            modifier = 'batting out of turn';
-            break;
-        case 'BP':
-            modifier = 'bunt pop up';
-            break;
-        case 'BPDP':
-            modifier = 'bunt popped into double play';
-            break;
-        case 'BR':
-            modifier = 'runner hit by batted ball';
-            break;
-        case 'C':
-            modifier = 'called third strike';
-            break;
-        case 'COUB':
-            modifier = 'courtesy batter';
-            break;
-        case 'COUF':
-            modifier = 'courtesy fielder';
-            break;
-        case 'COUR':
-            modifier = 'courtesy runner';
-            break;
-        case 'DP':
-            modifier = 'unspecified double play';
-            break;                
-        case 'E$':
-            modifier = 'error on $';
-            break;
-        case 'F':
-            modifier = 'fly';
-            break;
-        case 'FDP':
-            modifier = 'fly ball double play';
-            break;
-        case 'FINT':
-            modifier = 'fan interference';
-            break;
-        case 'FL':
-            modifier = 'foul';
-            break;
-        case 'FO':
-            modifier = 'force out';
-            break;
-        case 'G':
-            modifier = 'ground ball';
-            break;            
-        case 'GDP':
-            modifier = 'ground ball double play';
-            break;
-        case 'GTP':
-            modifier = 'ground ball triple play';
-            break;
-        case 'IF':
-            modifier = 'infield fly rule';
-            break;
-        case 'INT':
-            modifier = 'interference';
-            break;
-        case 'IPHR':
-            modifier = 'inside the park home run';
-            break;
-        case 'L':
-            modifier = 'line drive';
-            break;
-        case 'LDP':
-            modifier = 'lined into double play';
-            break;
-        case 'LTP':
-            modifier = 'lined into triple play';
-            break;
-        case 'MREV':
-            modifier = 'manager challenge of call on the field';
-            break;
-        case 'NDP':
-            modifier = 'no double play credited for this play';
-            break;
-        case 'OBS':
-            modifier = 'obstruction (fielder obstructing a runner)';
-            break;
-        case 'P':
-            modifier = 'pop fly';
-            break;
-        case 'PASS':
-            modifier = 'a runner passed another runner and was called out';
-            break;
-        case 'R$':
-            modifier = 'relay throw from the initial fielder to $ with no out made';
-            break;
-        case 'RINT':
-            modifier = 'runner interference';
-            break;
-        case 'SF':
-            modifier = 'sacrifice fly';
-            break;
-        case 'SH':
-            modifier = 'sacrifice hit (bunt)';
-            break;
-        case 'TH':
-            modifier = 'throw';
-            break;
-        case 'TH%':
-            modifier = 'throw to base %';
-            break;
-        case 'TP':
-            modifier = 'unspecified triple play';
-            break;
-        case 'UINT':
-            modifier = 'umpire interference';
-            break;
-        case 'UREV':
-            modifier = 'umpire review of call on the field';
-            break;
-        default:
-            if(modifierCode == undefined) {
-                return null;
-            } else {
-                return locationModifier(modifierCode);
+        //assisted
+        let outs = 1;
+        let runnerCode = false;   
+        let initialFielder = true;             
+        for(pos of code) {
+            if(pos == '(') {
+                runnerCode = true;                
+            } else if(pos == ')') {
+                runnerCode = false;
+            } else if(runnerCode) {
+                desc.long += ` (the ${fromBases[pos]} is out)`                
+            } else {              
+                if(initialFielder) {
+                    desc.long += getPlayerAtPosition(pos);
+                    initialFielder = false;
+                } else {
+                    desc.long += ` to ${getPlayerAtPosition(pos)}`
+                }
             }
-    }            
+        }
 
-    return modifier;
+        desc.short = "Ground out";
+    }    
+    if(desc.long.endsWith(' to ,')) {
+        desc.long = desc.long.substr(0, desc.long.length-5);
+    }
         
+    return desc;
 }
 
 function buildDescription(code) {
     let desc = {};
     const initial = code.substring(0,1);
     switch(initial) {
-        case '1':
-            desc.long = "pops out to pitcher";
-            desc.short = "Pop out";
-            break;
-        case '2':
-            desc.long = "pops out to catcher";
-            desc.short = "Pop out";
-        case '3':
-            desc.long = "pops out to first baseman";
-            desc.short = "Pop out";
-        case '4':
-            desc.long = "pops out to second baseman";
-            desc.short = "Pop out";
-        case '5':
-            desc.long = "pops out to third baseman";
-            desc.short = "Pop out";
-        case '6':
-            desc.long = "pops out to shortstop";
-            desc.short = "Pop out";
-            break;
-        case '7':
-            desc.long = "flies out to left";
-            desc.short = "Flyout"
-        case '8':
-            desc.long = "flies out to center";
-            desc.short = "Flyout";
-            break;
+        case '1':            
+        case '2':            
+        case '3':            
+        case '4':            
+        case '5':            
+        case '6':            
+        case '7':            
+        case '8':            
         case '9':
-            desc.long = "flies out right";
-            desc.short = "Flyout";
-            break;
+            desc = buildOutDescription(code);
+            break;            
         case 'K':
             desc.long = "stikes out";
             desc.short = "Strikeout"
@@ -350,13 +189,11 @@ function buildDescription(code) {
             desc.long = "walks";
             desc.short = "Walk";
             break;
-        case 'I':
-        case 'IW':
+        case 'I':        
             desc.long = "intentionally walked";
             desc.short = "Intentional Walk";
             break;
-        case 'H':
-        case 'HR':
+        case 'H':        
             desc.long = "homers";
             desc.short = "Homerun";
             break;
@@ -380,50 +217,26 @@ function buildDescription(code) {
     return desc;
 }
 
-function advanceDescription(advanceString) {
-    const fromBases = {
-        'B': 'batter',
-        '1': 'runner on 1st',
-        '2': 'runner on 2nd',
-        '3': 'runner on 3rd'
-    };
-
-    const toBases = {
-        '1': 'takes 1st',
-        '2': 'advances to 2nd',
-        '3': 'advances to 3rd',
-        'H': 'scores'
-    }
-
-    const from = advanceString.substring(0,1);
-    const to = advanceString.substring(2,3);
-    return `The ${fromBases[from]} ${toBases[to]}`;
-}
-
-function parseAdvances(advanceString) {
-    return advanceString.split(';').map(advance => advanceDescription(advance));    
-}
-
 function parseEvent(eventString) {
     const parts = eventString.split('/');
+    const descCode = parts[0];
     let event = {
         modifiers: []
     };     
-    for(i = 0; i < parts.length; i++) {
-        if(i == 0) {
-            const  desc = buildDescription(parts[i]);
-            event.description = desc.long;
-            event.shortDescription = desc.short;
-        } else if(i == (parts.length - 1)) {
+    for(i = 1; i < parts.length; i++) {        
+        if(i == (parts.length - 1)) {
             const subparts = parts[i].split('.');
             if(subparts.length > 1) {
-                event.advance = parseAdvances(subparts[1]);
+                event.advances = parseAdvances(subparts[1]);
             }            
             event.modifiers.push(buildModifiers(subparts[0]));
         } else {            
             event.modifiers.push(buildModifiers(parts[i]));
         }
     }
+    const description = buildDescription(descCode);
+    event.description = description.long;
+    event.shortDescription = description.short;
     return event;
 }
 
@@ -438,6 +251,7 @@ function parsePlay(playCsv) {
     play.pitches = parsePitches(playParts[5]);
     play.event = parseEvent(playParts[6]);
     play.substitutions = [];    
+    play.raw = playCsv;
     return play;
 
 }
