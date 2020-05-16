@@ -4,6 +4,7 @@ const tableName = "game";
 const {parsePlay} = require('./parsePlay');
 const {getLocationString} = require('./fieldLocations');
 const {parseGameLog} = require('./gamelog');
+const {getPeople} = require('./person');
 
 const docClient = new aws.DynamoDB.DocumentClient();
 
@@ -23,7 +24,7 @@ function parseSubstitution(substitutionString) {
     return `${side == '0' ? 'Visiting team' : 'Home team'} moves ${name} to ${pos}`;    
 }
 
-function parseGame(item) {
+function parseGame(item) {    
     const blob = item.data;
     const log = parseGameLog(item.log);
     let game = {        
@@ -44,20 +45,20 @@ function parseGame(item) {
             case 'id':
                 break;
             case 'play':
-                play = parsePlay(line);
+                play = parsePlay(line, game.players);
                 game.plays.push(play);                
                 break;
             case 'sub':
                 play.substitutions.push(parseSubstitution(line));                
                 break;
             case 'start':
-                game.starters.push({
+                game.players.push({
                     id: parts[1],
                     name: parts[2],
                     team: parts[3] == 0 ? "visitor" : "home",
                     battingOrder: parts[4],
                     fieldPosition: parts[5]
-                });
+                });                
                 break;
             case 'info':                
                 game.info[parts[1]] = parts[2];
@@ -73,7 +74,7 @@ function parseGame(item) {
             case 'data':
                 game.data.push(line);
         }   
-    }
+    }    
     return game;
 }
 

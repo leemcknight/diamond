@@ -39,8 +39,7 @@ module.exports = {
                 }
               }            
         };
-
-        console.log(`params: ${JSON.stringify(params)}`);
+        
         return new Promise(            
             (resolve, reject) => docClient.batchGet(params, (err, data) => {
                 if (err) {

@@ -240,13 +240,23 @@ function parseEvent(eventString) {
     return event;
 }
 
-function parsePlay(playCsv) {
+function lookup(playerId, players) {
+    for(player of players) {
+        if(playerId == player.id) {
+            return player.name;
+        }
+    }
+    return playerId;
+}
+
+function parsePlay(playCsv, players) {
     //play,inning,home/visitor,player id,count,pitches,event
     const playParts = playCsv.split(',');
     let play = {};
     play.inning = playParts[1];
     play.side = playParts[2];
     play.playerId = playParts[3];
+    play.player = lookup(play.playerId, players);
     play.count = playParts[4];
     play.pitches = parsePitches(playParts[5]);
     play.event = parseEvent(playParts[6]);
