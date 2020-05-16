@@ -126,7 +126,7 @@ function PlayByPlay() {
                                         <div class="clearfix bg-white">
                                             <div class="float-left">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item">{ `${play.playerId} ${play.event.description}`}
+                                                    <li class="list-group-item">{ `${play.player} ${play.event.description}`}
                                                         {play.event.modifiers.map(modifier => (
                                                             ` ${modifier}`
                                                         ))}
