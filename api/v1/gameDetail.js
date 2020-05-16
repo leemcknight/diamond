@@ -29,6 +29,7 @@ function parseGame(item) {
     const log = parseGameLog(item.log);
     let game = {        
         plays: [],
+        players: [],
         info: {},
         starters: [],
         data: [],

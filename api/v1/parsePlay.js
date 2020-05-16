@@ -243,7 +243,7 @@ function parseEvent(eventString) {
 function lookup(playerId, players) {
     for(player of players) {
         if(playerId == player.id) {
-            return player.name;
+            return player.name.replace(/"/g,'').replace('$','');;
         }
     }
     return playerId;
