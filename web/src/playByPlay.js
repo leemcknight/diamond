@@ -41,19 +41,6 @@ function groupPlays(plays) {
     return innings;
 }
 
-function playerDetails(gameState) {
-    let res = {}
-    if(gameState.isPending) {
-        res.isPending = true;
-    }
-    if(gameState.error) {
-        res.error = true;
-    }
-    if(gameState.data) {
-
-    }
-}
-
 function PlayByPlay() {
     const {gameId} = useParams();
     const headers = { Accept: "application/json" }

@@ -6,12 +6,12 @@ import Ballparks from './ballparks';
 import PlayByPlay from './playByPlay';
 import Home from './home';
 import MainHeader from './header';
+import About from './about';
 import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route  
 } from "react-router-dom";
 
 
@@ -36,6 +36,9 @@ function App() {
                 </Route>
                 <Route path="/ballparks">
                   <Ballparks />
+                </Route>
+                <Route path="/about">
+                  <About />
                 </Route>
                 <Route path="/">
                   <Home />

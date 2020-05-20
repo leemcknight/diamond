@@ -36,10 +36,10 @@ function MainHeader() {
               <Link class="nav-link" to="/ballparks">Ballparks</Link>
             </li>
             <li class="nav-item mx-2">
-              <Link class="nav-link" to="About">About</Link>
+              <Link class="nav-link" to="/about">About</Link>
             </li>                        
           </ul>    
-        </div>
+        </div>        
       </nav>
 
     );        

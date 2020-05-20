@@ -2,7 +2,8 @@ import sys;
 
 
 def buildkey():
-    
+
+
 
 def main():
     path = sys.argv[1]
