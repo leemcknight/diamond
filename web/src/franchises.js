@@ -14,12 +14,17 @@ function Franchises() {
       return <h2>We encountered an error.</h2>
     if(data)
       return (        
-        <div className="Franchises">
-            <div id="teamsColumn">
-                  <ul id="teamList">
-                      {teams.map(team => <li id="team"><a href="#"> {team.location} {team.nickname}</a></li>)}
-                  </ul>
-              </div>
+        <div>
+            {teams.map(team => 
+              <div class="card m-5 w-50">
+                <img src={`/team_logos/${team.current_franchise_id}.svg`} width="128" height="128" class="card-img-top"></img>
+                <div class="card-body">
+                  <h5 class="card-title">{team.location} {team.nickname}</h5>
+                  <p class="card-text">{team.city}, {team.state}</p>
+                  <p class="card-text">{team.first_game} - {team.last_game}</p>
+                  <p class="card-text">{team.league}</p>                  
+                </div>
+              </div>)}                
         </div>
       );
   } 

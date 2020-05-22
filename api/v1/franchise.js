@@ -26,6 +26,7 @@ function convertDynamoResponse(dynamoResponse) {
             nickname: item.nickname.S,
             original_franchise_id: item.original_franchise_id.S,
             last_game: last_game,
+            state: item.state.S,
             division: division
         });        
     }

@@ -26,26 +26,18 @@ class Ballparks extends Component {
     }
 
     render() {
-        console.log('Ballparks render');                        
         return (
-
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Ballparks
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    {this.state.ballparks.map(ballpark => <a class="dropdown-item" href="#">{ballpark.name}</a>)}                    
-                </div>
-            </div>
-
-
-            /*
             <div>
-                <select name="ballparks"> 
-                    {this.state.ballparks.map(ballpark => <option>{ballpark.name}</option>)}
-                </select>
+                {this.state.ballparks.map(ballpark => 
+                    <div class="card m-5">
+                        <h5 class="card-header">{ballpark.name}</h5>
+                        <div class="card-text">
+                            <div>{ballpark.start} - {ballpark.end}</div>
+                            <div>{ballpark.city}, {ballpark.state}</div>
+                        </div>
+                    </div>
+                    )}
             </div>
-            */
         );
     }
 }

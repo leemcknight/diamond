@@ -18,13 +18,8 @@ function MainHeader() {
         <Link to="/home"><img src="/diamond.png" width="32" /></Link>
         <div class="collapse navbar-collapse mx-4 px-4" id="navbarSupportedContent">
           <ul class="navbar-nav navbar-light">            
-            <li class="nav-item dropdown mx-2">
-              <div class="dropdown">
-                <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Teams
-                </button>
-                <TeamDropDown />
-              </div>
+            <li class="nav-item mx-2">
+              <Link class="nav-link" to="/franchises">Teams</Link>
             </li>
             <li class="nav-item mx-2">
               <Link class="nav-link" to="/schedules">Schedules</Link>
