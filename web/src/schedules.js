@@ -25,7 +25,12 @@ function Schedules() {
             {results && results.data ? 
                 results.data.filter(game=> game.home === scheduleFilter.team || 
                                     game.visitor === scheduleFilter.team)
-                            .map(game => <div><a href={`/games/${game.gameId}`}>{game.gameId}</a></div>)
+                            .map(game => <div>
+						<img src={`/team_logos/${game.visitor}.svg`} width="64" height="64" />
+						at
+						<img src={`/team_logos/${game.home}.svg`} width="64" height="64" />
+						<a href={`/games/${game.gameId}`}>{game.gameId}</a>
+					</div>)
                 :  null
             }
 
