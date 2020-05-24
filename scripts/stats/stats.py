@@ -1,15 +1,15 @@
 import sys 
 from os import listdir
 from os.path import isfile, join
+from EventEmitter import EventEmitter
 
-def process_line(line):
-	line_parts = line.split(',')
+emitter = EventEmitter()
 
 def process_file(file):
 	print("processing {}".format(file))
 	with open(file, 'r') as event_file:
-		line = event_file.readline()
-		process_line(line)
+		for event_line in event_file:
+			emitter.emit_events(event_line)
 
 def process_dir(path):
 	onlyfiles = [f for f in listdir(path) if isfile(join(path, f))]
