@@ -25,7 +25,7 @@ function parseSubstitution(substitutionString) {
 }
 
 function parseGame(item) {    
-    const blob = item.data;
+    const blob = item.game_data;
     const log = parseGameLog(item.log);
     let game = {        
         plays: [],
