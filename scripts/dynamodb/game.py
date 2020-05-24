@@ -1,6 +1,6 @@
-import boto3
-import csv
-import sys
+import boto3 
+import csv 
+import sys 
 from os import listdir
 from os.path import isfile, join
 
@@ -21,14 +21,16 @@ def load_dir(path):
     for file in onlyfiles:
         qualified = path + '/' + file
         with open(qualified) as game_file:
-            game = {}
-            game['data'] = game_file.read()
-            game['game_id'] = file.split('.')[0]
-            table.put_item(Item=game)            
+            game_data = game_file.read() 
+            game_id = file.split('.')[0]
+            update_expr = 'set game_data = :d' 
+            vals = { ':d': game_data }
+            table.update_item(Key={'game_id': game_id}, UpdateExpression=update_expr, ExpressionAttributeValues=vals,ReturnValues='UPDATED_NEW')            
+            print(game_id) 
 
-def main():
-    path = sys.argv[1]
-    load_dir(path)
+def main(): 
+     path = sys.argv[1] 
+     load_dir(path)
         
 if __name__ == "__main__":
     main()
