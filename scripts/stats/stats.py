@@ -4,11 +4,13 @@ from os.path import isfile, join
 from EventEmitter import EventEmitter
 
 emitter = EventEmitter()
-fieldstate = {
+game_state = {
 		'players': {
 			'0': {},
 			'1': {},
-		'runners': {}
+		'runners': {},
+		'batter': None,
+		'inning': 1 
 	}
 }
 
@@ -16,7 +18,7 @@ def start(data):
 	player = data[1]
 	team = data[3]
 	pos = data[5]
-	fieldstate['players'][team][pos] = player
+	game_state['players'][team][pos] = player
 	print("start: {}".format(data))
 	
 
@@ -24,10 +26,10 @@ def sub(data):
 	print("sub: {}".format(data))
 
 def play(data):
-	emitter.emit_events(data, fieldstate)
+	emitter.emit_events(data, game_state)
 
 def id(data):
-	fieldstate['game_id'] = data[1]
+	game_state['game_id'] = data[1]
 
 handlers = {
 	'play': play,
