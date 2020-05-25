@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './index.css';
 import { useFetch  } from 'react-async';
 import ScheduleForm from './scheduleForm';
+const moment = require('moment');
 
 function Schedules() {
     const [scheduleFilter] = useState({
@@ -25,13 +26,18 @@ function Schedules() {
             {results && results.data ? 
                 results.data.filter(game=> game.home === scheduleFilter.team || 
                                     game.visitor === scheduleFilter.team)
-                            .map(game => <div>
-						<img src={`/team_logos/${game.visitor}.svg`} width="64" height="64" />
-						at
-						<img src={`/team_logos/${game.home}.svg`} width="64" height="64" />
-						<a href={`/games/${game.gameId}`}>{game.gameId}</a>
-					</div>)
-                :  null
+                            .map(game => 
+                                <div class="card m-5 w-25">
+                                    <div class="card-header">{moment(game.date, 'YYYYMMDD').format('MM/DD/YYYY')}</div>
+                                    <div>
+                                        <img src={`/team_logos/${game.visitor}.svg`} width="64" height="64" />
+                                        at
+                                        <img src={`/team_logos/${game.home}.svg`} width="64" height="64" />
+                                        
+                                    </div>
+                                    <a href={`/games/${game.gameId}`}>Play by Play</a>
+					            </div>)
+                        :  null
             }
 
             {results && results.error ? <div class="alert alert-danger" role="alert">
