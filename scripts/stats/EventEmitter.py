@@ -2,38 +2,17 @@ import asyncio
 
 
 class EventEmitter:
-	def emitters(self):
-		if range(ord('B'), ord('Z')):
+	def emitter(self, event_code):
+		if ord(event_code) in range(ord('B'), ord('Z')):
 			return self.emit_pitch
-
+		if event_code.isnumeric():  
+			return self.emit_pickoff
 		return {
-				'B': self.emit_pitch,
-				'C': self.emit_pitch,
-				'F': self.emit_pitch,
-				'H': self.emit_pitch,
-				'I': self.emit_pitch,
-				'K': self.emit_pitch,
-				'L': self.emit_pitch,
-				'M': self.emit_pitch,
-				'N': self.emit_pitch,
-				'O': self.emit_pitch,
-				'P': self.emit_pitch,
-				'Q': self.emit_pitch,
-				'R': self.emit_pitch,
-				'S': self.emit_pitch,
-				'T': self.emit_pitch,
-				'U': self.emit_pitch,
-				'V': self.emit_pitch,
-				'X': self.emit_pitch,
-				'Y': self.emit_pitch,
-				'1': self.emit_pickoff,
-				'2': self.emit_pickoff,
-				'3': self.emit_pickoff,
 				'>': self.emit_stealattempt,
 				'.': self.emit_play_not_involving_batter,
 				'*': self.emit_blocked_pitch,
 				'+': self.emit_pickoff_throw_by_catcher
-		}
+		}[event_code]
 
 	def emit_pickoff_throw_by_catcher(self, pickoff, game_state):
 		print('emitting pickoff throw by catcher'.format(pickoff))
@@ -63,13 +42,14 @@ class EventEmitter:
 
 	def emit_batter(self, batter, game_state):
 		game_state['batter'] = batter
+		print(game_state)
 		print('batter is now: {}'.format(batter))
 
 	def emit_events(self, event_data, game_state):
 		self.emit_batter(event_data[3], game_state)
 		pitches = event_data[5]
 		for pitch in pitches:
-			self.emitters()[pitch](pitch, game_state)
+			self.emitter(pitch)(pitch, game_state)
 		
 		play = event_data[6].split('/')[0]
 		self.emit_play(play, game_state)

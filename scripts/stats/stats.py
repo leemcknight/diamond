@@ -7,17 +7,18 @@ emitter = EventEmitter()
 game_state = {
 		'players': {
 			'0': {},
-			'1': {},
+			'1': {}
+		},
 		'runners': {},
 		'batter': None,
 		'inning': 1 
 	}
-}
+
 
 def start(data):
 	player = data[1]
 	team = data[3]
-	pos = data[5]
+	pos = data[5].strip()
 	game_state['players'][team][pos] = player
 	print("start: {}".format(data))
 	
