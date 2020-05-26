@@ -2,6 +2,8 @@ import asyncio
 
 
 class EventEmitter:
+	handlers = {'pitch': []}
+
 	def emitter(self, event_code):
 		if ord(event_code) in range(ord('B'), ord('Z')):
 			return self.emit_pitch
@@ -13,6 +15,9 @@ class EventEmitter:
 				'*': self.emit_blocked_pitch,
 				'+': self.emit_pickoff_throw_by_catcher
 		}[event_code]
+
+	def add_handler(event, handler):
+		handlers['pitch'].push(handler)
 
 	def emit_pickoff_throw_by_catcher(self, pickoff, game_state):
 		print('emitting pickoff throw by catcher'.format(pickoff))
@@ -31,17 +36,40 @@ class EventEmitter:
 
 	def emit_pitch(self, pitch, game_state):
 		print('emitting pitch: {}'.format(pitch))
+		balls = int(game_state['count'].split('-')[0])
+		strikes = int(game_state['count'].split('-')[1])
+		if(pitch in 'SC'):
+			strikes += 1
+		elif(pitch in 'BIPV'):
+			balls += 1
+		game_state['count'] = str(balls) + '-' + str(strikes)
+		print('count now {}'.format(game_state['count']))
 
 	def emit_advance(self, advance, game_state):
 		print('emitting advance: {}'.format(advance))
+		start_base = advance.split('-')[0]
+		end_base = advance.split('-')[1]
+		runner = game_state.runners['start_base']
+		if (end_base == 'H'):
+			emit_run(runner, game_state)
+
+	def emit_run(self, scorer, game_state):
+		print('emitting run for: {}'.format(scorer))
 
 	def emit_play(self, play, game_state):
 		print('emitting play: {}'.format(play))
 		if(play.startswith('S')):
-			game_state['1B'] = game_state['batter']
+			game_state['runners']['1'] = game_state['batter']
+		elif (play.startswith('D')):
+			game_state['runners']['2'] = game_state['batter']
+		elif (play.startswith('T')):
+			game_state['runners']['3'] = game_state['batter']
+		elif (play.startswith('H')):
+			self.emit_run(game_state['batter'], game_state)
 
 	def emit_batter(self, batter, game_state):
 		game_state['batter'] = batter
+		game_state['count'] = '0-0'
 		print(game_state)
 		print('batter is now: {}'.format(batter))
 

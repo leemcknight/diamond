@@ -5,13 +5,16 @@ from EventEmitter import EventEmitter
 
 emitter = EventEmitter()
 game_state = {
+		'score': '0-0',
 		'players': {
 			'0': {},
 			'1': {}
 		},
 		'runners': {},
 		'batter': None,
-		'inning': 1 
+		'inning': 1,
+		'outs': 0,
+		'count': '0-0' 
 	}
 
 
