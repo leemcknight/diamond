@@ -2,6 +2,7 @@ import sys
 from os import listdir
 from os.path import isfile, join
 from EventEmitter import EventEmitter
+from PitchHandler import PitchHandler
 
 emitter = EventEmitter()
 game_state = {
@@ -12,7 +13,7 @@ game_state = {
 		},
 		'runners': {},
 		'batter': None,
-		'inning': 1,
+		'inning': 'T1',
 		'outs': 0,
 		'count': '0-0' 
 	}
@@ -46,8 +47,6 @@ handlers = {
 	'com': lambda data: None
 }
 
-
-
 def update_context(line):
 	data = line.split(',')
 	context_handlers[data[0]](line)
@@ -69,6 +68,8 @@ def process_dir(path):
 def main(): 
 	path = sys.argv[1]
 	print("processing {}".format(path))
+	print('adding handlers.')
+	PitchHandler(emitter)	
 	process_dir(path)
 
 if __name__ == "__main__":

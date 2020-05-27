@@ -16,8 +16,8 @@ class EventEmitter:
 				'+': self.emit_pickoff_throw_by_catcher
 		}[event_code]
 
-	def add_handler(event, handler):
-		handlers['pitch'].push(handler)
+	def add_handler(self, event, handler):
+		self.handlers[event].append(handler)
 
 	def emit_pickoff_throw_by_catcher(self, pickoff, game_state):
 		print('emitting pickoff throw by catcher'.format(pickoff))
@@ -36,6 +36,10 @@ class EventEmitter:
 
 	def emit_pitch(self, pitch, game_state):
 		print('emitting pitch: {}'.format(pitch))
+		pitcher_index = 1 if game_state['inning'][0] == 'T' else 0
+		pitcher = game_state['players'][pitcher_index][1]
+		for handler in self.handlers['pitch']:
+			handler(pitch,pitcher, game_state)
 		balls = int(game_state['count'].split('-')[0])
 		strikes = int(game_state['count'].split('-')[1])
 		if(pitch in 'SC'):
