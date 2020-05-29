@@ -36,8 +36,8 @@ class EventEmitter:
 
 	def emit_pitch(self, pitch, game_state):
 		print('emitting pitch: {}'.format(pitch))
-		pitcher_index = 1 if game_state['inning'][0] == 'T' else 0
-		pitcher = game_state['players'][pitcher_index][1]
+		pitcher_index = '1' if game_state['inning'][0] == 'T' else '0'
+		pitcher = game_state['players'][pitcher_index]['1']
 		for handler in self.handlers['pitch']:
 			handler(pitch,pitcher, game_state)
 		balls = int(game_state['count'].split('-')[0])

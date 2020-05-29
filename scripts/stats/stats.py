@@ -36,12 +36,15 @@ def play(data):
 def id(data):
 	game_state['game_id'] = data[1]
 
+def info(data):
+	type = data[1]
+
 handlers = {
 	'play': play,
 	'start': start,
 	'sub': sub,
 	'id': id,
-	'info': lambda data : None,
+	'info': info,
 	'version': lambda data : None,
 	'data': lambda data: None,
 	'com': lambda data: None
