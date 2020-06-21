@@ -2,7 +2,7 @@ import asyncio
 
 
 class EventEmitter:
-	handlers = {'pitch': []}
+	handlers = {'pitch': [], 'K': []}
 
 	def emitter(self, event_code):
 		if ord(event_code) in range(ord('B'), ord('Z')):
@@ -39,7 +39,7 @@ class EventEmitter:
 		pitcher_index = '1' if game_state['inning'][0] == 'T' else '0'
 		pitcher = game_state['players'][pitcher_index]['1']
 		for handler in self.handlers['pitch']:
-			handler(pitch,pitcher, game_state)
+			handler(pitch, pitcher, game_state)
 		balls = int(game_state['count'].split('-')[0])
 		strikes = int(game_state['count'].split('-')[1])
 		if(pitch in 'SC'):
@@ -70,12 +70,21 @@ class EventEmitter:
 			game_state['runners']['3'] = game_state['batter']
 		elif (play.startswith('H')):
 			self.emit_run(game_state['batter'], game_state)
+		elif (play.startswith('K')):
+			for handler in self.handlers['K']:
+					pitcher = self.get_pitcher(game_state)
+					handler(pitcher, game_state)
 
 	def emit_batter(self, batter, game_state):
 		game_state['batter'] = batter
 		game_state['count'] = '0-0'
 		print(game_state)
 		print('batter is now: {}'.format(batter))
+
+	def get_pitcher(self, game_state):
+		if game_state['inning'].startswith('T'):
+			return game_state['players']['1']['1']
+		return game_state['players']['2']['1']
 
 	def emit_events(self, event_data, game_state):
 		self.emit_batter(event_data[3], game_state)
