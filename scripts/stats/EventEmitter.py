@@ -51,34 +51,62 @@ class EventEmitter:
 
     def emit_advance(self, advance, game_state):
         print('emitting advance: {}'.format(advance))
-        start_base = advance.split('-')[0].strip()
-        end_base = advance.split('-')[1].strip()
-        runner = game_state['runners'][start_base]
-        game_state['runners'].pop(start_base)
-        game_state['runners'][end_base] = runner
-        if (end_base == 'H'):
-            self.emit_run(runner, game_state)
-        print('runners now: {}'.format(game_state['runners']))
+        print('runners state before advance: {}'.format(game_state['runners']))
+        if('X' in advance):
+            print('emitting out on advance')
+            players = advance.split('X')
+            assister = players[0]
+            put_out = players[1]
+            emit_out(game_state) 
+        else:
+            start_base = advance.split('-')[0].strip()
+            end_base = advance.split('-')[1].strip()
+            runner = game_state['runners'][start_base]
+            game_state['runners'].pop(start_base)
+            if (end_base == 'H'):
+                self.emit_run(runner, game_state)
+            else:
+                game_state['runners'][end_base] = runner
+            print('runners now: {}'.format(game_state['runners']))
 
     def emit_modifier(self, modifier, game_state):
         print('emitting modifier: {}'.format(modifier))
+  
+    def emit_out(self, game_state):
+        print('emitting out')
 
     def emit_run(self, scorer, game_state):
+        print('current score: {}'.format(game_state['score']))
         print('emitting run for: {}'.format(scorer))
-        runs = game_state['score'].split('0')
-        
+        runs = game_state['score'].split('-')
+        visitor_runs = int(runs[0])
+        home_runs = int(runs[1])   
+        if(game_state['inning'].startswith('T')):
+            visitor_runs += 1
+        else:
+            home_runs += 1
+        score = '{}-{}'.format(visitor_runs, home_runs)
+        game_state['score'] = score
         print('score is now: {}'.format(game_state['score']))
+
+    def emit_walk(self, play, game_state):
+        print('emitting walk')
+        game_state['runners']['1'] = game_state['batter']
 
     def emit_play(self, play, game_state):
         print('emitting play: {}'.format(play))
         if(play.startswith('S')):
             game_state['runners']['1'] = game_state['batter']
+        elif(play.startswith('W')):
+            self.emit_walk(play, game_state)
         elif (play.startswith('D')):
             game_state['runners']['2'] = game_state['batter']
         elif (play.startswith('T')):
             game_state['runners']['3'] = game_state['batter']
         elif (play.startswith('H')):
             self.emit_run(game_state['batter'], game_state)
+        elif(play.startswith('IW')):
+            game_state['runners']['1'] = game_state['batter']      
         elif (play.startswith('K')):
             for handler in self.handlers['K']:
                     pitcher = self.get_pitcher(game_state)
@@ -108,8 +136,8 @@ class EventEmitter:
         modifiers = modifiers_and_advances[0]
         if len(modifiers_and_advances) > 1:
             advances = modifiers_and_advances[1].split(';')
+            for modifier in modifiers:
+                self.emit_modifier(modifier, game_state)
             for advance in advances:
                 self.emit_advance(advance, game_state)
-        for modifier in modifiers:
-            self.emit_modifier(modifier, game_state)
         self.emit_play(desc, game_state)
