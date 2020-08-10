@@ -35,7 +35,7 @@ class EventEmitter:
         print('emitting pickoff: {}'.format(pickoff))
 
     def emit_pitch(self, pitch, game_state):
-        print('emitting pitch: {}'.format(pitch))
+        print('Here comes the pitch...')
         pitcher_index = '1' if game_state['inning'][0] == 'T' else '0'
         pitcher = game_state['players'][pitcher_index]['1']
         for handler in self.handlers['pitch']:
@@ -44,10 +44,19 @@ class EventEmitter:
         strikes = int(game_state['count'].split('-')[1])
         if(pitch in 'SC'):
             strikes += 1
+            if(pitch == 'S'):
+                print('Swung on and missed.')
+            elif(pitch == 'C'):
+                print('Called Strike.')
         elif(pitch in 'BIPV'):
+            print('ball.')
             balls += 1
+        elif(pitch == 'F'):
+            print('Fouled off.')
+            if(strikes < 2):
+                strikes += 1
         game_state['count'] = str(balls) + '-' + str(strikes)
-        print('count now {}'.format(game_state['count']))
+        print('Count now {}'.format(game_state['count']))
 
     def emit_advance(self, advance, game_state):
         print('emitting advance: {}'.format(advance))
@@ -57,10 +66,10 @@ class EventEmitter:
             players = advance.split('X')
             assister = players[0]
             put_out = players[1]
-            emit_out(game_state) 
+            self.emit_out(game_state) 
         else:
             start_base = advance.split('-')[0].strip()
-            end_base = advance.split('-')[1].strip()
+            end_base = advance.split('-')[1].strip()[0:1]
             runner = game_state['runners'][start_base]
             game_state['runners'].pop(start_base)
             if (end_base == 'H'):
@@ -72,12 +81,29 @@ class EventEmitter:
     def emit_modifier(self, modifier, game_state):
         print('emitting modifier: {}'.format(modifier))
   
+    def next_inning(self, game_state):
+        inning = game_state['inning']        
+        inning_number = inning[1:len(inning)] 
+        top_bottom = ''
+        if(inning[0:1] == 'T'):
+            game_state['inning'] = 'B' + inning_number
+            top_bottom = 'bottom'
+        else:
+            game_state['inning'] = 'T' + str(int(inning_number) + 1)
+            top_bottom = 'top'
+        game_state['outs'] = 0
+        print('We move to the {} of the {}.'.format(top_bottom, game_state['inning']))
+
     def emit_out(self, game_state):
-        print('emitting out')
+        outs = int(game_state['outs'])
+        outs += 1
+        game_state['outs'] = outs
+        print('There are now {} outs.'.format(outs))
+        if(outs == 3):
+            self.next_inning(game_state)
 
     def emit_run(self, scorer, game_state):
-        print('current score: {}'.format(game_state['score']))
-        print('emitting run for: {}'.format(scorer))
+        print('a run scores. {} crosses the plate.'.format(scorer))
         runs = game_state['score'].split('-')
         visitor_runs = int(runs[0])
         home_runs = int(runs[1])   
@@ -90,8 +116,19 @@ class EventEmitter:
         print('score is now: {}'.format(game_state['score']))
 
     def emit_walk(self, play, game_state):
-        print('emitting walk')
+        print('Walked him.')
         game_state['runners']['1'] = game_state['batter']
+
+    def emit_hit_by_pitch(self, play, game_state):
+        print('Hit by pitch.')
+        game_state['runners']['1'] = game_state['batter']
+
+    def emit_strikeout(self, play, game_state):
+        print('Struck him out.')
+        pitcher = self.get_pitcher(game_state)
+        self.emit_out(game_state)
+        for handler in self.handlers['K']:
+            handler(pitcher, game_state)
 
     def emit_play(self, play, game_state):
         print('emitting play: {}'.format(play))
@@ -103,25 +140,26 @@ class EventEmitter:
             game_state['runners']['2'] = game_state['batter']
         elif (play.startswith('T')):
             game_state['runners']['3'] = game_state['batter']
+        elif(play.startswith('HP')):
+            self.emit_hit_by_pitch(play, game_state)
         elif (play.startswith('H')):
             self.emit_run(game_state['batter'], game_state)
         elif(play.startswith('IW')):
             game_state['runners']['1'] = game_state['batter']      
-        elif (play.startswith('K')):
-            for handler in self.handlers['K']:
-                    pitcher = self.get_pitcher(game_state)
-                    handler(pitcher, game_state)
+        elif(play.startswith('K')):
+            self.emit_strikeout(play, game_state)
 
     def emit_batter(self, batter, game_state):
         game_state['batter'] = batter
         game_state['count'] = '0-0'
+        game_state['runners']['B'] = batter
         print(game_state)
         print('batter is now: {}'.format(batter))
 
     def get_pitcher(self, game_state):
         if game_state['inning'].startswith('T'):
             return game_state['players']['1']['1']
-        return game_state['players']['2']['1']
+        return game_state['players']['0']['1']
 
     def emit_events(self, event_data, game_state):
         self.emit_batter(event_data[3], game_state)
@@ -130,7 +168,6 @@ class EventEmitter:
             self.emitter(pitch)(pitch, game_state)
         
         play = event_data[6]
-        
         desc = play.split('/')[0]
         modifiers_and_advances = play.split('.')
         modifiers = modifiers_and_advances[0]
