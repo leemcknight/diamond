@@ -35,19 +35,12 @@ def play(data):
 
 def id(data):
     print('Play ball!')
-    game_state = {
-            'score': '0-0',
-            'players': {
-                '0': {},
-                '1': {}
-            },
-            'runners': {},
-            'batter': None,
-            'inning': 'T1',
-            'outs': 0,
-            'count': '0-0' 
-        }
     game_state['game_id'] = data[1].strip()
+    game_state['score'] = '0-0'
+    game_state['runners'] = {}
+    game_state['inning'] = 'T1'
+    game_state['outs'] = 0
+    game_state['count'] = '0-0'
 
 def info(data):
     type = data[1]
