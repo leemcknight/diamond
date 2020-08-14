@@ -1,8 +1,10 @@
 import asyncio
+from positions import Positions
 
 
 class EventEmitter:
     handlers = {'pitch': [], 'K': []}
+    positions = Positions()
 
     def emitter(self, event_code):
         if ord(event_code) in range(ord('B'), ord('Z')):
@@ -55,6 +57,8 @@ class EventEmitter:
             print('Fouled off.')
             if(strikes < 2):
                 strikes += 1
+        elif(pitch == 'X'):
+            print('Ball in play...')
         game_state['count'] = str(balls) + '-' + str(strikes)
         print('Count now {}'.format(game_state['count']))
 
@@ -144,17 +148,34 @@ class EventEmitter:
         print('{} homers!'.format(game_state['batter']))
         self.emit_run(game_state['batter'], game_state)
  
+    def parse_outs(self, play, game_state):
+        pos = play[1:2]
+        print('out on a play to {}'.format(self.positions.get_player_and_position(pos, game_state)))
+        self.emit_out(game_state)
+        
     def emit_play(self, play, game_state):
-        print('emitting play: {}'.format(play))
         if(play.startswith('SB')):
             self.emit_stolen_base(play, game_state)
         elif(play.startswith('S')):
             self.emit_single(play, game_state)
         elif(play.startswith('W')):
             self.emit_walk(play, game_state)
+        elif(play.startswith('E')):
+            print('{} reaches on an error by {}'.format(game_state['batter'], self.positions[play[1:2]]))
+            game_state['runners']['1'] = game_state['batter']
+        elif(play.startswith('C')):
+            print('catchers interference.  batter awarded first base')
+            game_state['runners']['1'] = game_state['batter']
+        elif(play.startswith('DGR')):
+            print('{} hits a ground rule double.'.format(game_state['batter']))
+            game_state['runners']['2'] = game_state['batter']
+        elif(play.startswith('DI')):
+            print('Runner Advances from on defensive indifference')
         elif (play.startswith('D')):
+            print('{} doubles to {}'.format(game_state['batter'], self.positions[play[1:2]]))
             game_state['runners']['2'] = game_state['batter']
         elif (play.startswith('T')):
+            print('{} triples to {}'.format(game_state['batter'], self.positions[play[1:2]]))
             game_state['runners']['3'] = game_state['batter']
         elif(play.startswith('HP')):
             self.emit_hit_by_pitch(play, game_state)
@@ -164,6 +185,8 @@ class EventEmitter:
             game_state['runners']['1'] = game_state['batter']      
         elif(play.startswith('K')):
             self.emit_strikeout(play, game_state)
+        else:
+            self.parse_outs(play, game_state)
 
     def emit_batter(self, batter, game_state):
         game_state['batter'] = batter
@@ -178,7 +201,7 @@ class EventEmitter:
         return game_state['players']['0']['1']
 
     def emit_single(self, play, game_state):
-        print('{} singles.'.format(game_state['batter']))
+        print('{} singles to {}.'.format(game_state['batter'], self.positions[play[1:2]]))
         game_state['runners']['1'] = game_state['batter']
 
     def emit_events(self, event_data, game_state):
