@@ -31,7 +31,7 @@ class EventEmitter:
         print('emitting play not involving batter'.format(play))
 
     def emit_stealattempt(self, steal_attempt, game_state):
-        print('emitting steal attempt'.format(steal_attempt))
+        print('runner goes!')
 
     def emit_pickoff(self, pickoff, game_state):
         print('emitting pickoff: {}'.format(pickoff))
@@ -96,6 +96,7 @@ class EventEmitter:
             game_state['inning'] = 'T' + str(int(inning_number) + 1)
             top_bottom = 'top'
         game_state['outs'] = 0
+        game_state['runners'] = {}
         print('----------------------')
         print('We move to the {} of the {}.'.format(top_bottom, game_state['inning']))
 
@@ -140,17 +141,28 @@ class EventEmitter:
         next_base = int(stolen_base)
         prev_base = next_base - 1
         runner = game_state['runners'][str(prev_base)]
-        print('{} steals base: {}'.format(runner, stolen_base))
+        print('{} safe at {} with a stolen base.'.format(runner, stolen_base))
         game_state['runners'][stolen_base] = runner
         game_state['runners'][str(prev_base)] = None
+
+    def emit_pickoff(self, play, game_state):
+        pickoff_play = play[2:len(play)]
+        print('pickoff play: '.format(pickoff_play))
 
     def emit_homerun(self, play, game_state):
         print('{} homers!'.format(game_state['batter']))
         self.emit_run(game_state['batter'], game_state)
  
     def parse_outs(self, play, game_state):
-        pos = play[1:2]
-        print('out on a play to {}'.format(self.positions.get_player_and_position(pos, game_state)))
+        print('out on play: {}'.format(play))
+        #check for fielder's choice
+        if play.startswith('FC'):
+            pos = play[2:3]
+            print('pos: {}'.format(pos))
+            print('batter reaches on a fielders choice.  Out made by {}'.format(self.positions.get_player_and_position(pos, game_state)))
+        else:
+            pos = play[0:1]
+            print('out on a play to {}'.format(self.positions.get_player_and_position(pos, game_state)))
         self.emit_out(game_state)
         
     def emit_play(self, play, game_state):
@@ -161,7 +173,9 @@ class EventEmitter:
         elif(play.startswith('W')):
             self.emit_walk(play, game_state)
         elif(play.startswith('E')):
-            print('{} reaches on an error by {}'.format(game_state['batter'], self.positions[play[1:2]]))
+            print('{} reaches on an error by {}'
+                            .format(game_state['batter'], 
+                                    self.positions.get_player_and_position(play[1:2], game_state)))
             game_state['runners']['1'] = game_state['batter']
         elif(play.startswith('C')):
             print('catchers interference.  batter awarded first base')
@@ -172,11 +186,15 @@ class EventEmitter:
         elif(play.startswith('DI')):
             print('Runner Advances from on defensive indifference')
         elif (play.startswith('D')):
-            print('{} doubles to {}'.format(game_state['batter'], self.positions[play[1:2]]))
+            print('{} doubles to {}'.format(game_state['batter'], self.positions.get_player_and_position(play[1:2], game_state)))
             game_state['runners']['2'] = game_state['batter']
         elif (play.startswith('T')):
-            print('{} triples to {}'.format(game_state['batter'], self.positions[play[1:2]]))
+            print('{} triples to {}'.format(game_state['batter'], self.positions.get_player_and_position(play[1:2], game_state)))
             game_state['runners']['3'] = game_state['batter']
+        elif(play.startswith('FC')):
+            print('{} reaches on a fielders choice.'.format(game_state['batter']))
+            game_state['runners']['1'] = game_state['batter']
+            self.parse_outs(play, game_state)
         elif(play.startswith('HP')):
             self.emit_hit_by_pitch(play, game_state)
         elif (play.startswith('H')):
@@ -185,6 +203,16 @@ class EventEmitter:
             game_state['runners']['1'] = game_state['batter']      
         elif(play.startswith('K')):
             self.emit_strikeout(play, game_state)
+        elif(play.startswith('NP')):
+            print('No play.')
+        elif(play.startswith('OA')):
+            print('Baserunning play.')
+        elif(play.startswith('PB')):
+            print('Passed ball.')
+        elif(play.startswith('PO')):
+            self.emit_pickoff(play, game_state)
+        elif(play.startswith('BK')):
+            print('Balk')
         else:
             self.parse_outs(play, game_state)
 
@@ -201,7 +229,7 @@ class EventEmitter:
         return game_state['players']['0']['1']
 
     def emit_single(self, play, game_state):
-        print('{} singles to {}.'.format(game_state['batter'], self.positions[play[1:2]]))
+        print('{} singles to {}.'.format(game_state['batter'], self.positions.get_player_and_position(play[1:2], game_state)))
         game_state['runners']['1'] = game_state['batter']
 
     def emit_events(self, event_data, game_state):
