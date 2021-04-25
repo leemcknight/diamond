@@ -17,7 +17,7 @@ function Franchises() {
         <div>
             {teams.map(team => 
               <div class="card m-5 w-50">
-                <img src={`/team_logos/${team.current_franchise_id}.svg`} width="128" height="128" class="card-img-top"></img>
+                <img alt='team logo' src={`/team_logos/${team.current_franchise_id}.svg`} width="128" height="128" class="card-img-top"></img>
                 <div class="card-body">
                   <h5 class="card-title">{team.location} {team.nickname}</h5>
                   <p class="card-text">{team.city}, {team.state}</p>

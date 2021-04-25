@@ -14,9 +14,7 @@ function Schedules() {
     const baseUrl = "https://bmkj033bof.execute-api.us-west-2.amazonaws.com/dev/v1";
     let pending = true;
     let results;    
-    console.log(`getting schedule for ${scheduleFilter.year}, ${scheduleFilter.month}`);
     results = useFetch(`${baseUrl}/schedule/${scheduleFilter.year}/${scheduleFilter.month}`, { headers });
-    pending = results.isPending;    
     return (
         <div>
             <div id="wrapper">            

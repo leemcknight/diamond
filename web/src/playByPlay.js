@@ -2,28 +2,26 @@ import React from 'react';
 import {useParams} from "react-router-dom";
 import { useFetch  } from 'react-async';
 import './playByPlay.css'
-
+const {Container, Row, Col, Card} = require('react-bootstrap');
 
 function inningSuffix(inning) {
     if(inning >= 4) {
         return 'th';
-    } else if(inning == 1) {
+    } else if(inning === 1) {
         return 'st';
-    } else if(inning == 2) {
+    } else if(inning === 2) {
         return 'nd';
-    } else if(inning == 3) {
+    } else if(inning === 3) {
         return 'rd';
     }
 }
-
-
 
 function groupPlays(plays) {
     let innings = [];
     let currentInning = {};
     let play;
     for(play of plays) {
-        if(play.inning == currentInning.inning && play.side == currentInning.side) {
+        if(play.inning === currentInning.inning && play.side === currentInning.side) {
             currentInning.plays.push(play);
         } else {
             currentInning = {
@@ -31,7 +29,7 @@ function groupPlays(plays) {
                 inning: play.inning,
                 side: play.side
             };
-            if(play.side == 0 || play.side == 1) {
+            if(play.side === 0 || play.side === 1) {
                currentInning.plays.push(play);
             }
             innings.push(currentInning);
@@ -54,62 +52,70 @@ function PlayByPlay() {
     if(data) {
         const innings = groupPlays(data.plays);
         return (
-            <div>     
-                <div class="m-4"><img src={`/team_logos/${data.info.visteam}.svg`} width="128" height="128"/> at <img src={`/team_logos/${data.info.hometeam}.svg`} width="128" height="128"/></div>
-                <h2>{data.info.date}</h2>         
-                <h3>{data.info.starttime}</h3>    
-
-                <div class="container border">
-                    <div class="row border-bottom row-md-auto">
-                        <div class="col col-md-auto">Final</div>
+        <Container>
+            <Row>
+                <Col className='m-4'><img alt='visiting team logo' src={`/team_logos/${data.info.visteam}.svg`} width="128" height="128"/> at <img alt='home team logo' src={`/team_logos/${data.info.hometeam}.svg`} width="128" height="128"/>
+                </Col>
+            </Row>
+            <Row>
+                <Col>{data.info.date}
+                </Col>
+            </Row>
+            <Row><Col>{data.info.starttime}</Col></Row>
+            <Row>
+                <Container className='border'>
+                    <Row className='border-bottom md-auto'>
+                        <Col className='md-auto'>Final></Col>
                             {data.log.box.map(inning => (
-                                <div class="col col-md-auto">{inning.i}</div>
+                                <Col className='md-auto'>{inning.i}</Col>
                             ))}                            
-                            <div class="col col-md-auto">R</div>
-                            <div class="col col-md-auto">H</div>
-                            <div class="col col-md-auto">E</div>
-                    </div>
-                    <div class="row border-bottom">
-                        <div class="col col-md-auto">{data.info.visteam}</div>
+                            <Col className='md-auto'>R</Col>
+                            <Col className='md-auto'>H</Col>
+                            <Col className='md-auto'>E</Col>
+                    </Row>
+                    <Row className='border-bottom'>
+                        <Col className='md-auto'>{data.info.visteam}</Col>
                             {data.log.box.map(inning => (
-                                <div class="col col-md-auto">{inning.v}</div>
+                                <Col className='md-auto'>{inning.v}</Col>
                             ))}
-                            <div class="col col-md-auto">{data.log.visitorScore}</div>
-                            <div class="col col-md-auto">{data.log.visitorHits}</div>
-                            <div class="col col-md-auto">{data.log.visitorErrors}</div>
-                    </div>
-                    <div class="row">
-                        <div class="col col-md-auto">{data.info.hometeam}</div>
+                            <Col className='md-auto'>{data.log.visitorScore}</Col>
+                            <Col className='md-auto'>{data.log.visitorHits}</Col>
+                            <Col className='md-auto'>{data.log.visitorErrors}</Col>
+                    </Row>
+                    <Row> 
+                        <Col className='md-auto'>{data.info.hometeam}</Col>
                             {data.log.box.map(inning => (
-                                <div class="col col-md-auto">{inning.h}</div>
+                                <Col className='md-auto'>{inning.h}</Col>
                             ))}
-                            <div class="col col-md-auto">{data.log.homeScore}</div>
-                            <div class="col col-md-auto">{data.log.homeHits}</div>
-                            <div class="col col-md-auto">{data.log.homeErrors}</div>
-                    </div>
+                            <Col className='md-auto'>{data.log.homeScore}</Col>
+                            <Col className='md-auto'>{data.log.homeHits}</Col>
+                            <Col className='md-auto'>{data.log.homeErrors}</Col>
+                    </Row>
                     
-                </div>                   
-                <div id="gameinfo">   
+                </Container>                   
+               </Row>
+               <Row>
+                <Container id='gameinfo'>   
 
                 <div class="btn-toolbar justify-content-md-center m-4" role="toolbar" aria-label="Toolbar with button groups">
                     <div class="btn-group mr-2" role="group" aria-label="First group">
                     {innings.map(inning => 
-                            inning.side == 0 ? <button type="button" class="btn btn-success" onClick={() => setCurrentInning(inning.inning)}>{inning.inning}</button> : null
+                            inning.side === 0 ? <button type="button" class="btn btn-success" onClick={() => setCurrentInning(inning.inning)}>{inning.inning}</button> : null
                         )}
                     </div>                    
                 </div>
 
                     <div>   
-                        {innings.filter(inning => inning.inning == currentInning)
+                        {innings.filter(inning => inning.inning === currentInning)
                                 .map(inning => (
-                            <div class="m-4 w-50 card">
-                                <div class="card-header">{inning.side == 0 ? "Top" : "Bottom"} {inning.inning}</div>
-                                <div class="card-body">{inning.plays.map(play => (
+                            <Card className='m-4 w-50'>
+                                <Card.Header>{inning.side === 0 ? "Top" : "Bottom"} of the {inning.inning} {inningSuffix(inning.inning)}</Card.Header>
+                                <Card.Body>{inning.plays.map(play => (
                                     <div class="p-2">                                                                                                       
                                         {play.substitutions.map(substitution => 
                                             <div class="alert alert-secondary" role="alert"><div class="col">{substitution}</div></div>
                                             )}
-                                        {play.event.shortDescription != 'NP' ?     
+                                        {play.event.shortDescription !== 'NP' ?     
                                         <div class="clearfix bg-white">
                                             <div class="float-left">
                                                 <ul class="list-group">
@@ -139,12 +145,13 @@ function PlayByPlay() {
                                         {play.comment ? <div class="alert alert-primary p-2" role="alert"><div class="col">{play.comment}</div></div> : null}
                                     </div>
                                     ))}                                
-                                </div>                            
-                            </div>
+                                </Card.Body>                            
+                            </Card>
                             ))} 
                     </div>                                                                                    
-                </div>            
-            </div>            
+                </Container>            
+            </Row>
+            </Container>            
         );
     }
 }

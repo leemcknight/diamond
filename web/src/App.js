@@ -13,6 +13,7 @@ import {
   Switch,
   Route  
 } from "react-router-dom";
+const {Container, Row, Col} = require('react-bootstrap');
 
 
 function App() {
@@ -54,16 +55,20 @@ function App() {
 
 function Footer() {
   return (
-    <div className="DiamondFooter">
-      <p> The information used here was obtained free of
-     charge from and is copyrighted by Retrosheet.  Interested
-     parties may contact Retrosheet at 20 Sunset Rd.,
-     Newark, DE 19711.
-</p>
-<p>
-Icons made by <a href="https://www.flaticon.com/<?=_('authors/')?>surang" title="surang">surang</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
-</p>
-    </div>
+    <Container>
+        <Row>
+            <Col>
+                <p> The information used here was obtained free of
+                    charge from and is copyrighted by Retrosheet.  Interested
+                     parties may contact Retrosheet at 20 Sunset Rd.,
+                     Newark, DE 19711.
+                </p>
+                <p>
+                    Icons made by <a href="https://www.flaticon.com/<?=_('authors/')?>surang" title="surang">surang</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+                </p>
+            </Col>
+        </Row>
+    </Container>
   );
 } 
 

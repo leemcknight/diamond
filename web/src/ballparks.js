@@ -1,45 +1,42 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useState } from 'react';
+import { Container, Row, Col, Card, Alert, Spinner } from 'react-bootstrap';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-class Ballparks extends Component {
-    constructor(props) {
-        super(props);
-        console.log('ballparks constructor');
-        
-        this.state = { ballparks: [] };        
-        this.getBallparks();
-    }
-    componentDidMount() {
-        console.log('componentDidMount');        
-        this.getBallparks();
-    }
-
-    async getBallparks() {
+function Ballparks() {
+   const {ballparks, setBallparks} = useState(); 
+   const {error, setError} = useState();
+   
+    async function getBallparks() {
+        setError(null);
         console.log('getBallparks');
         var baseUrl = "https://bmkj033bof.execute-api.us-west-2.amazonaws.com/dev/v1";
-        var json = await fetch(`${baseUrl}/ballparks`).then(resp => resp.json()).catch(err => console.error(err));
-        this.setState( { ballparks: json });
-        console.log(json);
+        try {
+            const response = await fetch(`${baseUrl}/ballparks`);
+            const json = await response.json();
+            setBallparks(json);
+        } catch(error) {
+            setError(error);
+        }
     }
 
-    render() {
-        return (
-            <div>
-                {this.state.ballparks.map(ballpark => 
-                    <div class="card m-5">
-                        <h5 class="card-header">{ballpark.name}</h5>
-                        <div class="card-text">
-                            <div>{ballpark.start} - {ballpark.end}</div>
-                            <div>{ballpark.city}, {ballpark.state}</div>
-                        </div>
-                    </div>
-                    )}
-            </div>
-        );
+    if(!ballparks) {
+        getBallparks();
     }
+    return (
+        <Container>
+            { error && (<Row><Col><Alert variant='warning'>{error}</Alert></Col></Row>) }
+            {ballparks ? ballparks.map(ballpark => (
+                <Card className='m-5'>
+                    <Card.Header>{ballpark.name}</Card.Header>
+                    <Card.Text>
+                        <div>{ballpark.start} - {ballpark.end}</div>
+                        <div>{ballpark.city}, {ballpark.state}</div>
+                    </Card.Text> </Card>
+            )) : 
+            <Row><Col><Spinner animation='border' /></Col></Row> 
+            }
+        </Container>
+    );
 }
 
 export default Ballparks;

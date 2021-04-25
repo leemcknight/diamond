@@ -1,12 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import TeamDropDown from './teamDropDown';
-import { browserHistory, Router, Route, Link, withRouter } from 'react-router-dom'
 
-
-class ScheduleForm extends React.Component {          
-      render() {
+function ScheduleForm(props) {
         return (      
-            <form onSubmit={this.props.handler}>
+            <form onSubmit={props.handler}>
                 <div class="form-group row" id="scheduleWrapper">                                        
                     <label for="year">Year</label> 
                         <select class="form-control" id="year">                    
@@ -42,7 +39,6 @@ class ScheduleForm extends React.Component {
                 <button type="submit" class="btn btn-primary">Submit</button>                
             </form>
             );    
-      }
 }
 
 
