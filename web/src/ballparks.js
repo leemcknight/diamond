@@ -3,11 +3,10 @@ import { Container, Row, Col, Card, Alert, Spinner } from 'react-bootstrap';
 import './index.css';
 
 function Ballparks() {
-   const {ballparks, setBallparks} = useState(); 
-   const {error, setError} = useState();
+   const [ballparks, setBallparks] = useState(); 
+   const [error, setError] = useState();
    
     async function getBallparks() {
-        setError(null);
         console.log('getBallparks');
         var baseUrl = "https://bmkj033bof.execute-api.us-west-2.amazonaws.com/dev/v1";
         try {
@@ -19,7 +18,7 @@ function Ballparks() {
         }
     }
 
-    if(!ballparks) {
+    if(!ballparks && !error) {
         getBallparks();
     }
     return (
@@ -28,10 +27,14 @@ function Ballparks() {
             {ballparks ? ballparks.map(ballpark => (
                 <Card className='m-5'>
                     <Card.Header>{ballpark.name}</Card.Header>
-                    <Card.Text>
-                        <div>{ballpark.start} - {ballpark.end}</div>
-                        <div>{ballpark.city}, {ballpark.state}</div>
-                    </Card.Text> </Card>
+                    <Card.Body>
+                        <Card.Title>{ballpark.start} - {ballpark.end}
+                        </Card.Title>
+                        <Card.Text>
+                                {ballpark.city}, {ballpark.state}
+                        </Card.Text> 
+                    </Card.Body>
+                    </Card>
             )) : 
             <Row><Col><Spinner animation='border' /></Col></Row> 
             }

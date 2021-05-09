@@ -2,18 +2,16 @@ import React from 'react';
 import {useParams} from "react-router-dom";
 import { useFetch  } from 'react-async';
 import './playByPlay.css'
-const {Container, Row, Col, Card} = require('react-bootstrap');
+const {Container, Row, Col, Card, Spinner, Alert, Button, ButtonToolbar, ButtonGroup} = require('react-bootstrap');
+const inningSuffixes = {
+    1: 'st',
+    2: 'nd',
+    3: 'rd'
+};
 
 function inningSuffix(inning) {
-    if(inning >= 4) {
-        return 'th';
-    } else if(inning === 1) {
-        return 'st';
-    } else if(inning === 2) {
-        return 'nd';
-    } else if(inning === 3) {
-        return 'rd';
-    }
+    const suffix = inningSuffixes[inning];
+    return suffix ? suffix : 'rd';
 }
 
 function groupPlays(plays) {
@@ -46,9 +44,9 @@ function PlayByPlay() {
     const { data, error, isPending } = useFetch(`${baseUrl}/game/${gameId}/playByPlay`, { headers });
     const [currentInning, setCurrentInning] = React.useState(1);    
     if(isPending)
-        return <h2>Loading...</h2>
+        return (<Container><Row><Col><Spinner animation='border' role='status'/></Col></Row></Container>);
     if(error)
-        return <h2>We encountered an error.</h2>
+        return (<Container><Row><Col><Alert variant='danger'>There was an error retrieving this game</Alert></Col></Row></Container>);
     if(data) {
         const innings = groupPlays(data.plays);
         return (
@@ -65,9 +63,9 @@ function PlayByPlay() {
             <Row>
                 <Container className='border'>
                     <Row className='border-bottom md-auto'>
-                        <Col className='md-auto'>Final></Col>
+                        <Col className='md-auto'>Final</Col>
                             {data.log.box.map(inning => (
-                                <Col className='md-auto'>{inning.i}</Col>
+                                <Col key={`inning-i-${inning.i}`} className='md-auto'>{inning.i}</Col>
                             ))}                            
                             <Col className='md-auto'>R</Col>
                             <Col className='md-auto'>H</Col>
@@ -76,7 +74,7 @@ function PlayByPlay() {
                     <Row className='border-bottom'>
                         <Col className='md-auto'>{data.info.visteam}</Col>
                             {data.log.box.map(inning => (
-                                <Col className='md-auto'>{inning.v}</Col>
+                                <Col key={`inning-v-${inning.i}`} className='md-auto'>{inning.v}</Col>
                             ))}
                             <Col className='md-auto'>{data.log.visitorScore}</Col>
                             <Col className='md-auto'>{data.log.visitorHits}</Col>
@@ -85,7 +83,7 @@ function PlayByPlay() {
                     <Row> 
                         <Col className='md-auto'>{data.info.hometeam}</Col>
                             {data.log.box.map(inning => (
-                                <Col className='md-auto'>{inning.h}</Col>
+                                <Col key={`inning-h-${inning.i}`} className='md-auto'>{inning.h}</Col>
                             ))}
                             <Col className='md-auto'>{data.log.homeScore}</Col>
                             <Col className='md-auto'>{data.log.homeHits}</Col>
@@ -95,40 +93,41 @@ function PlayByPlay() {
                 </Container>                   
                </Row>
                <Row>
-                <Container id='gameinfo'>   
-
-                <div class="btn-toolbar justify-content-md-center m-4" role="toolbar" aria-label="Toolbar with button groups">
-                    <div class="btn-group mr-2" role="group" aria-label="First group">
-                    {innings.map(inning => 
-                            inning.side === 0 ? <button type="button" class="btn btn-success" onClick={() => setCurrentInning(inning.inning)}>{inning.inning}</button> : null
-                        )}
-                    </div>                    
-                </div>
-
-                    <div>   
+                <Col>
+                    <ButtonToolbar className="justify-content-md-center m-4">
+                        <ButtonGroup className="mr-2"> 
+                        {innings.map(inning => 
+                                inning.side === 0 ? <Button onClick={() => setCurrentInning(inning.inning)}>{inning.inning}</Button> : null
+                            )}
+                        </ButtonGroup>                    
+                    </ButtonToolbar>
+                </Col>
+                </Row>
+                <Row>
+                    <Col>   
                         {innings.filter(inning => inning.inning === currentInning)
                                 .map(inning => (
                             <Card className='m-4 w-50'>
                                 <Card.Header>{inning.side === 0 ? "Top" : "Bottom"} of the {inning.inning} {inningSuffix(inning.inning)}</Card.Header>
                                 <Card.Body>{inning.plays.map(play => (
-                                    <div class="p-2">                                                                                                       
+                                    <div className="p-2">                                                                                                       
                                         {play.substitutions.map(substitution => 
-                                            <div class="alert alert-secondary" role="alert"><div class="col">{substitution}</div></div>
+                                            <div className="alert alert-secondary" role="alert"><div class="col">{substitution}</div></div>
                                             )}
                                         {play.event.shortDescription !== 'NP' ?     
-                                        <div class="clearfix bg-white">
-                                            <div class="float-left">
-                                                <ul class="list-group">
-                                                    <li class="list-group-item">{ `${play.player} ${play.event.description}`}
+                                        <div className="clearfix bg-white">
+                                            <div className="float-left">
+                                                <ul className="list-group">
+                                                    <li className="list-group-item">{ `${play.player} ${play.event.description}`}
                                                         {play.event.modifiers.map(modifier => (
                                                             ` ${modifier}`
                                                         ))}
                                                     </li> 
                                                     {play.event.advance ? play.event.advance.map(advance => (
-                                                        <li class="list-group-item list-group-item-success">{advance}</li>
+                                                        <li className="list-group-item list-group-item-success">{advance}</li>
                                                     )) : null}</ul>
-                                            </div>
-                                            <div class="float-right">
+                                            </div>class
+                                            <div className="float-right">
                                                 <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target={`#${play.playerId}${play.inning}${play.side}`} aria-expanded="false" aria-controls={`${play.playerId}${play.inning}${play.side}`}>
                                                     {play.event.shortDescription}
                                                 </button>
@@ -148,9 +147,8 @@ function PlayByPlay() {
                                 </Card.Body>                            
                             </Card>
                             ))} 
-                    </div>                                                                                    
-                </Container>            
-            </Row>
+                    </Col>                                                                                    
+                </Row>
             </Container>            
         );
     }

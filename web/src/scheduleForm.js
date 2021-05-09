@@ -2,8 +2,15 @@ import React from 'react';
 import TeamDropDown from './teamDropDown';
 
 function ScheduleForm(props) {
+        function handleSubmit(event) {
+            event.stopPropagation();
+            const form = event.target;
+            console.log(form);
+            props.scheduleCallback(form);
+        }
+
         return (      
-            <form onSubmit={props.handler}>
+            <form onSubmit={handleSubmit}>
                 <div class="form-group row" id="scheduleWrapper">                                        
                     <label for="year">Year</label> 
                         <select class="form-control" id="year">                    
