@@ -9,7 +9,7 @@
   "author": "Lee McKnight",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.623.0",
+    "aws-sdk": "^2.814.0",
     "serverless": "^1.69.0",
     "serverless-http": "^2.3.2",
     "webpack": "^4.42.1"
