@@ -1,19 +1,25 @@
 import React from 'react';
 import TeamDropDown from './teamDropDown';
+const { Dropdown, Button } = require('react-bootstrap');
 
 function ScheduleForm(props) {
         function handleSubmit(event) {
             event.stopPropagation();
             const form = event.target;
-            console.log(form);
-            props.scheduleCallback(form);
+            const scheduleForm = {
+                year: form.year.value,
+                month: form.month.value,
+                team: form.team.value
+            }
+            console.log(scheduleForm);
+            props.scheduleCallback(scheduleForm);
         }
 
         return (      
             <form onSubmit={handleSubmit}>
                 <div class="form-group row" id="scheduleWrapper">                                        
                     <label for="year">Year</label> 
-                        <select class="form-control" id="year">                    
+                        <select className="form-control" id="year">                    
                             <option selected>2020</option>
                             <option>2019</option>
                             <option>2018</option>
@@ -21,7 +27,7 @@ function ScheduleForm(props) {
                             <option>2016</option>
                         </select>                    
                     <label for="month">Month</label>
-                    <select class="form-control" id="month">                    
+                    <select className="form-control" id="month">                    
                             <option value="01">Jan</option>
                             <option value="02">Feb</option>
                             <option value="03">Mar</option>
@@ -38,12 +44,12 @@ function ScheduleForm(props) {
                 </div>
                 <div class="form-group row">
                     <label>Team</label>
-                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <Dropdown variant='primary' className='dropdown-toggle' id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Teams
-                    </button>
+                    </Dropdown>
                     <TeamDropDown />
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>                
+                <Button type="submit">Submit</Button>                
             </form>
             );    
 }

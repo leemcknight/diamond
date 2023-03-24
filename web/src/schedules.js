@@ -4,8 +4,6 @@ import ScheduleForm from './scheduleForm';
 const { Container, Row, Col, Card, CardDeck, Alert } = require('react-bootstrap');
 const moment = require('moment');
 
-
-
 function Schedules() {
     const [schedule, setSchedule] = useState();
     const [busy, setBusy] = useState(false);

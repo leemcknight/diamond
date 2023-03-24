@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.css';
 import { useFetch  } from 'react-async';
+const { DropDownButton, DropDown } = require('react-bootstrap');
 
 function TeamDropDown() {
 
@@ -20,9 +21,9 @@ function TeamDropDown() {
       return <h2>We encountered an error.</h2>
     if(teams)
         return (                    
-        <div class="dropdown-menu scroll-window" aria-labelledby="dropdownMenuButton">            
-            {teams.map(team => <a class="dropdown-item" href="#">{team.location} {team.nickname}</a>)}            
-        </div>        
+        <DropDownButton id='teamDropDown' title='Team'>
+            {teams.map(team => <DropDown.Item href="#">{team.location} {team.nickname}</DropDown.Item>)}            
+        </DropDownButton>        
     );
 }
 

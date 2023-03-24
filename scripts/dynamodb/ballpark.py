@@ -34,7 +34,7 @@ keymap = {
 
 with open('data/ballparks/parkcode.txt') as ballparks:
     ballparkreader = csv.DictReader(ballparks)
-    table = dynamo.Table('ballpark')
+    table = dynamo.Table('diamond')
 
     mapped_keys = [map_keys(item, keymap) for item in ballparkreader]
     cleaned = [clean_map(item) for item in mapped_keys]

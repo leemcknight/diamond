@@ -22,7 +22,7 @@ fieldnames = ['date', 'game_number',
 def load_file(path):
     with open(path) as schedules:
         schedule_reader = csv.DictReader(schedules, fieldnames)
-        table = dynamo.Table('schedule')
+        table = dynamo.Table('diamond')
 
         cleaned = [clean_map(item) for item in schedule_reader]    
         for schedule in cleaned:
