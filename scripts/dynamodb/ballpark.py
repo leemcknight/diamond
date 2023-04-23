@@ -1,3 +1,5 @@
+#!/usr/bin python3
+
 import boto3
 import csv
 
@@ -6,6 +8,10 @@ dynamo = boto3.resource('dynamodb')
 
 def map_keys(item, keymap):
     keys = list(item.keys())
+    # key
+    item["item_key"] = "ballpark"
+    item["item_name"] = item["PARKID"]
+
     for item_key in keys:
         item[keymap[item_key]] = item.pop(item_key)
     return item
@@ -21,13 +27,13 @@ def clean_map(item):
 #PARKID,NAME,AKA,CITY,STATE,START,END,LEAGUE,NOTES
 
 keymap = {
-    'PARKID': 'ballpark_id',
+    'PARKID': 'id',
     'NAME': 'name',
     'AKA': 'aka',
     'CITY': 'city',
     'STATE': 'state',
-    'START': 'start',
-    'END': 'end',
+    'START': 'startDate',
+    'END': 'endDate',
     'LEAGUE': 'league',
     'NOTES': 'notes'    
 }

@@ -1,14 +1,14 @@
-import React from 'react';
-import './index.css';
-import ScheduleForm from './scheduleForm';
+import React from "react";
+import ScheduleForm from "./components/scheduleForm";
+import { Container } from "react-bootstrap";
 
 function Home() {
-    return (
-      <div className="jumbotron m-5">
-        <h1 class="display-4">Welcome to Diamond</h1>
-        <ScheduleForm />
-      </div>
-    );
-  } 
+  return (
+    <Container>
+      <h1 className="display-4">Welcome to Diamond</h1>
+      <ScheduleForm />
+    </Container>
+  );
+}
 
-  export default Home;
+export default Home;

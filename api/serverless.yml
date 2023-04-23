@@ -1,0 +1,81 @@
+# Welcome to Serverless!
+#
+# This file is the main config file for your service.
+# It's very minimal at this point and uses default values.
+# You can always add more config options for more control.
+# We've included some commented out config examples here.
+# Just uncomment any of them to get that config option.
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+#
+# Happy Coding!
+
+service: diamond
+# app and org for use with dashboard.serverless.com
+#app: your-app-name
+#org: your-org-name
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+# frameworkVersion: "=X.X.X"
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs12.x  
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+      Resource:
+        arn:aws:dynamodb:us-west-2:941853961702:table/*        
+
+# you can overwrite defaults here
+  stage: dev
+  region: us-west-2
+
+functions:  
+  getBallparks:
+    handler: src/http/handler.getBallparks
+    events:
+      - http:
+          path: /ballparks
+          method: get
+  getFranchises:
+    handler: src/http/handler.handleGetFranchises
+    events:
+      - http:
+          path: /franchises
+          method: get
+  filterFranchises:
+    handler: src/http/handler.handleFilterFranchises
+    events:
+      - http:
+          path: /franchises/{name}
+          method: get  
+  monthSchedule:
+      handler: src/http/handler.getMonthSchedule
+      events:
+      - http:
+          path: /schedule/{year}/{month}
+          method: get
+  gameDetail:
+      handler: src/http/handler.getGameDetails
+      events:
+      - http:
+          path: /game/{id}/playByPlay
+          method: get
+  getPeople:
+      handler: src/http/handler.batchGetPerson
+      events:
+      - http:
+          path: /people/batchGet
+          method: post
+  
+
+plugins:
+  - serverless-plugin-typescript
