@@ -14,7 +14,6 @@ class Positions:
     def get_field_name(position):
         return position[position]['fieldLocation']
 
-    def get_player_and_position(self, position, game_state):
-        print('getting position for {}'.format(position))
-        return '{} {}'.format(self.positions[position]['position'], 'player')
+    def get_player_and_position(self, position, game_state):        
+        return '{}'.format(self.positions[position]['position'])
 

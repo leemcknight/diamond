@@ -1,4 +1,4 @@
-import { toBases, fromBases } from "../lookups/bases.json";
+import { toBases, fromBases } from "../../lookups/bases.json";
 
 function advanceDescription(advanceString: string): string {
   const from = advanceString.substring(0, 1);

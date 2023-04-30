@@ -1,8 +1,43 @@
-export type BoxScoreEntry = {
-  inning: number;
-  home?: string;
-  visitor?: string;
+export type HittingEntry = {
+  name: string;
+  positions: string[];
+  atBats: number;
+  hits: number;
+  rbi: number;
+  walks: number;
+  strikeOuts: number;
+  leftOnBase: number;
+  subs: Array<HittingEntry>;
 };
+
+export type BattingStats = {
+  singles: string[];
+  doubles: string[];
+  triples: string[];
+  homeruns: string[];
+  rbi: string[];
+};
+
+export type PitchingLine = {
+  name: string;
+  inningsPitched: string;
+  hits: number;
+  earnedRuns: number;
+  walks: number;
+  strikeouts: number;
+  homeruns: number;
+  pitches: number;
+  strikes: number;
+  battersFaced: number;
+};
+
 export type BoxScore = {
-  innings: Array<BoxScoreEntry>;
+  home: {
+    lineupStats: Array<HittingEntry>;
+    pitchingStats: Array<PitchingLine>;
+  };
+  visitor: {
+    lineupStats: Array<HittingEntry>;
+    pitchingStats: Array<PitchingLine>;
+  };
 };

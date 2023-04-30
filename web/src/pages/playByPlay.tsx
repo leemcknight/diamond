@@ -16,6 +16,9 @@ import {
   Collapse,
 } from "react-bootstrap";
 import { TPlay } from "../types";
+import { LineScore } from "../partials/lineScore";
+import { SpinnerOverlay } from "../components/spinnerOverlay";
+import { BoxScore } from "../partials/boxScore";
 
 const inningSuffixes = {
   1: "st",
@@ -74,67 +77,46 @@ export function PlayByPlay(): JSX.Element {
 
   return (
     <>
+      {isLoading && <SpinnerOverlay />}
       {game && (
-        <Container>
-          <Row>
+        <Container className="m-3">
+          <Row className="bg-light border shadow-sm rounded">
             <Col className="m-4">
-              <img
-                alt="visiting team logo"
-                src={`/team_logos/${game?.visitingTeam}.svg`}
-                width="128"
-                height="128"
-              />{" "}
-              at{" "}
-              <img
-                alt="home team logo"
-                src={`/team_logos/${game?.homeTeam}.svg`}
-                width="128"
-                height="128"
-              />
+              <h4>
+                <img
+                  alt="visiting team logo"
+                  src={`/team_logos/${game?.visitingTeam}.svg`}
+                  width="64"
+                  height="64"
+                  className="mx-4"
+                />
+                {game.gameLog.visitorScore}
+              </h4>
+            </Col>
+            <Col className="m-4">
+              <h4>FINAL</h4>
+              {new Date(game.gameDate).toLocaleDateString()}
+            </Col>
+            <Col className="m-4">
+              <h4>
+                {game.gameLog.homeScore}
+                <img
+                  alt="home team logo"
+                  src={`/team_logos/${game?.homeTeam}.svg`}
+                  width="64"
+                  height="64"
+                  className="mx-4"
+                />
+              </h4>
             </Col>
           </Row>
           <Row>
-            <Col>{new Date(game.gameDate).toLocaleDateString()}</Col>
+            <Col>
+              <LineScore game={game} />
+            </Col>
           </Row>
           <Row>
-            <Col>{game?.startTime}</Col>
-          </Row>
-          <Row>
-            <Container className="border">
-              <Row className="border-bottom md-auto">
-                <Col className="md-auto">Final</Col>
-                {game?.gameLog.boxScore.innings.map((inning) => (
-                  <Col key={`inning-i-${inning.inning}`} className="md-auto">
-                    {inning.inning}
-                  </Col>
-                ))}
-                <Col className="md-auto">R</Col>
-                <Col className="md-auto">H</Col>
-                <Col className="md-auto">E</Col>
-              </Row>
-              <Row className="border-bottom">
-                <Col className="md-auto">{game?.visitingTeam}</Col>
-                {game?.gameLog.boxScore.innings.map((inning) => (
-                  <Col key={`inning-v-${inning.inning}`} className="md-auto">
-                    {inning.visitor}
-                  </Col>
-                ))}
-                <Col className="md-auto">{game?.gameLog.visitorScore}</Col>
-                <Col className="md-auto">{game?.gameLog.visitorHits}</Col>
-                <Col className="md-auto">{game?.gameLog.visitorErrors}</Col>
-              </Row>
-              <Row>
-                <Col className="md-auto">{game?.homeTeam}</Col>
-                {game?.gameLog.boxScore.innings.map((inning) => (
-                  <Col key={`inning-h-${inning.inning}`} className="md-auto">
-                    {inning.home}
-                  </Col>
-                ))}
-                <Col className="md-auto">{game?.gameLog.homeScore}</Col>
-                <Col className="md-auto">{game?.gameLog.homeHits}</Col>
-                <Col className="md-auto">{game?.gameLog.homeErrors}</Col>
-              </Row>
-            </Container>
+            <BoxScore game={game} />
           </Row>
           <Row>
             <Col>

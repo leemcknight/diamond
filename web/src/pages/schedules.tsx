@@ -7,14 +7,7 @@ import {
 import { TFranchise, TMonthSchedule, TTeamSchedule } from "../types";
 import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
-const {
-  Container,
-  Row,
-  Col,
-  Card,
-  CardDeck,
-  Alert,
-} = require("react-bootstrap");
+import { Container, Row, Col, Card, Alert } from "react-bootstrap";
 const moment = require("moment");
 
 function Schedules(): JSX.Element {

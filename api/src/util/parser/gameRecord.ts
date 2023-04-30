@@ -1,46 +1,9 @@
-import {
-  Play,
-  GameLog,
-  GameRecord,
-  Game,
-  Player,
-  GameProperty,
-} from "../types";
-import { getLocationString } from "./fieldLocations";
-import { boxScore, unquote } from "./gamelog";
-import { parsePlay } from "./parsePlay";
-
-function parseComment(commentString: string): string {
-  return commentString.split(",")[1].replace(/"/g, "").replace("$", "");
-}
-
-function parseSubstitution(substitutionString: string) {
-  let parts = substitutionString.split(",");
-  const name = parts[2].replace(/"/g, "");
-  const side = parts[3];
-  const pos = getLocationString(parts[5]);
-  if (Number(parts[5]) > 10) {
-    return `${
-      side == "0" ? "Visiting team" : "Home team"
-    } brings ${name} in as a ${pos}`;
-  }
-  return `${
-    side == "0" ? "Visiting team" : "Home team"
-  } moves ${name} to ${pos}`;
-}
-
-export function parseGameLog(log: string): GameLog {
-  const parts = log.split(",");
-  return {
-    boxScore: boxScore(unquote(parts[19]), unquote(parts[20])),
-    visitorScore: Number(parts[9]),
-    homeScore: Number(parts[10]),
-    visitorHits: Number(parts[22]),
-    homeHits: Number(parts[50]),
-    visitorErrors: Number(parts[44]),
-    homeErrors: Number(parts[72]),
-  } as GameLog;
-}
+import { Game, GameProperty, GameRecord, Play, Player } from "../../types";
+import { unquote } from "../gamelog";
+import { parseComment } from "./comment";
+import { parseGameLog } from "./gameLog";
+import { parsePlay } from "./play";
+import { parseSubstitution } from "./substitution";
 
 export function parseGameRecord(item: GameRecord): Game {
   const blob = item.gameData;
@@ -48,7 +11,6 @@ export function parseGameRecord(item: GameRecord): Game {
   var game = {
     plays: new Array<Play>(),
     players: new Array<Player>(),
-    info: new Array<GameProperty>(),
     data: new Array<string>(),
   } as Game;
   const lines = blob.split("\n");
@@ -153,7 +115,7 @@ function addInfo(game: Game, key: string, info: string) {
       game.fieldConditions = info;
       break;
     case "precip":
-      //TODO
+      game.precipitation = info;
       break;
     case "sky":
       game.sky = info;
@@ -165,13 +127,13 @@ function addInfo(game: Game, key: string, info: string) {
       game.attendance = Number(info);
       break;
     case "wp":
-      game.winningPitcher = info;
+      game.winningPitcher = unquote(info);
       break;
     case "lp":
-      game.losingPitcher = info;
+      game.losingPitcher = unquote(info);
       break;
     case "save":
-      //TODO
+      game.savingPitcher = unquote(info);
       break;
   }
 }

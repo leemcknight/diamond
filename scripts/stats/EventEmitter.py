@@ -1,9 +1,9 @@
 import asyncio
 from positions import Positions
-
+from lookup import get_current_pitcher
 
 class EventEmitter:
-    handlers = {'pitch': [], 'K': []}
+    handlers = {'pitch': [], 'K': [], 'BB': [], '1B': [], '2B': [], '3B': [],'HR': [], 'E':[], }
     positions = Positions()
 
     def emitter(self, event_code):
@@ -21,46 +21,45 @@ class EventEmitter:
     def add_handler(self, event, handler):
         self.handlers[event].append(handler)
 
-    def emit_pickoff_throw_by_catcher(self, pickoff, game_state):
+    def emit_pickoff_throw_by_catcher(self, pickoff, game_state, box_score):
         print('emitting pickoff throw by catcher'.format(pickoff))
 
-    def emit_blocked_pitch(self, blocked_pitch, game_state):
+    def emit_blocked_pitch(self, blocked_pitch, game_state, box_score):
         print('emitting blocked pitch'.format(blocked_pitch))
 
-    def emit_play_not_involving_batter(self, play, game_state):
+    def emit_play_not_involving_batter(self, play, game_state, box_score):
         print('emitting play not involving batter'.format(play))
 
-    def emit_stealattempt(self, steal_attempt, game_state):
+    def emit_stealattempt(self, steal_attempt, game_state, box_score):
         print('runner goes!')
 
-    def emit_pickoff(self, pickoff, game_state):
+    def emit_pickoff(self, pickoff, game_state, box_score):
         print('emitting pickoff: {}'.format(pickoff))
 
-    def emit_pitch(self, pitch, game_state):
-        print('Here comes the pitch...')
-        pitcher_index = '1' if game_state['inning'][0] == 'T' else '0'
-        pitcher = game_state['players'][pitcher_index]['1']
+    def emit_pitch(self, pitch, game_state, box_score):        
+        pitcher_index = '1' if game_state['inning'][0] == 'T' else '0'        
+        pitcher = game_state['players'][pitcher_index]['1']        
+        pitching_line = box_score.get_pitching_line(pitcher_index).current_reliever()
+        
         for handler in self.handlers['pitch']:
             handler(pitch, pitcher, game_state)
         balls = int(game_state['count'].split('-')[0])
         strikes = int(game_state['count'].split('-')[1])
+        is_strike = False
         if(pitch in 'SC'):
-            strikes += 1
-            if(pitch == 'S'):
-                print('Swung on and missed.')
-            elif(pitch == 'C'):
-                print('Called Strike.')
-        elif(pitch in 'BIPV'):
-            print('ball.')
+            strikes += 1 
+            is_strike = True           
+        elif(pitch in 'BIPV'):            
             balls += 1
         elif(pitch == 'F'):
-            print('Fouled off.')
+            is_strike = True
             if(strikes < 2):
                 strikes += 1
         elif(pitch == 'X'):
-            print('Ball in play...')
-        game_state['count'] = str(balls) + '-' + str(strikes)
-        print('Count now {}'.format(game_state['count']))
+            is_strike = True            
+        
+        pitching_line.pitch(is_strike)
+        game_state['count'] = str(balls) + '-' + str(strikes)        
 
     def emit_advance(self, advance, game_state):
         print('emitting advance: {}'.format(advance))
@@ -100,9 +99,12 @@ class EventEmitter:
         print('----------------------')
         print('We move to the {} of the {}.'.format(top_bottom, game_state['inning']))
 
-    def emit_out(self, game_state):
+    def emit_out(self, game_state, box_score):
         outs = int(game_state['outs'])
         outs += 1
+        pitching_team = '1' if game_state['inning'][0] == 'T' else '0'
+        line = box_score.get_pitching_line(pitching_team)
+        line.record_out()
         game_state['outs'] = outs
         print('There are now {} outs.'.format(outs))
         if(outs == 3):
@@ -123,18 +125,21 @@ class EventEmitter:
 
     def emit_walk(self, play, game_state):
         print('Walked him.')
+        pitcher_index = '1' if game_state['inning'][0] == 'T' else '0'
+        pitcher = game_state['players'][pitcher_index]['1']
         game_state['runners']['1'] = game_state['batter']
+        for handler in self.handlers['BB']:
+            handler(pitcher, game_state['runners']['1'], game_state)
 
     def emit_hit_by_pitch(self, play, game_state):
         print('Hit by pitch.')
         game_state['runners']['1'] = game_state['batter']
 
-    def emit_strikeout(self, play, game_state):
-        print('Struck him out.')
-        pitcher = self.get_pitcher(game_state)
-        self.emit_out(game_state)
+    def emit_strikeout(self, play, game_state, box_score):
+        print('Struck him out.')                
         for handler in self.handlers['K']:
-            handler(pitcher, game_state)
+            handler(game_state)        
+        self.emit_out(game_state, box_score)
 
     def emit_stolen_base(self, play, game_state):
         stolen_base = play[2:3]
@@ -145,32 +150,67 @@ class EventEmitter:
         game_state['runners'][stolen_base] = runner
         game_state['runners'][str(prev_base)] = None
 
-    def emit_pickoff(self, play, game_state):
-        pickoff_play = play[2:len(play)]
-        print('pickoff play: '.format(pickoff_play))
-
-    def emit_homerun(self, play, game_state):
-        print('{} homers!'.format(game_state['batter']))
-        self.emit_run(game_state['batter'], game_state)
+    def emit_homerun(self, play, game_state, box_score):
+        print('{} homers!'.format(game_state['batter']))                
+        self.emit_run(game_state['batter'], game_state)        
  
-    def parse_outs(self, play, game_state):
-        print('out on play: {}'.format(play))
+    def parse_outs(self, play, game_state, box_score):        
         #check for fielder's choice
         if play.startswith('FC'):
             pos = play[2:3]
             print('pos: {}'.format(pos))
             print('batter reaches on a fielders choice.  Out made by {}'.format(self.positions.get_player_and_position(pos, game_state)))
-        else:
-            pos = play[0:1]
-            print('out on a play to {}'.format(self.positions.get_player_and_position(pos, game_state)))
-        self.emit_out(game_state)
+        else:            
+            unassisted = True
+            last = ""            
+            next_is_runner_out = False
+            print("out on a play from {}".format(self.positions.get_player_and_position(play[0], game_state)))
+            for idx in range(0, len(play)):                                
+                c = play[idx]
+                if(c == "("):
+                    next_is_runner_out = True                
+                elif(c == ")"):
+                    next_is_runner_out = False
+                elif next_is_runner_out:
+                    # "c" is the runner forced on this play
+                    next_is_runner_out = False
+                    print("Runner from {} is out.".format(c))
+                    # self.emit_out(game_state)
+                else:
+                    next_is_runner_out = False
+                    fielder = self.positions.get_player_and_position(play[idx], game_state)
+                    if idx > 0:
+                        unassisted = False
+                        print(" to {}".format(fielder))       
+                        self.emit_out(game_state, box_score)         
+                last = play[idx]
+            
+            if unassisted:
+                if int(last) < 7:                
+                    print(" + Unassisted.")
+                self.emit_out(game_state, box_score)
+                
+            
+        #self.emit_out(game_state)
         
-    def emit_play(self, play, game_state):
+    def emit_play(self, play, game_state, box_score):      
+        print("play {}".format(play))  
+        team = '0' if game_state['inning'][0] == 'T' else '1'
+        pitching_team = '1' if game_state['inning'][0] == 'T' else '0'
+        batting_line = box_score.get_hitting_line(team, game_state['batter'])
+        pitching_line = box_score.get_pitching_line(pitching_team)
         if(play.startswith('SB')):
             self.emit_stolen_base(play, game_state)
         elif(play.startswith('S')):
-            self.emit_single(play, game_state)
+            batting_line.single()
+            pitching_line.hit()
+            self.emit_single(play, game_state, box_score)
+        elif(play.startswith('CS')):
+            print("caught stealing.")
+            self.emit_out(game_state, box_score)
         elif(play.startswith('W')):
+            pitching_line.walk()
+            batting_line.walk()
             self.emit_walk(play, game_state)
         elif(play.startswith('E')):
             print('{} reaches on an error by {}'
@@ -181,14 +221,19 @@ class EventEmitter:
             print('catchers interference.  batter awarded first base')
             game_state['runners']['1'] = game_state['batter']
         elif(play.startswith('DGR')):
+            batting_line.double()
             print('{} hits a ground rule double.'.format(game_state['batter']))
             game_state['runners']['2'] = game_state['batter']
         elif(play.startswith('DI')):
             print('Runner Advances from on defensive indifference')
         elif (play.startswith('D')):
+            pitching_line.hit()
+            batting_line.double()
             print('{} doubles to {}'.format(game_state['batter'], self.positions.get_player_and_position(play[1:2], game_state)))
             game_state['runners']['2'] = game_state['batter']
         elif (play.startswith('T')):
+            pitching_line.hit()
+            batting_line.triple()
             print('{} triples to {}'.format(game_state['batter'], self.positions.get_player_and_position(play[1:2], game_state)))
             game_state['runners']['3'] = game_state['batter']
         elif(play.startswith('FC')):
@@ -198,11 +243,17 @@ class EventEmitter:
         elif(play.startswith('HP')):
             self.emit_hit_by_pitch(play, game_state)
         elif (play.startswith('H')):
+            pitching_line.homerun()
+            batting_line.homerun()
             self.emit_homerun(play, game_state)
         elif(play.startswith('IW')):
+            pitching_line.walk()
+            batting_line.walk()
             game_state['runners']['1'] = game_state['batter']      
         elif(play.startswith('K')):
-            self.emit_strikeout(play, game_state)
+            pitching_line.strikeout(False)
+            batting_line.strikeout()
+            self.emit_strikeout(play, game_state, box_score)
         elif(play.startswith('NP')):
             print('No play.')
         elif(play.startswith('OA')):
@@ -210,33 +261,29 @@ class EventEmitter:
         elif(play.startswith('PB')):
             print('Passed ball.')
         elif(play.startswith('PO')):
-            self.emit_pickoff(play, game_state)
+            self.emit_pickoff(play, game_state, box_score)
         elif(play.startswith('BK')):
             print('Balk')
+        elif(play.startswith('FL')):
+            print('Fouled off, play: ')
         else:
-            self.parse_outs(play, game_state)
+            self.parse_outs(play, game_state, box_score)
 
     def emit_batter(self, batter, game_state):
         game_state['batter'] = batter
         game_state['count'] = '0-0'
-        game_state['runners']['B'] = batter
-        print(game_state)
+        game_state['runners']['B'] = batter        
         print('batter is now: {}'.format(batter))
 
-    def get_pitcher(self, game_state):
-        if game_state['inning'].startswith('T'):
-            return game_state['players']['1']['1']
-        return game_state['players']['0']['1']
-
-    def emit_single(self, play, game_state):
-        print('{} singles to {}.'.format(game_state['batter'], self.positions.get_player_and_position(play[1:2], game_state)))
+    def emit_single(self, play, game_state, box_score):
+        print('{} singles to {}.'.format(game_state['batter'], self.positions.get_player_and_position(play[1:2], game_state)))        
         game_state['runners']['1'] = game_state['batter']
 
-    def emit_events(self, event_data, game_state):
+    def emit_events(self, event_data, game_state, box_score):        
         self.emit_batter(event_data[3], game_state)
         pitches = event_data[5]
         for pitch in pitches:
-            self.emitter(pitch)(pitch, game_state)
+            self.emitter(pitch)(pitch, game_state, box_score)
         play = event_data[6]
         desc = play.split('/')[0]
         plays_modifiers_and_advances = play.split('.')
@@ -249,4 +296,6 @@ class EventEmitter:
                     self.emit_modifier(modifier.strip(), game_state)
             for advance in advances:
                 self.emit_advance(advance, game_state)
-        self.emit_play(desc, game_state)
+        play_parts = desc.split('+')
+        for part in play_parts:
+            self.emit_play(part, game_state, box_score)

@@ -1,6 +1,6 @@
 import { TDynamoKey, getSingletonByKey } from "./dynamoReader";
 import { Game, GameRecord } from "../types/game";
-import { parseGameRecord } from "../util/parser";
+import { parseGameRecord } from "../util/parser/gameRecord";
 
 export async function getGame(id: string): Promise<Game> {
   const itemKey = `game`;

@@ -1,4 +1,4 @@
-import { parseGameLog } from "./parser";
+import { parseGameLog } from "./gameLog";
 
 test("parse gamelog", () => {
   const box = parseGameLog(

@@ -1,6 +1,8 @@
 import { BoxScore } from "./boxScore";
+import { LineScore } from "./lineScore";
 
 export type GameLog = {
+  lineScore: LineScore;
   boxScore: BoxScore;
   visitorScore: number;
   homeScore: number;

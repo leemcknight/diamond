@@ -5,9 +5,14 @@ import { Nav, Navbar } from "react-bootstrap";
 export function MainHeader(): JSX.Element {
   const navigate = useNavigate();
   return (
-    <Navbar bg="primary" className="mb-3">
+    <Navbar bg="primary" className="mb navbar-dark">
       <Navbar.Brand href="/">
-        <img alt="diamond logo" src="/diamond.png" width="32" />
+        <img
+          alt="diamond logo"
+          src="/diamond.png"
+          width="32"
+          className="mx-3"
+        />
       </Navbar.Brand>
       <Navbar.Collapse id="main-nav">
         <Nav>

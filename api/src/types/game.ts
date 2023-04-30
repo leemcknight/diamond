@@ -23,10 +23,12 @@ export type Game = {
   wind?: string;
   fieldConditions?: string;
   sky?: string;
+  precipitation?: string;
   timeOfGame?: number;
   attendance?: number;
   winningPitcher?: string;
   losingPitcher?: string;
+  savingPitcher?: string;
   players: Array<Player>;
   starters: Array<Player>;
   plays: Array<Play>;

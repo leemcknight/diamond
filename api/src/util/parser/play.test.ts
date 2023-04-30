@@ -1,6 +1,6 @@
-import { Player } from "../types";
-import { parsePlay } from "./parsePlay";
-import { parseGameLog } from "./parser";
+import { Player } from "../../types";
+import { parsePlay } from "./play";
+import { parseGameLog } from "./gameLog";
 const PLAYERS = [
   {
     id: "ramir001",
