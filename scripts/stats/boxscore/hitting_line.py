@@ -1,3 +1,6 @@
+from positions import Positions
+
+
 class HittingLine:
     def __init__(self, player, position, is_sub) -> None:
         self._name = player
@@ -9,8 +12,8 @@ class HittingLine:
         self._rbi = 0
         self._walks = 0
         self._strikeouts = 0
-        self._lob = 0        
-        self._singles = 0        
+        self._lob = 0
+        self._singles = 0
         self._doubles = 0
         self._triples = 0
         self._homeruns = 0
@@ -18,13 +21,12 @@ class HittingLine:
         self._is_sub = is_sub
         pass
 
-
     def print(self):
-        l = "{}     {}       {}      {}      {}      {}      {}      {}"
-        if self._is_sub:
-            l = "   " + l
+        p = Positions()
+        l = "{}     {}     {}       {}      {}      {}      {}      {}      {}"
         print(l.format(
-            "{} ({})".format(self._name, self._positions),            
+            "{} {}".format(self._name, p.format_positions(self._positions)),
+            self._plate_appearances,
             self._atBats,
             self._runs,
             self._hits,
@@ -32,7 +34,7 @@ class HittingLine:
             self._walks,
             self._strikeouts,
             self._lob
-        ))    
+        ))
         if self._sub is not None:
             self._sub.print()
 
@@ -41,7 +43,7 @@ class HittingLine:
         if self._sub is not None:
             return self._sub.current_sub()
         return self
-    
+
     def sub(self, sub_line):
         if self._sub is None:
             print("setting sub to {}".format(sub_line.player_id()))
@@ -53,46 +55,52 @@ class HittingLine:
         self._positions.append(pos)
 
     def plate_appearance(self):
-        self._plate_appearances +=1 
+        self._plate_appearances += 1
 
     def player_id(self):
-        return self._name    
+        return self._name
 
-    def single(self):        
-        self._plate_appearances  += 1
-        self._hits += 1      
-        self._atBats += 1  
-        self._singles += 1
+    def single(self):
+        if self._sub is not None:
+            self._sub.single()
+        else:
+            self._plate_appearances += 1
+            self._hits += 1
+            self._atBats += 1
+            self._singles += 1
 
-    def double(self):    
-        self._plate_appearances  += 1
+    def double(self):
+        self._plate_appearances += 1
         self._hits += 1
         self._atBats += 1
-        self._doubles += 1 
+        self._doubles += 1
 
     def triple(self):
-        self._plate_appearances  += 1
+        self._plate_appearances += 1
         self._hits += 1
         self._atBats += 1
         self._triples += 1
 
     def homerun(self):
-        self._plate_appearances  += 1
+        self._plate_appearances += 1
         self._hits += 1
         self._atBats += 1
         self._homeruns += 1
-    
+
     def walk(self):
-        self._plate_appearances  += 1
+        self._plate_appearances += 1
         self._walks += 1
-    
+
     def rbi(self):
         self._rbi += 1
 
     def strikeout(self):
-        self._plate_appearances  += 1
-        self._atBats  += 1
-        self._strikeouts += 1
+        if self._sub is not None:
+            self._sub.strikeout()
+        else:
+            self._plate_appearances += 1
+            self._atBats += 1
+            self._strikeouts += 1
 
     def lob(self):
         self._lob += 1
