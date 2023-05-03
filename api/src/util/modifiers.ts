@@ -1,4 +1,5 @@
 import { getLocationString } from "./fieldLocations";
+import { FieldLocations } from "../types";
 
 function locationModifier(modifierCode: string): string {
   let battedBallType = "";
@@ -21,7 +22,7 @@ function locationModifier(modifierCode: string): string {
       type = "Popup";
       break;
     case "F":
-      type = "Fly";
+      type = "Flyball";
       break;
     case "B":
       type = "Bunt";
@@ -31,9 +32,9 @@ function locationModifier(modifierCode: string): string {
   const locationCode = modifierCode.substring(1, modifierCode.length);
   let val;
   if (type == undefined) {
-    val = `to ${getLocationString(locationCode)}`;
+    val = `to ${FieldLocations[locationCode]}`;
   } else {
-    val = `${type} to ${getLocationString(locationCode)}`;
+    val = `${type} to ${FieldLocations[locationCode]}`;
   }
   return val;
 }
@@ -157,7 +158,7 @@ export function buildModifiers(modifierCode: string): string {
       modifier = "sacrifice fly";
       break;
     case "SH":
-      modifier = "sacrifice hit (bunt)";
+      modifier = "sacrifice bunt";
       break;
     case "TH":
       modifier = "throw";
@@ -175,7 +176,7 @@ export function buildModifiers(modifierCode: string): string {
       modifier = "umpire review of call on the field";
       break;
     default:
-      if (modifierCode == undefined) {
+      if (!modifierCode) {
         return "";
       } else {
         return locationModifier(modifierCode);

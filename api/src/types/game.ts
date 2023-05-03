@@ -7,7 +7,7 @@ plays: [],
         log: log
 */
 
-import { GameLog, Play, Player } from "./";
+import { GameLog, Play, Player, BoxScore } from "./";
 
 export type Game = {
   id: string;
@@ -35,6 +35,10 @@ export type Game = {
   info: Array<GameProperty>;
   data: string[];
   gameLog: GameLog;
+  ump1B: string;
+  ump2B: string;
+  ump3B: string;
+  umpHome: string;
 };
 
 export type GameProperty = {

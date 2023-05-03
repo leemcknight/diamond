@@ -1,4 +1,4 @@
-import { Pitch } from "../../types";
+import { BoxScore, Pitch } from "../../types";
 
 export function parsePitches(pitchString: string): Pitch[] {
   const pitchArray = pitchString.split("");
@@ -41,9 +41,11 @@ export function parsePitches(pitchString: string): Pitch[] {
         break;
       case "C":
         pitch.result = "Called Strike";
+        pitch.strike = true;
         break;
       case "F":
         pitch.result = "Foul";
+        pitch.strike = true;
         break;
       case "H":
         pitch.result = "Hit batter";
@@ -53,33 +55,41 @@ export function parsePitches(pitchString: string): Pitch[] {
         break;
       case "K":
         pitch.result = "Strike";
+        pitch.strike = true;
         break;
       case "L":
         pitch.result = "Foul bunt";
+        pitch.strike = true;
         break;
       case "M":
         pitch.result = "Missed bunt attempt";
+        pitch.strike = true;
         break;
       case "N":
         pitch.result = "no pitch (balks or interference calls)";
         break;
       case "O":
         pitch.result = "Foul tip on bunt";
+        pitch.strike = true;
         break;
       case "P":
         pitch.result = "Pitchout";
         break;
       case "Q":
         pitch.result = "Swinging on pitchout";
+        pitch.strike = true;
         break;
       case "R":
         pitch.result = "Foul ball on pitchout";
+        pitch.strike = true;
         break;
       case "S":
         pitch.result = "Swinging strike";
+        pitch.strike = true;
         break;
       case "T":
         pitch.result = "Foul tip";
+        pitch.strike = true;
         break;
       case "U":
         pitch.result = "Unknown or missed pitch";
@@ -89,9 +99,11 @@ export function parsePitches(pitchString: string): Pitch[] {
         break;
       case "X":
         pitch.result = "Ball put into play by batter";
+        pitch.strike = true;
         break;
       case "Y":
         pitch.result = "Ball put into play on pitchout";
+        pitch.strike = true;
         break;
     }
 

@@ -8,3 +8,4 @@ export * from "./game";
 export * from "./ballpark";
 export * from "./franchise";
 export * from "./boxScore";
+export * from "./location";

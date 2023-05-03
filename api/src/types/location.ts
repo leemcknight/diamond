@@ -1,4 +1,4 @@
-const locations = {
+export const FieldLocations = {
   "1": "pitcher",
   "15": "off the mound on the third base side",
   "13": "off the mound on the first base side",

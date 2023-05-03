@@ -1,5 +1,6 @@
 export type HittingEntry = {
   name: string;
+  plateAppearances: number;
   positions: string[];
   atBats: number;
   hits: number;
@@ -7,7 +8,7 @@ export type HittingEntry = {
   walks: number;
   strikeOuts: number;
   leftOnBase: number;
-  subs: Array<HittingEntry>;
+  sub?: HittingEntry;
 };
 
 export type BattingStats = {
@@ -29,6 +30,7 @@ export type PitchingLine = {
   pitches: number;
   strikes: number;
   battersFaced: number;
+  outs: number;
 };
 
 export type BoxScore = {

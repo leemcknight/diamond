@@ -1,10 +1,22 @@
-import { Event, Description } from "../../types";
+import {
+  Event,
+  Description,
+  Game,
+  HittingEntry,
+  PitchingLine,
+  Play,
+} from "../../types";
 import { getLocationString, getPlayerAtPosition } from "../fieldLocations";
 import { buildModifiers } from "../modifiers";
 import { parseAdvances } from "./advances";
 import { fromBases } from "../../lookups/bases.json";
 
-export function parseEvent(eventString: string): Event {
+export function parseEvent(
+  eventString: string,
+  game: Game | undefined,
+  hittingLine: HittingEntry,
+  pitchingLine: PitchingLine
+): Event {
   const parts = eventString.split("/");
   const descCode = parts[0];
   let event = {
@@ -13,24 +25,30 @@ export function parseEvent(eventString: string): Event {
     advances: [],
     description: "",
   } as Event;
+
+  //modifiers
   for (var i = 1; i < parts.length; i++) {
-    if (i == parts.length - 1) {
-      const subparts = parts[i].split(".");
-      if (subparts.length > 1) {
-        event.advances = parseAdvances(subparts[1]);
-      }
-      event.modifiers.push(buildModifiers(subparts[0]));
-    } else {
-      event.modifiers.push(buildModifiers(parts[i]));
-    }
+    const line = parts[i].split(".")[0];
+    event.modifiers.push(buildModifiers(line));
   }
-  const description = buildDescription(descCode);
+
+  const lastPart = parts[parts.length - 1];
+  const advanceStrings = lastPart.split(".");
+  if (advanceStrings.length > 1) {
+    event.advances = parseAdvances(advanceStrings[1]);
+  }
+
+  const description = buildDescription(descCode, hittingLine, pitchingLine);
   event.description = description.long;
   event.shortDescription = description.short;
   return event;
 }
 
-function buildDescription(code: string): Description {
+function buildDescription(
+  code: string,
+  hittingLine: HittingEntry,
+  pitchingLine: PitchingLine
+): Description {
   let desc = {} as Description;
   const initial = code.substring(0, 1);
   switch (initial) {
@@ -44,34 +62,56 @@ function buildDescription(code: string): Description {
     case "8":
     case "9":
       desc = buildOutDescription(code);
+      pitchingLine.outs++;
+      pitchingLine.battersFaced++;
+      hittingLine.atBats++;
       break;
     case "K":
       desc.long = "stikes out";
       desc.short = "Strikeout";
+      pitchingLine.outs++;
+      pitchingLine.strikeouts++;
+      pitchingLine.battersFaced++;
+      hittingLine.atBats++;
+      hittingLine.strikeOuts++;
       break;
     case "W":
       desc.long = "walks";
       desc.short = "Walk";
+      pitchingLine.battersFaced++;
+      pitchingLine.walks++;
+      hittingLine.walks++;
       break;
     case "I":
       desc.long = "intentionally walked";
       desc.short = "Intentional Walk";
+      pitchingLine.battersFaced++;
+      pitchingLine.walks++;
       break;
     case "H":
       desc.long = "homers";
       desc.short = "Homerun";
+      pitchingLine.battersFaced++;
+      pitchingLine.homeruns++;
+      pitchingLine.hits++;
       break;
     case "S":
       desc.short = "Single";
       desc.long = `singles to ${getLocationString(code.substring(1, 2))}`;
+      pitchingLine.battersFaced++;
+      pitchingLine.hits++;
       break;
     case "D":
       desc.short = "Double";
       desc.long = `doubles to ${getLocationString(code.substring(1, 2))}`;
+      pitchingLine.battersFaced++;
+      pitchingLine.hits++;
       break;
     case "T":
       desc.short = "Triple";
       desc.long = `triples to ${getLocationString(code.substring(1, 2))}`;
+      pitchingLine.battersFaced++;
+      pitchingLine.hits++;
       break;
     default:
       desc.long = desc.short = code;

@@ -1,4 +1,11 @@
-import { Game, GameProperty, GameRecord, Play, Player } from "../../types";
+import {
+  BoxScore,
+  Game,
+  GameProperty,
+  GameRecord,
+  Play,
+  Player,
+} from "../../types";
 import { unquote } from "../gamelog";
 import { parseComment } from "./comment";
 import { parseGameLog } from "./gameLog";
@@ -25,11 +32,11 @@ export function parseGameRecord(item: GameRecord): Game {
       case "id":
         break;
       case "play":
-        play = parsePlay(line, game.players);
+        play = parsePlay(line, game);
         game.plays.push(play);
         break;
       case "sub":
-        play.substitutions.push(parseSubstitution(line));
+        play.substitutions.push(parseSubstitution(line, game.gameLog.boxScore));
         break;
       case "start":
         game.players.push({
@@ -88,13 +95,13 @@ function addInfo(game: Game, key: string, info: string) {
       //TODO
       break;
     case "ump1b":
-      //TODO
+      game.ump1B = info;
       break;
     case "ump2b":
-      //TODO
+      game.ump2B = info;
       break;
     case "ump3b":
-      //TODO
+      game.ump3B = info;
       break;
     case "pitches":
       //TODO

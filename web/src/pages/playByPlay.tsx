@@ -14,6 +14,7 @@ import {
   ButtonGroup,
   Button,
   Collapse,
+  Table,
 } from "react-bootstrap";
 import { TPlay } from "../types";
 import { LineScore } from "../partials/lineScore";
@@ -136,74 +137,65 @@ export function PlayByPlay(): JSX.Element {
           </Row>
           <Row>
             <Col>
-              {innings
-                .filter((inning) => inning.inning === currentInning)
-                .map((inning) => (
-                  <Card className="m-4 w-50">
-                    <Card.Header>
-                      {inning.side === "0" ? "Top" : "Bottom"} of the{" "}
-                      {inning.inning} {inningSuffix(inning.inning)}
-                    </Card.Header>
-                    <Card.Body>
-                      {inning.plays.map((play) => (
-                        <div className="p-2">
-                          {play.substitutions.map((substitution) => (
-                            <Alert variant="secondary">{substitution}</Alert>
-                          ))}
-                          {play.event.shortDescription !== "NP" ? (
-                            <div className="clearfix bg-white">
-                              <div className="float-left">
-                                <ul className="list-group">
-                                  <li className="list-group-item">
-                                    {`${play.player} ${play.event.description}`}
-                                    {play.event.modifiers.map(
-                                      (modifier) => ` ${modifier}`
-                                    )}
-                                  </li>
-                                  {play.event.advances
-                                    ? play.event.advances.map((advance) => (
-                                        <li className="list-group-item list-group-item-success">
-                                          {advance}
-                                        </li>
-                                      ))
-                                    : null}
-                                </ul>
-                              </div>
-                              <div className="float-right">
-                                <button
-                                  className="btn btn-primary btn-block"
-                                  type="button"
-                                  data-toggle="collapse"
-                                  data-target={`#${play.playerId}${play.inning}${play.side}`}
-                                  aria-expanded="false"
-                                  aria-controls={`${play.playerId}${play.inning}${play.side}`}
-                                >
-                                  {play.event.shortDescription}
-                                </button>
+              <Table bordered striped className="shadow">
+                <thead>
+                  <tr>
+                    <th>Inning</th>
+                    <th>Score</th>
+                    <th>Batter</th>
+                    <th>Play Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {innings
+                    .filter((inning) => inning.inning === currentInning)
+                    .map((inning) => (
+                      <>
+                        {inning.plays
+                          .filter((play) => play.event.description != "NP")
+                          .map((play) => (
+                            <>
+                              <tr>
+                                <td>{`${inning.side === "0" ? "T" : "B"}${
+                                  inning.inning
+                                }`}</td>
+                                <td>score</td>
+                                <td>{play.player}</td>
+                                <td align="left">
+                                  {play.event.description}{" "}
+                                  {play.event.modifiers.map(
+                                    (modifier) => ` ${modifier}`
+                                  )}
+                                </td>
+                              </tr>
 
-                                <div
-                                  className="border border-primary"
-                                  id={`${play.playerId}${play.inning}${play.side}`}
-                                >
-                                  {play.pitches.map((pitch) => (
-                                    <div className="m-1 p-1">
-                                      {pitch.result}
-                                    </div>
-                                  ))}
-                                </div>
-                              </div>
-                            </div>
-                          ) : null}
-                          {play.comment && (
-                            <Alert variant="primary" className="p-2">
-                              {play.comment}
-                            </Alert>
-                          )}
-                        </div>
-                      ))}
-                    </Card.Body>
-                  </Card>
-                ))}
+                              {play.substitutions.map((substitution) => (
+                                <tr>
+                                  <td align="right" colSpan={4}>
+                                    {substitution}
+                                  </td>
+                                </tr>
+                              ))}
+                              {play.event.advances.map((advance) => (
+                                <tr>
+                                  <td align="right" colSpan={4}>
+                                    {advance}
+                                  </td>
+                                </tr>
+                              ))}
+                              {play.comment && (
+                                <tr>
+                                  <td align="right" colSpan={4}>
+                                    {play.comment}
+                                  </td>
+                                </tr>
+                              )}
+                            </>
+                          ))}
+                      </>
+                    ))}
+                </tbody>
+              </Table>
             </Col>
           </Row>
         </Container>

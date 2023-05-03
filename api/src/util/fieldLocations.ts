@@ -1,3 +1,5 @@
+import { FieldLocations } from "../types";
+
 export function getLocationString(code: string): string {
   let loc = "";
   switch (code) {
@@ -38,6 +40,11 @@ export function getLocationString(code: string): string {
 
   return loc;
 }
+
+export function getFieldLocation(code: string): string {
+  return FieldLocations[code];
+}
+
 export function getPlayerAtPosition(code: string): string {
   var loc = "";
   switch (code) {
