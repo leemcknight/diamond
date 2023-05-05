@@ -112,14 +112,6 @@ export function PlayByPlay(): JSX.Element {
             </Col>
           </Row>
           <Row>
-            <Col className="mt-3 mb-3">
-              <LineScore game={game} />
-            </Col>
-          </Row>
-          <Row>
-            <BoxScore game={game} />
-          </Row>
-          <Row>
             <Col>
               <ButtonToolbar className="justify-content-md-center m-4">
                 <ButtonGroup className="mr-2">
@@ -133,10 +125,6 @@ export function PlayByPlay(): JSX.Element {
                   )}
                 </ButtonGroup>
               </ButtonToolbar>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
               <Table bordered striped size="sm" className="shadow">
                 <thead>
                   <tr>
@@ -162,9 +150,12 @@ export function PlayByPlay(): JSX.Element {
                                 <td align="left">score</td>
                                 <td align="left">{play.player}</td>
                                 <td align="left">
-                                  {play.event.description}{" "}
+                                  {`${play.event.description} `}
                                   {play.event.modifiers.map(
-                                    (modifier) => ` ${modifier}`
+                                    (modifier) => ` ${modifier}.`
+                                  )}
+                                  {play.event.advances.map(
+                                    (advance) => ` ${advance}.`
                                   )}
                                 </td>
                               </tr>
@@ -176,13 +167,7 @@ export function PlayByPlay(): JSX.Element {
                                   </td>
                                 </tr>
                               ))}
-                              {play.event.advances.map((advance) => (
-                                <tr>
-                                  <td align="right" colSpan={4}>
-                                    {advance}
-                                  </td>
-                                </tr>
-                              ))}
+
                               {play.comment && (
                                 <tr>
                                   <td align="right" colSpan={4}>
@@ -196,6 +181,10 @@ export function PlayByPlay(): JSX.Element {
                     ))}
                 </tbody>
               </Table>
+            </Col>
+            <Col md="auto" className="mt-3 mb-3">
+              <LineScore game={game} />
+              <BoxScore game={game} />
             </Col>
           </Row>
         </Container>
