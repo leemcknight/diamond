@@ -112,7 +112,7 @@ export function PlayByPlay(): JSX.Element {
             </Col>
           </Row>
           <Row>
-            <Col>
+            <Col className="mt-3 mb-3">
               <LineScore game={game} />
             </Col>
           </Row>
@@ -137,7 +137,7 @@ export function PlayByPlay(): JSX.Element {
           </Row>
           <Row>
             <Col>
-              <Table bordered striped className="shadow">
+              <Table bordered striped size="sm" className="shadow">
                 <thead>
                   <tr>
                     <th>Inning</th>
@@ -156,11 +156,11 @@ export function PlayByPlay(): JSX.Element {
                           .map((play) => (
                             <>
                               <tr>
-                                <td>{`${inning.side === "0" ? "T" : "B"}${
-                                  inning.inning
-                                }`}</td>
-                                <td>score</td>
-                                <td>{play.player}</td>
+                                <td align="left">{`${
+                                  inning.side === "0" ? "T" : "B"
+                                }${inning.inning}`}</td>
+                                <td align="left">score</td>
+                                <td align="left">{play.player}</td>
                                 <td align="left">
                                   {play.event.description}{" "}
                                   {play.event.modifiers.map(

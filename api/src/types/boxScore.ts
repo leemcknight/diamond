@@ -1,4 +1,5 @@
 export type HittingEntry = {
+  id: string;
   name: string;
   plateAppearances: number;
   positions: string[];
@@ -20,6 +21,7 @@ export type BattingStats = {
 };
 
 export type PitchingLine = {
+  id: string;
   name: string;
   inningsPitched: string;
   hits: number;

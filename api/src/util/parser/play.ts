@@ -22,10 +22,20 @@ export function parsePlay(playCsv: string, game: Game): Play {
   play.count = playParts[4];
   play.pitches = parsePitches(playParts[5]);
 
-  let hittingLine = getHittingEntry(game, play.side, play.playerId);
+  let hittingLine = getHittingEntry(
+    game.gameLog.boxScore,
+    play.side,
+    play.playerId
+  );
+
+  if(!hittingLine) {
+    throw new Error(`Hitting Line not found for ${play.playerId}`);
+    
+    
+  }
   //TODO: maybe change this later.
   let pitchingLine = getPitchingLine(
-    game,
+    game.gameLog.boxScore,
     play.side == "0" ? "home" : "visitor"
   );
   play.event = parseEvent(playParts[6], game, hittingLine, pitchingLine);

@@ -65,6 +65,7 @@ function buildDescription(
       pitchingLine.outs++;
       pitchingLine.battersFaced++;
       hittingLine.atBats++;
+      hittingLine.plateAppearances++;
       break;
     case "K":
       desc.long = "stikes out";
@@ -74,6 +75,7 @@ function buildDescription(
       pitchingLine.battersFaced++;
       hittingLine.atBats++;
       hittingLine.strikeOuts++;
+      hittingLine.plateAppearances++;
       break;
     case "W":
       desc.long = "walks";
@@ -81,12 +83,15 @@ function buildDescription(
       pitchingLine.battersFaced++;
       pitchingLine.walks++;
       hittingLine.walks++;
+      hittingLine.plateAppearances++;
       break;
     case "I":
       desc.long = "intentionally walked";
       desc.short = "Intentional Walk";
       pitchingLine.battersFaced++;
       pitchingLine.walks++;
+      hittingLine.plateAppearances++;
+      hittingLine.walks++;
       break;
     case "H":
       desc.long = "homers";
@@ -94,24 +99,36 @@ function buildDescription(
       pitchingLine.battersFaced++;
       pitchingLine.homeruns++;
       pitchingLine.hits++;
+      hittingLine.hits++;
+      hittingLine.atBats++;
+      hittingLine.plateAppearances++;
       break;
     case "S":
       desc.short = "Single";
       desc.long = `singles to ${getLocationString(code.substring(1, 2))}`;
       pitchingLine.battersFaced++;
       pitchingLine.hits++;
+      hittingLine.hits++;
+      hittingLine.atBats++;
+      hittingLine.plateAppearances++;
       break;
     case "D":
       desc.short = "Double";
       desc.long = `doubles to ${getLocationString(code.substring(1, 2))}`;
       pitchingLine.battersFaced++;
       pitchingLine.hits++;
+      hittingLine.hits++;
+      hittingLine.atBats++;
+      hittingLine.plateAppearances++;
       break;
     case "T":
       desc.short = "Triple";
       desc.long = `triples to ${getLocationString(code.substring(1, 2))}`;
       pitchingLine.battersFaced++;
       pitchingLine.hits++;
+      hittingLine.hits++;
+      hittingLine.atBats++;
+      hittingLine.plateAppearances++;
       break;
     default:
       desc.long = desc.short = code;

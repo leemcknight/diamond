@@ -24,6 +24,11 @@ export type TPlayer = TPerson & {
   fieldPosition: string;
 };
 
+export type TGameProperty = {
+  property: string;
+  propertyValue: string;
+};
+
 export type TGame = {
   id: string;
   gameNumber: number;
@@ -38,16 +43,22 @@ export type TGame = {
   wind?: string;
   fieldConditions?: string;
   sky?: string;
+  precipitation?: string;
   timeOfGame?: number;
   attendance?: number;
   winningPitcher?: string;
   losingPitcher?: string;
+  savingPitcher?: string;
   players: Array<TPlayer>;
   starters: Array<TPlayer>;
   plays: Array<TPlay>;
-  info: string[];
+  info: Array<TGameProperty>;
   data: string[];
   gameLog: TGameLog;
+  ump1B: string;
+  ump2B: string;
+  ump3B: string;
+  umpHome: string;
 };
 export type Event = {
   description: string;

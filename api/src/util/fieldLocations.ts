@@ -30,6 +30,9 @@ export function getLocationString(code: string): string {
     case "9":
       loc = "right field";
       break;
+    case "10":
+      loc = "designated hitter";
+      break;
     case "11":
       loc = "pinch hitter";
       break;

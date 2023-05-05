@@ -2,7 +2,8 @@ import { HittingEntry, PitchingLine } from "../../types";
 import { parseEvent } from "./event";
 
 const HITTING_LINE = {
-  name: "leonj001",
+  id: "leonj001",
+  name: "leanj001",
   hits: 0,
   atBats: 0,
   leftOnBase: 0,

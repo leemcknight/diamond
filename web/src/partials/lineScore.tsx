@@ -19,7 +19,7 @@ export function LineScore({ game }: TProps): JSX.Element {
         <thead>
           <tr>
             <th key="teamSpacker" />
-            {game?.gameLog.boxScore.innings.map((inning) => (
+            {game?.gameLog.lineScore.innings.map((inning) => (
               <th key={`inning-i-${inning.inning}`}>{inning.inning}</th>
             ))}
             <th key="spacer" />
@@ -31,7 +31,7 @@ export function LineScore({ game }: TProps): JSX.Element {
         <tbody>
           <tr>
             <td>{game?.visitingTeam}</td>
-            {game?.gameLog.boxScore.innings.map((inning) => (
+            {game?.gameLog.lineScore.innings.map((inning) => (
               <td key={`inning-v-${inning.inning}`} className="md-auto">
                 {inning.visitor}
               </td>
@@ -43,7 +43,7 @@ export function LineScore({ game }: TProps): JSX.Element {
           </tr>
           <tr>
             <td>{game?.homeTeam}</td>
-            {game?.gameLog.boxScore.innings.map((inning) => (
+            {game?.gameLog.lineScore.innings.map((inning) => (
               <td key={`inning-h-${inning.inning}`} className="md-auto">
                 {inning.home}
               </td>

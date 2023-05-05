@@ -6,6 +6,7 @@ import {
   Play,
   Player,
 } from "../../types";
+import { addHittingEntry, addPitchingEntry } from "../boxScore";
 import { unquote } from "../gamelog";
 import { parseComment } from "./comment";
 import { parseGameLog } from "./gameLog";
@@ -39,13 +40,22 @@ export function parseGameRecord(item: GameRecord): Game {
         play.substitutions.push(parseSubstitution(line, game.gameLog.boxScore));
         break;
       case "start":
+        const id = parts[1];
+        const fullName = parts[2];
+        const team = parts[3] == "0" ? "visitor" : "home";
+        const battingOrder = Number(parts[4]);
+        const fieldPosition = parts[5];
         game.players.push({
-          id: parts[1],
-          fullName: parts[2],
-          team: parts[3] == "0" ? "visitor" : "home",
-          battingOrder: Number(parts[4]),
-          fieldPosition: parts[5],
+          id,
+          fullName,
+          team,
+          battingOrder,
+          fieldPosition,
         });
+        addHittingEntry(log.boxScore, id, fullName, fieldPosition, team);
+        if (fieldPosition == "1") {
+          addPitchingEntry(log.boxScore, id, fullName, team);
+        }
         break;
       case "info":
         addInfo(game, parts[1], parts[2]);

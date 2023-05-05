@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Container, Row, Tab, Tabs } from "react-bootstrap";
 import { TGame } from "../types";
 import { gameDuration } from "../util/time";
+import { TeamBox } from "./teamBox";
 
 type TProps = {
   game: TGame;
@@ -11,8 +12,12 @@ export function BoxScore({ game }: TProps): JSX.Element {
   return (
     <Container className="bg-secondary text-white rounded shadow">
       <Tabs>
-        <Tab eventKey="visitor" title={game.visitingTeam}></Tab>
-        <Tab eventKey="home" title={game.homeTeam}></Tab>
+        <Tab eventKey="visitor" title={game.visitingTeam}>
+          <TeamBox teamBox={game.gameLog.boxScore.visitor}></TeamBox>
+        </Tab>
+        <Tab eventKey="home" title={game.homeTeam}>
+          <TeamBox teamBox={game.gameLog.boxScore.home}></TeamBox>
+        </Tab>
       </Tabs>
       <Row>
         <Col>

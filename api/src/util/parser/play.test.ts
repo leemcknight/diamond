@@ -46,7 +46,8 @@ const GAME = {
       home: {
         lineupStats: [
           {
-            name: "ramir001",
+            id: "ramir001",
+            name: "Manny Ramirez",
             hits: 0,
             atBats: 0,
             leftOnBase: 0,
@@ -59,6 +60,7 @@ const GAME = {
         ],
         pitchingStats: [
           {
+            id: "",
             name: "",
             inningsPitched: "0",
             earnedRuns: 0,
@@ -76,6 +78,7 @@ const GAME = {
       visitor: {
         lineupStats: [
           {
+            id: "leonj001",
             name: "leonj001",
             hits: 0,
             atBats: 0,
@@ -87,7 +90,8 @@ const GAME = {
             walks: 0,
           },
           {
-            name: "backw001",
+            id: "backw001",
+            name: "Wally Backman",
             hits: 0,
             atBats: 0,
             leftOnBase: 0,
@@ -100,6 +104,7 @@ const GAME = {
         ],
         pitchingStats: [
           {
+            id: "",
             name: "",
             inningsPitched: "0",
             earnedRuns: 0,
