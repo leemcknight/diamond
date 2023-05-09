@@ -2,6 +2,10 @@ from .hitting_line import HittingLine
 from .pitching_line import PitchingLine
 
 
+def pad_str(s):
+    return s.ljust(20, " ")
+
+
 class TeamBox:
     def __init__(self, team) -> None:
         self._lineup_stats = []
@@ -19,14 +23,45 @@ class TeamBox:
             self._lineup_stats.append(HittingLine(id, pos, False))
 
     def print(self):
-        print("Batters - {}     NAME     PA     AB     R      H       RBI     BB      SO      LOB".format(self._team.strip()))
-        for ls in self._lineup_stats:
-            ls.print()
+        hitting_headers = [
+            'Batters - {}'.format(self._team.strip()),
+            'PA',
+            'AB',
+            'R',
+            'H',
+            'RBI',
+            'BB',
+            'SO',
+            'LOB'
+        ]
+
+        for header in hitting_headers:
+            print(pad_str(header), end="")
 
         print("\n")
-        print("Pitchers - {}        IP    H    R       ER     BB      SO      HR".format(self._team.strip()))
-        if self._pitching_line is not None:
-            self._pitching_line.print()
+
+        for hl in self._lineup_stats:
+            hl.print()
+
+        print("\n")
+
+        pitching_headers = [
+            'Pitchers - {}'.format(self._team.strip()),
+            'IP',
+            'H',
+            'R',
+            'ER',
+            'BB',
+            'SO',
+            'HR'
+        ]
+
+        for header in pitching_headers:
+            print(pad_str(header), end="")
+
+        print("\n")
+
+        self._pitching_line.print()
 
         print("\nPitches-strikes:", end="")
         self._pitching_line.print_pitches()

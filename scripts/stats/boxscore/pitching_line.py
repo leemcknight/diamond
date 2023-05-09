@@ -1,6 +1,15 @@
 import math
 
 
+def pad_int(i):
+    p = str(i).ljust(20, " ")
+    return p
+
+
+def pad_str(s):
+    return s.ljust(20, " ")
+
+
 class PitchingLine:
     def __init__(self, pitcher) -> None:
         self._name = pitcher
@@ -82,16 +91,16 @@ class PitchingLine:
         return "{} {}/3".format(fi, pi)
 
     def print(self):
-        l = "{}       {}      {}      {}      {}      {}      {}      {}"
+        l = "{}{}{}{}{}{}{}{}"
         print(l.format(
-            self._name,
-            self._innings(),
-            self._hits,
-            self._runs,
-            self._earned_runs,
-            self._walks,
-            self._strikeouts,
-            self._homeruns
+            pad_str(self._name),
+            pad_int(self._innings()),
+            pad_int(self._hits),
+            pad_int(self._runs),
+            pad_int(self._earned_runs),
+            pad_int(self._walks),
+            pad_int(self._strikeouts),
+            pad_int(self._homeruns)
         ))
         if self._reliever is not None:
             self._reliever.print()

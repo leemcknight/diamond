@@ -1,6 +1,15 @@
 from positions import Positions
 
 
+def pad_int(i):
+    p = str(i).ljust(20, " ")
+    return p
+
+
+def pad_str(s):
+    return s.ljust(20, " ")
+
+
 class HittingLine:
     def __init__(self, player, position, is_sub) -> None:
         self._name = player
@@ -23,17 +32,22 @@ class HittingLine:
 
     def print(self):
         p = Positions()
-        l = "{}     {}     {}       {}      {}      {}      {}      {}      {}"
+        l = "{}{}{}{}{}{}{}{}{}"
+        name = self._name
+        if self._is_sub:
+            name = "  {}".format(self._name)
+
         print(l.format(
-            "{} {}".format(self._name, p.format_positions(self._positions)),
-            self._plate_appearances,
-            self._atBats,
-            self._runs,
-            self._hits,
-            self._rbi,
-            self._walks,
-            self._strikeouts,
-            self._lob
+            pad_str("{} {}".format(
+                name, p.format_positions(self._positions))),
+            pad_int(self._plate_appearances),
+            pad_int(self._atBats),
+            pad_int(self._runs),
+            pad_int(self._hits),
+            pad_int(self._rbi),
+            pad_int(self._walks),
+            pad_int(self._strikeouts),
+            pad_int(self._lob)
         ))
         if self._sub is not None:
             self._sub.print()
